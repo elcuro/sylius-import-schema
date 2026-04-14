@@ -244,6 +244,10 @@ def build_product(idx, total):
         variant.set("code",          f"{sylius_code}-{combo_slug.upper()[:20]}")
         variant.set("external-code", f"{ext_code}-{vi+1:02d}")
         variant.set("enabled",       "true")
+        # EAN is optional — roughly 70 % of variants have one
+        if random.random() < 0.7:
+            ean_base = 5900000000000 + (idx * 100) + vi
+            variant.set("ean", str(ean_base))
 
         # variant name = combination of values
         combo_label = " / ".join(v for _, v in combo.values()) if combo else name_en

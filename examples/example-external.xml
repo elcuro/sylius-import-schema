@@ -73,7 +73,7 @@
             <variants>
 
                 <!-- Variant: Black / 128 GB -->
-                <variant external-code="BB-987654-BLK-128" enabled="true">
+                <variant external-code="BB-987654-BLK-128" enabled="true" ean="5901234100128">
                     <translation name="Black / 128 GB" />
                     <translation locale="de_DE" name="Schwarz / 128 GB" />
 
@@ -97,7 +97,7 @@
                 </variant>
 
                 <!-- Variant: Black / 256 GB -->
-                <variant external-code="BB-987654-BLK-256" enabled="true">
+                <variant external-code="BB-987654-BLK-256" enabled="true" ean="5901234100256">
                     <translation name="Black / 256 GB" />
                     <translation locale="de_DE" name="Schwarz / 256 GB" />
                     <options>
@@ -112,7 +112,7 @@
                 </variant>
 
                 <!-- Variant: White / 128 GB -->
-                <variant external-code="BB-987654-WHT-128" enabled="true">
+                <variant external-code="BB-987654-WHT-128" enabled="true" ean="5901234200128">
                     <translation name="White / 128 GB" />
                     <translation locale="de_DE" name="Weiß / 128 GB" />
                     <options>
@@ -155,7 +155,7 @@
 
             <variants>
                 <!-- Single variant with no options -->
-                <variant external-code="CABLE-001-DEFAULT" enabled="true">
+                <variant external-code="CABLE-001-DEFAULT" enabled="true" ean="5901234000015">
                     <translation name="USB-C Cable 1m" />
                     <price currency="EUR" amount="1490" />
                     <stock on-hand="200" />

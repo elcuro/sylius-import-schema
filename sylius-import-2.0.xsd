@@ -288,6 +288,8 @@
         <xs:attribute name="code"          type="xs:string"  use="optional"/>
         <xs:attribute name="external-code" type="xs:string"  use="optional"/>
         <xs:attribute name="enabled"       type="xs:boolean" use="optional" default="true"/>
+        <!-- ean — EAN-13 barcode of the variant (e.g. "5901234123457") -->
+        <xs:attribute name="ean"           type="xs:string"  use="optional"/>
     </xs:complexType>
 
     <!-- ═══════════════════════════════════════════

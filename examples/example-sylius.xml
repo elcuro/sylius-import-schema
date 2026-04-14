@@ -74,7 +74,7 @@
             <variants>
 
                 <!-- Variant: Black / 128 GB -->
-                <variant code="IPHONE-15-PRO-BLK-128" enabled="true">
+                <variant code="IPHONE-15-PRO-BLK-128" enabled="true" ean="5901234100128">
                     <translation locale="en_US" name="Black / 128 GB"
                                  slug="apple-iphone-15-pro-black-128gb" />
                     <translation locale="de_DE" name="Schwarz / 128 GB"
@@ -92,7 +92,7 @@
                 </variant>
 
                 <!-- Variant: Black / 256 GB -->
-                <variant code="IPHONE-15-PRO-BLK-256" enabled="true">
+                <variant code="IPHONE-15-PRO-BLK-256" enabled="true" ean="5901234100256">
                     <translation locale="en_US" name="Black / 256 GB"
                                  slug="apple-iphone-15-pro-black-256gb" />
                     <translation locale="de_DE" name="Schwarz / 256 GB"
