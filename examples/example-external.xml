@@ -21,7 +21,7 @@
              EXAMPLE 1: Product with variants (color + storage)
              Supplier does not know our codes — uses their own.
              ═══════════════════════════════════════ -->
-        <product external-code="BB-987654" enabled="true">
+        <product external-code="BB-987654" enabled="true" manufacturer="Apple">
 
             <!-- At least one translation is required.
                  If locale is omitted, default-locale from root element is used (en_US). -->
@@ -132,7 +132,7 @@
         <!-- ═══════════════════════════════════════
              EXAMPLE 2: Simple product (single variant, no options)
              ═══════════════════════════════════════ -->
-        <product external-code="CABLE-001" enabled="true">
+        <product external-code="CABLE-001" enabled="true" manufacturer="Baseus">
 
             <translations>
                 <translation name="USB-C Cable 1m"

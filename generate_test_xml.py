@@ -92,22 +92,22 @@ OPTION_SETS = {
 }
 
 PRODUCT_TEMPLATES = [
-    # (name_template, category, subcategory, price_range, weight_range)
-    ("Samsung Galaxy S{n} Ultra",      "electronics",  "electronics-phones",   (79900, 129900), (0.228, 0.250)),
-    ("Apple iPhone {n} Pro",           "electronics",  "electronics-phones",   (99900, 149900), (0.187, 0.221)),
-    ("Sony WH-{n}000XM5 Headphones",   "electronics",  "electronics-audio",    (24900,  39900), (0.250, 0.300)),
-    ("LG OLED{n}C Laptop",             "electronics",  "electronics-laptops",  (89900, 179900), (1.200, 2.100)),
-    ("Nike Air Max {n}",               "clothing",     "clothing-mens",        ( 8990,  14990), (0.300, 0.450)),
-    ("Adidas Ultraboost {n}",          "clothing",     "clothing-mens",        ( 9990,  16990), (0.310, 0.460)),
-    ("Zara Slim Fit Shirt #{n}",       "clothing",     "clothing-mens",        ( 2990,   4990), (0.200, 0.300)),
-    ("H&M Women's Dress #{n}",         "clothing",     "clothing-womens",      ( 1990,   3990), (0.250, 0.350)),
-    ("Specialized Bike Part #{n}",     "sports",       "sports-cycling",       ( 4990,  29900), (0.500, 2.000)),
-    ("Under Armour Training Set #{n}", "sports",       "sports-fitness",       ( 3990,   8990), (0.400, 0.600)),
-    ("IKEA KALLAX Shelf #{n}",         "home-garden",  "home-furniture",       ( 4990,  12990), (15.00, 30.00)),
-    ("Philips Airfryer #{n}",          "home-garden",  "home-kitchen",         ( 7990,  14990), (2.500, 4.000)),
-    ("Bosch Hand Blender #{n}",        "home-garden",  "home-kitchen",         ( 2990,   6990), (0.800, 1.200)),
-    ("Dyson V{n} Vacuum",              "home-garden",  "home-garden",          (29900,  59900), (2.600, 3.100)),
-    ("Canon EOS R{n}",                 "electronics",  "electronics-cameras",  (89900, 199900), (0.650, 0.900)),
+    # (name_template, category, subcategory, price_range, weight_range, manufacturer)
+    ("Samsung Galaxy S{n} Ultra",      "electronics",  "electronics-phones",   (79900, 129900), (0.228, 0.250), "Samsung"),
+    ("Apple iPhone {n} Pro",           "electronics",  "electronics-phones",   (99900, 149900), (0.187, 0.221), "Apple"),
+    ("Sony WH-{n}000XM5 Headphones",   "electronics",  "electronics-audio",    (24900,  39900), (0.250, 0.300), "Sony"),
+    ("LG OLED{n}C Laptop",             "electronics",  "electronics-laptops",  (89900, 179900), (1.200, 2.100), "LG"),
+    ("Nike Air Max {n}",               "clothing",     "clothing-mens",        ( 8990,  14990), (0.300, 0.450), "Nike"),
+    ("Adidas Ultraboost {n}",          "clothing",     "clothing-mens",        ( 9990,  16990), (0.310, 0.460), "Adidas"),
+    ("Zara Slim Fit Shirt #{n}",       "clothing",     "clothing-mens",        ( 2990,   4990), (0.200, 0.300), "Zara"),
+    ("H&M Women's Dress #{n}",         "clothing",     "clothing-womens",      ( 1990,   3990), (0.250, 0.350), "H&M"),
+    ("Specialized Bike Part #{n}",     "sports",       "sports-cycling",       ( 4990,  29900), (0.500, 2.000), "Specialized"),
+    ("Under Armour Training Set #{n}", "sports",       "sports-fitness",       ( 3990,   8990), (0.400, 0.600), "Under Armour"),
+    ("IKEA KALLAX Shelf #{n}",         "home-garden",  "home-furniture",       ( 4990,  12990), (15.00, 30.00), "IKEA"),
+    ("Philips Airfryer #{n}",          "home-garden",  "home-kitchen",         ( 7990,  14990), (2.500, 4.000), "Philips"),
+    ("Bosch Hand Blender #{n}",        "home-garden",  "home-kitchen",         ( 2990,   6990), (0.800, 1.200), "Bosch"),
+    ("Dyson V{n} Vacuum",              "home-garden",  "home-garden",          (29900,  59900), (2.600, 3.100), "Dyson"),
+    ("Canon EOS R{n}",                 "electronics",  "electronics-cameras",  (89900, 199900), (0.650, 0.900), "Canon"),
 ]
 
 DE_PREFIXES  = ["Super", "Premium", "Ultra", "Pro", "Elite", "Advanced", "Smart", "Eco"]
@@ -159,7 +159,7 @@ def make_variant_combinations(options, max_variants=6):
 
 def build_product(idx, total):
     template = PRODUCT_TEMPLATES[idx % len(PRODUCT_TEMPLATES)]
-    name_tpl, main_cat, sub_cat, price_range, weight_range = template
+    name_tpl, main_cat, sub_cat, price_range, weight_range, manufacturer = template
 
     n = (idx // len(PRODUCT_TEMPLATES)) + 1
     name_en = name_tpl.format(n=n) if "{n}" in name_tpl else name_tpl
@@ -173,6 +173,7 @@ def build_product(idx, total):
     prod.set("code",          sylius_code)
     prod.set("external-code", ext_code)
     prod.set("enabled",       "true")
+    prod.set("manufacturer",  manufacturer)
 
     # ── Translations
     translations = ET.SubElement(prod, "translations")

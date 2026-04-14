@@ -122,6 +122,7 @@ Add the following to your root element to enable inline validation and autocompl
 | `code` | * | Our internal product code |
 | `external-code` | * | Your internal product code |
 | `enabled` | no | Whether the product is active, default `true` |
+| `manufacturer` | no | Manufacturer name (e.g. `Apple`, `Samsung`) |
 
 *At least one of `code` / `external-code` must be present.*
 

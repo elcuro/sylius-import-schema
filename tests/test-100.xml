@@ -2,7 +2,7 @@
 <!-- Test import file: 100 products -->
 <sylius-import xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0" default-locale="en_US" channel="default" xsi:noNamespaceSchemaLocation="https://elcuro.github.io/sylius-import-schema/sylius-import-2.0.xsd">
     <products>
-        <product code="PROD-00001" external-code="EXT-00001" enabled="true">
+        <product code="PROD-00001" external-code="EXT-00001" enabled="true" manufacturer="Samsung">
             <translations>
                 <translation locale="en_US" name="Samsung Galaxy S1 Ultra" slug="samsung-galaxy-s1-ultra-1" short-description="Samsung Galaxy S1 Ultra — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Samsung Galaxy S1 Ultra. Product index 1 of 100.&amp;lt;/p&amp;gt;" meta-title="Samsung Galaxy S1 Ultra | Buy online" meta-description="Buy Samsung Galaxy S1 Ultra at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Eco Samsung Galaxy S1 Ultra" slug="eco-samsung-galaxy-s1-ultra-1"/>
@@ -70,7 +70,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00002" external-code="EXT-00002" enabled="true">
+        <product code="PROD-00002" external-code="EXT-00002" enabled="true" manufacturer="Apple">
             <translations>
                 <translation locale="en_US" name="Apple iPhone 1 Pro" slug="apple-iphone-1-pro-2" short-description="Apple iPhone 1 Pro — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Apple iPhone 1 Pro. Product index 2 of 100.&amp;lt;/p&amp;gt;" meta-title="Apple iPhone 1 Pro | Buy online" meta-description="Buy Apple iPhone 1 Pro at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Ultra Apple iPhone 1 Pro" slug="ultra-apple-iphone-1-pro-2"/>
@@ -138,7 +138,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00003" external-code="EXT-00003" enabled="true">
+        <product code="PROD-00003" external-code="EXT-00003" enabled="true" manufacturer="Sony">
             <translations>
                 <translation locale="en_US" name="Sony WH-1000XM5 Headphones" slug="sony-wh-1000xm5-headphones-3" short-description="Sony WH-1000XM5 Headphones — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Sony WH-1000XM5 Headphones. Product index 3 of 100.&amp;lt;/p&amp;gt;" meta-title="Sony WH-1000XM5 Headphones | Buy online" meta-description="Buy Sony WH-1000XM5 Headphones at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Premium Sony WH-1000XM5 Headphones" slug="premium-sony-wh-1000xm5-headphones-3"/>
@@ -184,7 +184,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00004" external-code="EXT-00004" enabled="true">
+        <product code="PROD-00004" external-code="EXT-00004" enabled="true" manufacturer="LG">
             <translations>
                 <translation locale="en_US" name="LG OLED1C Laptop" slug="lg-oled1c-laptop-4" short-description="LG OLED1C Laptop — high quality product." description="&amp;lt;p&amp;gt;Detailed description of LG OLED1C Laptop. Product index 4 of 100.&amp;lt;/p&amp;gt;" meta-title="LG OLED1C Laptop | Buy online" meta-description="Buy LG OLED1C Laptop at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Elite LG OLED1C Laptop" slug="elite-lg-oled1c-laptop-4"/>
@@ -230,7 +230,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00005" external-code="EXT-00005" enabled="true">
+        <product code="PROD-00005" external-code="EXT-00005" enabled="true" manufacturer="Nike">
             <translations>
                 <translation locale="en_US" name="Nike Air Max 1" slug="nike-air-max-1-5" short-description="Nike Air Max 1 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Nike Air Max 1. Product index 5 of 100.&amp;lt;/p&amp;gt;" meta-title="Nike Air Max 1 | Buy online" meta-description="Buy Nike Air Max 1 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Eco Nike Air Max 1" slug="eco-nike-air-max-1-5"/>
@@ -320,7 +320,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00006" external-code="EXT-00006" enabled="true">
+        <product code="PROD-00006" external-code="EXT-00006" enabled="true" manufacturer="Adidas">
             <translations>
                 <translation locale="en_US" name="Adidas Ultraboost 1" slug="adidas-ultraboost-1-6" short-description="Adidas Ultraboost 1 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Adidas Ultraboost 1. Product index 6 of 100.&amp;lt;/p&amp;gt;" meta-title="Adidas Ultraboost 1 | Buy online" meta-description="Buy Adidas Ultraboost 1 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Elite Adidas Ultraboost 1" slug="elite-adidas-ultraboost-1-6"/>
@@ -377,7 +377,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00007" external-code="EXT-00007" enabled="true">
+        <product code="PROD-00007" external-code="EXT-00007" enabled="true" manufacturer="Zara">
             <translations>
                 <translation locale="en_US" name="Zara Slim Fit Shirt #1" slug="zara-slim-fit-shirt-1-7" short-description="Zara Slim Fit Shirt #1 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Zara Slim Fit Shirt #1. Product index 7 of 100.&amp;lt;/p&amp;gt;" meta-title="Zara Slim Fit Shirt #1 | Buy online" meta-description="Buy Zara Slim Fit Shirt #1 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Ultra Zara Slim Fit Shirt #1" slug="ultra-zara-slim-fit-shirt-1-7"/>
@@ -467,7 +467,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00008" external-code="EXT-00008" enabled="true">
+        <product code="PROD-00008" external-code="EXT-00008" enabled="true" manufacturer="H&amp;M">
             <translations>
                 <translation locale="en_US" name="H&amp;M Women's Dress #1" slug="handm-womens-dress-1-8" short-description="H&amp;M Women's Dress #1 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of H&amp;M Women's Dress #1. Product index 8 of 100.&amp;lt;/p&amp;gt;" meta-title="H&amp;M Women's Dress #1 | Buy online" meta-description="Buy H&amp;M Women's Dress #1 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Premium H&amp;M Women's Dress #1" slug="premium-handm-womens-dress-1-8"/>
@@ -557,7 +557,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00009" external-code="EXT-00009" enabled="true">
+        <product code="PROD-00009" external-code="EXT-00009" enabled="true" manufacturer="Specialized">
             <translations>
                 <translation locale="en_US" name="Specialized Bike Part #1" slug="specialized-bike-part-1-9" short-description="Specialized Bike Part #1 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Specialized Bike Part #1. Product index 9 of 100.&amp;lt;/p&amp;gt;" meta-title="Specialized Bike Part #1 | Buy online" meta-description="Buy Specialized Bike Part #1 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Elite Specialized Bike Part #1" slug="elite-specialized-bike-part-1-9"/>
@@ -613,7 +613,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00010" external-code="EXT-00010" enabled="true">
+        <product code="PROD-00010" external-code="EXT-00010" enabled="true" manufacturer="Under Armour">
             <translations>
                 <translation locale="en_US" name="Under Armour Training Set #1" slug="under-armour-training-set-1-10" short-description="Under Armour Training Set #1 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Under Armour Training Set #1. Product index 10 of 100.&amp;lt;/p&amp;gt;" meta-title="Under Armour Training Set #1 | Buy online" meta-description="Buy Under Armour Training Set #1 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Smart Under Armour Training Set #1" slug="smart-under-armour-training-set-1-10"/>
@@ -669,7 +669,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00011" external-code="EXT-00011" enabled="true">
+        <product code="PROD-00011" external-code="EXT-00011" enabled="true" manufacturer="IKEA">
             <translations>
                 <translation locale="en_US" name="IKEA KALLAX Shelf #1" slug="ikea-kallax-shelf-1-11" short-description="IKEA KALLAX Shelf #1 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of IKEA KALLAX Shelf #1. Product index 11 of 100.&amp;lt;/p&amp;gt;" meta-title="IKEA KALLAX Shelf #1 | Buy online" meta-description="Buy IKEA KALLAX Shelf #1 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Super IKEA KALLAX Shelf #1" slug="super-ikea-kallax-shelf-1-11"/>
@@ -757,7 +757,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00012" external-code="EXT-00012" enabled="true">
+        <product code="PROD-00012" external-code="EXT-00012" enabled="true" manufacturer="Philips">
             <translations>
                 <translation locale="en_US" name="Philips Airfryer #1" slug="philips-airfryer-1-12" short-description="Philips Airfryer #1 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Philips Airfryer #1. Product index 12 of 100.&amp;lt;/p&amp;gt;" meta-title="Philips Airfryer #1 | Buy online" meta-description="Buy Philips Airfryer #1 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Eco Philips Airfryer #1" slug="eco-philips-airfryer-1-12"/>
@@ -823,7 +823,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00013" external-code="EXT-00013" enabled="true">
+        <product code="PROD-00013" external-code="EXT-00013" enabled="true" manufacturer="Bosch">
             <translations>
                 <translation locale="en_US" name="Bosch Hand Blender #1" slug="bosch-hand-blender-1-13" short-description="Bosch Hand Blender #1 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Bosch Hand Blender #1. Product index 13 of 100.&amp;lt;/p&amp;gt;" meta-title="Bosch Hand Blender #1 | Buy online" meta-description="Buy Bosch Hand Blender #1 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Super Bosch Hand Blender #1" slug="super-bosch-hand-blender-1-13"/>
@@ -867,7 +867,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00014" external-code="EXT-00014" enabled="true">
+        <product code="PROD-00014" external-code="EXT-00014" enabled="true" manufacturer="Dyson">
             <translations>
                 <translation locale="en_US" name="Dyson V1 Vacuum" slug="dyson-v1-vacuum-14" short-description="Dyson V1 Vacuum — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Dyson V1 Vacuum. Product index 14 of 100.&amp;lt;/p&amp;gt;" meta-title="Dyson V1 Vacuum | Buy online" meta-description="Buy Dyson V1 Vacuum at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Pro Dyson V1 Vacuum" slug="pro-dyson-v1-vacuum-14"/>
@@ -956,7 +956,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00015" external-code="EXT-00015" enabled="true">
+        <product code="PROD-00015" external-code="EXT-00015" enabled="true" manufacturer="Canon">
             <translations>
                 <translation locale="en_US" name="Canon EOS R1" slug="canon-eos-r1-15" short-description="Canon EOS R1 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Canon EOS R1. Product index 15 of 100.&amp;lt;/p&amp;gt;" meta-title="Canon EOS R1 | Buy online" meta-description="Buy Canon EOS R1 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Smart Canon EOS R1" slug="smart-canon-eos-r1-15"/>
@@ -1002,7 +1002,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00016" external-code="EXT-00016" enabled="true">
+        <product code="PROD-00016" external-code="EXT-00016" enabled="true" manufacturer="Samsung">
             <translations>
                 <translation locale="en_US" name="Samsung Galaxy S2 Ultra" slug="samsung-galaxy-s2-ultra-16" short-description="Samsung Galaxy S2 Ultra — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Samsung Galaxy S2 Ultra. Product index 16 of 100.&amp;lt;/p&amp;gt;" meta-title="Samsung Galaxy S2 Ultra | Buy online" meta-description="Buy Samsung Galaxy S2 Ultra at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Smart Samsung Galaxy S2 Ultra" slug="smart-samsung-galaxy-s2-ultra-16"/>
@@ -1048,7 +1048,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00017" external-code="EXT-00017" enabled="true">
+        <product code="PROD-00017" external-code="EXT-00017" enabled="true" manufacturer="Apple">
             <translations>
                 <translation locale="en_US" name="Apple iPhone 2 Pro" slug="apple-iphone-2-pro-17" short-description="Apple iPhone 2 Pro — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Apple iPhone 2 Pro. Product index 17 of 100.&amp;lt;/p&amp;gt;" meta-title="Apple iPhone 2 Pro | Buy online" meta-description="Buy Apple iPhone 2 Pro at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Advanced Apple iPhone 2 Pro" slug="advanced-apple-iphone-2-pro-17"/>
@@ -1094,7 +1094,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00018" external-code="EXT-00018" enabled="true">
+        <product code="PROD-00018" external-code="EXT-00018" enabled="true" manufacturer="Sony">
             <translations>
                 <translation locale="en_US" name="Sony WH-2000XM5 Headphones" slug="sony-wh-2000xm5-headphones-18" short-description="Sony WH-2000XM5 Headphones — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Sony WH-2000XM5 Headphones. Product index 18 of 100.&amp;lt;/p&amp;gt;" meta-title="Sony WH-2000XM5 Headphones | Buy online" meta-description="Buy Sony WH-2000XM5 Headphones at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Smart Sony WH-2000XM5 Headphones" slug="smart-sony-wh-2000xm5-headphones-18"/>
@@ -1162,7 +1162,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00019" external-code="EXT-00019" enabled="true">
+        <product code="PROD-00019" external-code="EXT-00019" enabled="true" manufacturer="LG">
             <translations>
                 <translation locale="en_US" name="LG OLED2C Laptop" slug="lg-oled2c-laptop-19" short-description="LG OLED2C Laptop — high quality product." description="&amp;lt;p&amp;gt;Detailed description of LG OLED2C Laptop. Product index 19 of 100.&amp;lt;/p&amp;gt;" meta-title="LG OLED2C Laptop | Buy online" meta-description="Buy LG OLED2C Laptop at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Premium LG OLED2C Laptop" slug="premium-lg-oled2c-laptop-19"/>
@@ -1219,7 +1219,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00020" external-code="EXT-00020" enabled="true">
+        <product code="PROD-00020" external-code="EXT-00020" enabled="true" manufacturer="Nike">
             <translations>
                 <translation locale="en_US" name="Nike Air Max 2" slug="nike-air-max-2-20" short-description="Nike Air Max 2 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Nike Air Max 2. Product index 20 of 100.&amp;lt;/p&amp;gt;" meta-title="Nike Air Max 2 | Buy online" meta-description="Buy Nike Air Max 2 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Ultra Nike Air Max 2" slug="ultra-nike-air-max-2-20"/>
@@ -1287,7 +1287,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00021" external-code="EXT-00021" enabled="true">
+        <product code="PROD-00021" external-code="EXT-00021" enabled="true" manufacturer="Adidas">
             <translations>
                 <translation locale="en_US" name="Adidas Ultraboost 2" slug="adidas-ultraboost-2-21" short-description="Adidas Ultraboost 2 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Adidas Ultraboost 2. Product index 21 of 100.&amp;lt;/p&amp;gt;" meta-title="Adidas Ultraboost 2 | Buy online" meta-description="Buy Adidas Ultraboost 2 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Eco Adidas Ultraboost 2" slug="eco-adidas-ultraboost-2-21"/>
@@ -1333,7 +1333,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00022" external-code="EXT-00022" enabled="true">
+        <product code="PROD-00022" external-code="EXT-00022" enabled="true" manufacturer="Zara">
             <translations>
                 <translation locale="en_US" name="Zara Slim Fit Shirt #2" slug="zara-slim-fit-shirt-2-22" short-description="Zara Slim Fit Shirt #2 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Zara Slim Fit Shirt #2. Product index 22 of 100.&amp;lt;/p&amp;gt;" meta-title="Zara Slim Fit Shirt #2 | Buy online" meta-description="Buy Zara Slim Fit Shirt #2 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Pro Zara Slim Fit Shirt #2" slug="pro-zara-slim-fit-shirt-2-22"/>
@@ -1390,7 +1390,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00023" external-code="EXT-00023" enabled="true">
+        <product code="PROD-00023" external-code="EXT-00023" enabled="true" manufacturer="H&amp;M">
             <translations>
                 <translation locale="en_US" name="H&amp;M Women's Dress #2" slug="handm-womens-dress-2-23" short-description="H&amp;M Women's Dress #2 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of H&amp;M Women's Dress #2. Product index 23 of 100.&amp;lt;/p&amp;gt;" meta-title="H&amp;M Women's Dress #2 | Buy online" meta-description="Buy H&amp;M Women's Dress #2 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Elite H&amp;M Women's Dress #2" slug="elite-handm-womens-dress-2-23"/>
@@ -1458,7 +1458,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00024" external-code="EXT-00024" enabled="true">
+        <product code="PROD-00024" external-code="EXT-00024" enabled="true" manufacturer="Specialized">
             <translations>
                 <translation locale="en_US" name="Specialized Bike Part #2" slug="specialized-bike-part-2-24" short-description="Specialized Bike Part #2 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Specialized Bike Part #2. Product index 24 of 100.&amp;lt;/p&amp;gt;" meta-title="Specialized Bike Part #2 | Buy online" meta-description="Buy Specialized Bike Part #2 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Smart Specialized Bike Part #2" slug="smart-specialized-bike-part-2-24"/>
@@ -1547,7 +1547,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00025" external-code="EXT-00025" enabled="true">
+        <product code="PROD-00025" external-code="EXT-00025" enabled="true" manufacturer="Under Armour">
             <translations>
                 <translation locale="en_US" name="Under Armour Training Set #2" slug="under-armour-training-set-2-25" short-description="Under Armour Training Set #2 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Under Armour Training Set #2. Product index 25 of 100.&amp;lt;/p&amp;gt;" meta-title="Under Armour Training Set #2 | Buy online" meta-description="Buy Under Armour Training Set #2 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Pro Under Armour Training Set #2" slug="pro-under-armour-training-set-2-25"/>
@@ -1603,7 +1603,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00026" external-code="EXT-00026" enabled="true">
+        <product code="PROD-00026" external-code="EXT-00026" enabled="true" manufacturer="IKEA">
             <translations>
                 <translation locale="en_US" name="IKEA KALLAX Shelf #2" slug="ikea-kallax-shelf-2-26" short-description="IKEA KALLAX Shelf #2 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of IKEA KALLAX Shelf #2. Product index 26 of 100.&amp;lt;/p&amp;gt;" meta-title="IKEA KALLAX Shelf #2 | Buy online" meta-description="Buy IKEA KALLAX Shelf #2 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Smart IKEA KALLAX Shelf #2" slug="smart-ikea-kallax-shelf-2-26"/>
@@ -1647,7 +1647,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00027" external-code="EXT-00027" enabled="true">
+        <product code="PROD-00027" external-code="EXT-00027" enabled="true" manufacturer="Philips">
             <translations>
                 <translation locale="en_US" name="Philips Airfryer #2" slug="philips-airfryer-2-27" short-description="Philips Airfryer #2 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Philips Airfryer #2. Product index 27 of 100.&amp;lt;/p&amp;gt;" meta-title="Philips Airfryer #2 | Buy online" meta-description="Buy Philips Airfryer #2 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Elite Philips Airfryer #2" slug="elite-philips-airfryer-2-27"/>
@@ -1702,7 +1702,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00028" external-code="EXT-00028" enabled="true">
+        <product code="PROD-00028" external-code="EXT-00028" enabled="true" manufacturer="Bosch">
             <translations>
                 <translation locale="en_US" name="Bosch Hand Blender #2" slug="bosch-hand-blender-2-28" short-description="Bosch Hand Blender #2 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Bosch Hand Blender #2. Product index 28 of 100.&amp;lt;/p&amp;gt;" meta-title="Bosch Hand Blender #2 | Buy online" meta-description="Buy Bosch Hand Blender #2 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Advanced Bosch Hand Blender #2" slug="advanced-bosch-hand-blender-2-28"/>
@@ -1768,7 +1768,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00029" external-code="EXT-00029" enabled="true">
+        <product code="PROD-00029" external-code="EXT-00029" enabled="true" manufacturer="Dyson">
             <translations>
                 <translation locale="en_US" name="Dyson V2 Vacuum" slug="dyson-v2-vacuum-29" short-description="Dyson V2 Vacuum — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Dyson V2 Vacuum. Product index 29 of 100.&amp;lt;/p&amp;gt;" meta-title="Dyson V2 Vacuum | Buy online" meta-description="Buy Dyson V2 Vacuum at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Ultra Dyson V2 Vacuum" slug="ultra-dyson-v2-vacuum-29"/>
@@ -1813,7 +1813,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00030" external-code="EXT-00030" enabled="true">
+        <product code="PROD-00030" external-code="EXT-00030" enabled="true" manufacturer="Canon">
             <translations>
                 <translation locale="en_US" name="Canon EOS R2" slug="canon-eos-r2-30" short-description="Canon EOS R2 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Canon EOS R2. Product index 30 of 100.&amp;lt;/p&amp;gt;" meta-title="Canon EOS R2 | Buy online" meta-description="Buy Canon EOS R2 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Premium Canon EOS R2" slug="premium-canon-eos-r2-30"/>
@@ -1859,7 +1859,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00031" external-code="EXT-00031" enabled="true">
+        <product code="PROD-00031" external-code="EXT-00031" enabled="true" manufacturer="Samsung">
             <translations>
                 <translation locale="en_US" name="Samsung Galaxy S3 Ultra" slug="samsung-galaxy-s3-ultra-31" short-description="Samsung Galaxy S3 Ultra — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Samsung Galaxy S3 Ultra. Product index 31 of 100.&amp;lt;/p&amp;gt;" meta-title="Samsung Galaxy S3 Ultra | Buy online" meta-description="Buy Samsung Galaxy S3 Ultra at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Super Samsung Galaxy S3 Ultra" slug="super-samsung-galaxy-s3-ultra-31"/>
@@ -1927,7 +1927,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00032" external-code="EXT-00032" enabled="true">
+        <product code="PROD-00032" external-code="EXT-00032" enabled="true" manufacturer="Apple">
             <translations>
                 <translation locale="en_US" name="Apple iPhone 3 Pro" slug="apple-iphone-3-pro-32" short-description="Apple iPhone 3 Pro — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Apple iPhone 3 Pro. Product index 32 of 100.&amp;lt;/p&amp;gt;" meta-title="Apple iPhone 3 Pro | Buy online" meta-description="Buy Apple iPhone 3 Pro at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Premium Apple iPhone 3 Pro" slug="premium-apple-iphone-3-pro-32"/>
@@ -1995,7 +1995,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00033" external-code="EXT-00033" enabled="true">
+        <product code="PROD-00033" external-code="EXT-00033" enabled="true" manufacturer="Sony">
             <translations>
                 <translation locale="en_US" name="Sony WH-3000XM5 Headphones" slug="sony-wh-3000xm5-headphones-33" short-description="Sony WH-3000XM5 Headphones — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Sony WH-3000XM5 Headphones. Product index 33 of 100.&amp;lt;/p&amp;gt;" meta-title="Sony WH-3000XM5 Headphones | Buy online" meta-description="Buy Sony WH-3000XM5 Headphones at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Super Sony WH-3000XM5 Headphones" slug="super-sony-wh-3000xm5-headphones-33"/>
@@ -2052,7 +2052,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00034" external-code="EXT-00034" enabled="true">
+        <product code="PROD-00034" external-code="EXT-00034" enabled="true" manufacturer="LG">
             <translations>
                 <translation locale="en_US" name="LG OLED3C Laptop" slug="lg-oled3c-laptop-34" short-description="LG OLED3C Laptop — high quality product." description="&amp;lt;p&amp;gt;Detailed description of LG OLED3C Laptop. Product index 34 of 100.&amp;lt;/p&amp;gt;" meta-title="LG OLED3C Laptop | Buy online" meta-description="Buy LG OLED3C Laptop at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Elite LG OLED3C Laptop" slug="elite-lg-oled3c-laptop-34"/>
@@ -2120,7 +2120,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00035" external-code="EXT-00035" enabled="true">
+        <product code="PROD-00035" external-code="EXT-00035" enabled="true" manufacturer="Nike">
             <translations>
                 <translation locale="en_US" name="Nike Air Max 3" slug="nike-air-max-3-35" short-description="Nike Air Max 3 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Nike Air Max 3. Product index 35 of 100.&amp;lt;/p&amp;gt;" meta-title="Nike Air Max 3 | Buy online" meta-description="Buy Nike Air Max 3 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Pro Nike Air Max 3" slug="pro-nike-air-max-3-35"/>
@@ -2177,7 +2177,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00036" external-code="EXT-00036" enabled="true">
+        <product code="PROD-00036" external-code="EXT-00036" enabled="true" manufacturer="Adidas">
             <translations>
                 <translation locale="en_US" name="Adidas Ultraboost 3" slug="adidas-ultraboost-3-36" short-description="Adidas Ultraboost 3 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Adidas Ultraboost 3. Product index 36 of 100.&amp;lt;/p&amp;gt;" meta-title="Adidas Ultraboost 3 | Buy online" meta-description="Buy Adidas Ultraboost 3 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Advanced Adidas Ultraboost 3" slug="advanced-adidas-ultraboost-3-36"/>
@@ -2234,7 +2234,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00037" external-code="EXT-00037" enabled="true">
+        <product code="PROD-00037" external-code="EXT-00037" enabled="true" manufacturer="Zara">
             <translations>
                 <translation locale="en_US" name="Zara Slim Fit Shirt #3" slug="zara-slim-fit-shirt-3-37" short-description="Zara Slim Fit Shirt #3 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Zara Slim Fit Shirt #3. Product index 37 of 100.&amp;lt;/p&amp;gt;" meta-title="Zara Slim Fit Shirt #3 | Buy online" meta-description="Buy Zara Slim Fit Shirt #3 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Ultra Zara Slim Fit Shirt #3" slug="ultra-zara-slim-fit-shirt-3-37"/>
@@ -2280,7 +2280,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00038" external-code="EXT-00038" enabled="true">
+        <product code="PROD-00038" external-code="EXT-00038" enabled="true" manufacturer="H&amp;M">
             <translations>
                 <translation locale="en_US" name="H&amp;M Women's Dress #3" slug="handm-womens-dress-3-38" short-description="H&amp;M Women's Dress #3 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of H&amp;M Women's Dress #3. Product index 38 of 100.&amp;lt;/p&amp;gt;" meta-title="H&amp;M Women's Dress #3 | Buy online" meta-description="Buy H&amp;M Women's Dress #3 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Premium H&amp;M Women's Dress #3" slug="premium-handm-womens-dress-3-38"/>
@@ -2326,7 +2326,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00039" external-code="EXT-00039" enabled="true">
+        <product code="PROD-00039" external-code="EXT-00039" enabled="true" manufacturer="Specialized">
             <translations>
                 <translation locale="en_US" name="Specialized Bike Part #3" slug="specialized-bike-part-3-39" short-description="Specialized Bike Part #3 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Specialized Bike Part #3. Product index 39 of 100.&amp;lt;/p&amp;gt;" meta-title="Specialized Bike Part #3 | Buy online" meta-description="Buy Specialized Bike Part #3 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Elite Specialized Bike Part #3" slug="elite-specialized-bike-part-3-39"/>
@@ -2382,7 +2382,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00040" external-code="EXT-00040" enabled="true">
+        <product code="PROD-00040" external-code="EXT-00040" enabled="true" manufacturer="Under Armour">
             <translations>
                 <translation locale="en_US" name="Under Armour Training Set #3" slug="under-armour-training-set-3-40" short-description="Under Armour Training Set #3 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Under Armour Training Set #3. Product index 40 of 100.&amp;lt;/p&amp;gt;" meta-title="Under Armour Training Set #3 | Buy online" meta-description="Buy Under Armour Training Set #3 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Advanced Under Armour Training Set #3" slug="advanced-under-armour-training-set-3-40"/>
@@ -2449,7 +2449,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00041" external-code="EXT-00041" enabled="true">
+        <product code="PROD-00041" external-code="EXT-00041" enabled="true" manufacturer="IKEA">
             <translations>
                 <translation locale="en_US" name="IKEA KALLAX Shelf #3" slug="ikea-kallax-shelf-3-41" short-description="IKEA KALLAX Shelf #3 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of IKEA KALLAX Shelf #3. Product index 41 of 100.&amp;lt;/p&amp;gt;" meta-title="IKEA KALLAX Shelf #3 | Buy online" meta-description="Buy IKEA KALLAX Shelf #3 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Elite IKEA KALLAX Shelf #3" slug="elite-ikea-kallax-shelf-3-41"/>
@@ -2493,7 +2493,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00042" external-code="EXT-00042" enabled="true">
+        <product code="PROD-00042" external-code="EXT-00042" enabled="true" manufacturer="Philips">
             <translations>
                 <translation locale="en_US" name="Philips Airfryer #3" slug="philips-airfryer-3-42" short-description="Philips Airfryer #3 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Philips Airfryer #3. Product index 42 of 100.&amp;lt;/p&amp;gt;" meta-title="Philips Airfryer #3 | Buy online" meta-description="Buy Philips Airfryer #3 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Advanced Philips Airfryer #3" slug="advanced-philips-airfryer-3-42"/>
@@ -2537,7 +2537,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00043" external-code="EXT-00043" enabled="true">
+        <product code="PROD-00043" external-code="EXT-00043" enabled="true" manufacturer="Bosch">
             <translations>
                 <translation locale="en_US" name="Bosch Hand Blender #3" slug="bosch-hand-blender-3-43" short-description="Bosch Hand Blender #3 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Bosch Hand Blender #3. Product index 43 of 100.&amp;lt;/p&amp;gt;" meta-title="Bosch Hand Blender #3 | Buy online" meta-description="Buy Bosch Hand Blender #3 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Elite Bosch Hand Blender #3" slug="elite-bosch-hand-blender-3-43"/>
@@ -2625,7 +2625,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00044" external-code="EXT-00044" enabled="true">
+        <product code="PROD-00044" external-code="EXT-00044" enabled="true" manufacturer="Dyson">
             <translations>
                 <translation locale="en_US" name="Dyson V3 Vacuum" slug="dyson-v3-vacuum-44" short-description="Dyson V3 Vacuum — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Dyson V3 Vacuum. Product index 44 of 100.&amp;lt;/p&amp;gt;" meta-title="Dyson V3 Vacuum | Buy online" meta-description="Buy Dyson V3 Vacuum at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Pro Dyson V3 Vacuum" slug="pro-dyson-v3-vacuum-44"/>
@@ -2692,7 +2692,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00045" external-code="EXT-00045" enabled="true">
+        <product code="PROD-00045" external-code="EXT-00045" enabled="true" manufacturer="Canon">
             <translations>
                 <translation locale="en_US" name="Canon EOS R3" slug="canon-eos-r3-45" short-description="Canon EOS R3 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Canon EOS R3. Product index 45 of 100.&amp;lt;/p&amp;gt;" meta-title="Canon EOS R3 | Buy online" meta-description="Buy Canon EOS R3 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Elite Canon EOS R3" slug="elite-canon-eos-r3-45"/>
@@ -2782,7 +2782,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00046" external-code="EXT-00046" enabled="true">
+        <product code="PROD-00046" external-code="EXT-00046" enabled="true" manufacturer="Samsung">
             <translations>
                 <translation locale="en_US" name="Samsung Galaxy S4 Ultra" slug="samsung-galaxy-s4-ultra-46" short-description="Samsung Galaxy S4 Ultra — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Samsung Galaxy S4 Ultra. Product index 46 of 100.&amp;lt;/p&amp;gt;" meta-title="Samsung Galaxy S4 Ultra | Buy online" meta-description="Buy Samsung Galaxy S4 Ultra at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Premium Samsung Galaxy S4 Ultra" slug="premium-samsung-galaxy-s4-ultra-46"/>
@@ -2828,7 +2828,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00047" external-code="EXT-00047" enabled="true">
+        <product code="PROD-00047" external-code="EXT-00047" enabled="true" manufacturer="Apple">
             <translations>
                 <translation locale="en_US" name="Apple iPhone 4 Pro" slug="apple-iphone-4-pro-47" short-description="Apple iPhone 4 Pro — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Apple iPhone 4 Pro. Product index 47 of 100.&amp;lt;/p&amp;gt;" meta-title="Apple iPhone 4 Pro | Buy online" meta-description="Buy Apple iPhone 4 Pro at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Smart Apple iPhone 4 Pro" slug="smart-apple-iphone-4-pro-47"/>
@@ -2874,7 +2874,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00048" external-code="EXT-00048" enabled="true">
+        <product code="PROD-00048" external-code="EXT-00048" enabled="true" manufacturer="Sony">
             <translations>
                 <translation locale="en_US" name="Sony WH-4000XM5 Headphones" slug="sony-wh-4000xm5-headphones-48" short-description="Sony WH-4000XM5 Headphones — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Sony WH-4000XM5 Headphones. Product index 48 of 100.&amp;lt;/p&amp;gt;" meta-title="Sony WH-4000XM5 Headphones | Buy online" meta-description="Buy Sony WH-4000XM5 Headphones at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Advanced Sony WH-4000XM5 Headphones" slug="advanced-sony-wh-4000xm5-headphones-48"/>
@@ -2920,7 +2920,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00049" external-code="EXT-00049" enabled="true">
+        <product code="PROD-00049" external-code="EXT-00049" enabled="true" manufacturer="LG">
             <translations>
                 <translation locale="en_US" name="LG OLED4C Laptop" slug="lg-oled4c-laptop-49" short-description="LG OLED4C Laptop — high quality product." description="&amp;lt;p&amp;gt;Detailed description of LG OLED4C Laptop. Product index 49 of 100.&amp;lt;/p&amp;gt;" meta-title="LG OLED4C Laptop | Buy online" meta-description="Buy LG OLED4C Laptop at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Advanced LG OLED4C Laptop" slug="advanced-lg-oled4c-laptop-49"/>
@@ -3010,7 +3010,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00050" external-code="EXT-00050" enabled="true">
+        <product code="PROD-00050" external-code="EXT-00050" enabled="true" manufacturer="Nike">
             <translations>
                 <translation locale="en_US" name="Nike Air Max 4" slug="nike-air-max-4-50" short-description="Nike Air Max 4 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Nike Air Max 4. Product index 50 of 100.&amp;lt;/p&amp;gt;" meta-title="Nike Air Max 4 | Buy online" meta-description="Buy Nike Air Max 4 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Pro Nike Air Max 4" slug="pro-nike-air-max-4-50"/>
@@ -3056,7 +3056,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00051" external-code="EXT-00051" enabled="true">
+        <product code="PROD-00051" external-code="EXT-00051" enabled="true" manufacturer="Adidas">
             <translations>
                 <translation locale="en_US" name="Adidas Ultraboost 4" slug="adidas-ultraboost-4-51" short-description="Adidas Ultraboost 4 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Adidas Ultraboost 4. Product index 51 of 100.&amp;lt;/p&amp;gt;" meta-title="Adidas Ultraboost 4 | Buy online" meta-description="Buy Adidas Ultraboost 4 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Smart Adidas Ultraboost 4" slug="smart-adidas-ultraboost-4-51"/>
@@ -3124,7 +3124,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00052" external-code="EXT-00052" enabled="true">
+        <product code="PROD-00052" external-code="EXT-00052" enabled="true" manufacturer="Zara">
             <translations>
                 <translation locale="en_US" name="Zara Slim Fit Shirt #4" slug="zara-slim-fit-shirt-4-52" short-description="Zara Slim Fit Shirt #4 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Zara Slim Fit Shirt #4. Product index 52 of 100.&amp;lt;/p&amp;gt;" meta-title="Zara Slim Fit Shirt #4 | Buy online" meta-description="Buy Zara Slim Fit Shirt #4 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Pro Zara Slim Fit Shirt #4" slug="pro-zara-slim-fit-shirt-4-52"/>
@@ -3192,7 +3192,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00053" external-code="EXT-00053" enabled="true">
+        <product code="PROD-00053" external-code="EXT-00053" enabled="true" manufacturer="H&amp;M">
             <translations>
                 <translation locale="en_US" name="H&amp;M Women's Dress #4" slug="handm-womens-dress-4-53" short-description="H&amp;M Women's Dress #4 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of H&amp;M Women's Dress #4. Product index 53 of 100.&amp;lt;/p&amp;gt;" meta-title="H&amp;M Women's Dress #4 | Buy online" meta-description="Buy H&amp;M Women's Dress #4 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Premium H&amp;M Women's Dress #4" slug="premium-handm-womens-dress-4-53"/>
@@ -3260,7 +3260,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00054" external-code="EXT-00054" enabled="true">
+        <product code="PROD-00054" external-code="EXT-00054" enabled="true" manufacturer="Specialized">
             <translations>
                 <translation locale="en_US" name="Specialized Bike Part #4" slug="specialized-bike-part-4-54" short-description="Specialized Bike Part #4 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Specialized Bike Part #4. Product index 54 of 100.&amp;lt;/p&amp;gt;" meta-title="Specialized Bike Part #4 | Buy online" meta-description="Buy Specialized Bike Part #4 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Smart Specialized Bike Part #4" slug="smart-specialized-bike-part-4-54"/>
@@ -3305,7 +3305,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00055" external-code="EXT-00055" enabled="true">
+        <product code="PROD-00055" external-code="EXT-00055" enabled="true" manufacturer="Under Armour">
             <translations>
                 <translation locale="en_US" name="Under Armour Training Set #4" slug="under-armour-training-set-4-55" short-description="Under Armour Training Set #4 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Under Armour Training Set #4. Product index 55 of 100.&amp;lt;/p&amp;gt;" meta-title="Under Armour Training Set #4 | Buy online" meta-description="Buy Under Armour Training Set #4 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Super Under Armour Training Set #4" slug="super-under-armour-training-set-4-55"/>
@@ -3394,7 +3394,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00056" external-code="EXT-00056" enabled="true">
+        <product code="PROD-00056" external-code="EXT-00056" enabled="true" manufacturer="IKEA">
             <translations>
                 <translation locale="en_US" name="IKEA KALLAX Shelf #4" slug="ikea-kallax-shelf-4-56" short-description="IKEA KALLAX Shelf #4 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of IKEA KALLAX Shelf #4. Product index 56 of 100.&amp;lt;/p&amp;gt;" meta-title="IKEA KALLAX Shelf #4 | Buy online" meta-description="Buy IKEA KALLAX Shelf #4 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Premium IKEA KALLAX Shelf #4" slug="premium-ikea-kallax-shelf-4-56"/>
@@ -3482,7 +3482,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00057" external-code="EXT-00057" enabled="true">
+        <product code="PROD-00057" external-code="EXT-00057" enabled="true" manufacturer="Philips">
             <translations>
                 <translation locale="en_US" name="Philips Airfryer #4" slug="philips-airfryer-4-57" short-description="Philips Airfryer #4 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Philips Airfryer #4. Product index 57 of 100.&amp;lt;/p&amp;gt;" meta-title="Philips Airfryer #4 | Buy online" meta-description="Buy Philips Airfryer #4 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Premium Philips Airfryer #4" slug="premium-philips-airfryer-4-57"/>
@@ -3537,7 +3537,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00058" external-code="EXT-00058" enabled="true">
+        <product code="PROD-00058" external-code="EXT-00058" enabled="true" manufacturer="Bosch">
             <translations>
                 <translation locale="en_US" name="Bosch Hand Blender #4" slug="bosch-hand-blender-4-58" short-description="Bosch Hand Blender #4 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Bosch Hand Blender #4. Product index 58 of 100.&amp;lt;/p&amp;gt;" meta-title="Bosch Hand Blender #4 | Buy online" meta-description="Buy Bosch Hand Blender #4 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Smart Bosch Hand Blender #4" slug="smart-bosch-hand-blender-4-58"/>
@@ -3592,7 +3592,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00059" external-code="EXT-00059" enabled="true">
+        <product code="PROD-00059" external-code="EXT-00059" enabled="true" manufacturer="Dyson">
             <translations>
                 <translation locale="en_US" name="Dyson V4 Vacuum" slug="dyson-v4-vacuum-59" short-description="Dyson V4 Vacuum — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Dyson V4 Vacuum. Product index 59 of 100.&amp;lt;/p&amp;gt;" meta-title="Dyson V4 Vacuum | Buy online" meta-description="Buy Dyson V4 Vacuum at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Pro Dyson V4 Vacuum" slug="pro-dyson-v4-vacuum-59"/>
@@ -3637,7 +3637,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00060" external-code="EXT-00060" enabled="true">
+        <product code="PROD-00060" external-code="EXT-00060" enabled="true" manufacturer="Canon">
             <translations>
                 <translation locale="en_US" name="Canon EOS R4" slug="canon-eos-r4-60" short-description="Canon EOS R4 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Canon EOS R4. Product index 60 of 100.&amp;lt;/p&amp;gt;" meta-title="Canon EOS R4 | Buy online" meta-description="Buy Canon EOS R4 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Eco Canon EOS R4" slug="eco-canon-eos-r4-60"/>
@@ -3727,7 +3727,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00061" external-code="EXT-00061" enabled="true">
+        <product code="PROD-00061" external-code="EXT-00061" enabled="true" manufacturer="Samsung">
             <translations>
                 <translation locale="en_US" name="Samsung Galaxy S5 Ultra" slug="samsung-galaxy-s5-ultra-61" short-description="Samsung Galaxy S5 Ultra — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Samsung Galaxy S5 Ultra. Product index 61 of 100.&amp;lt;/p&amp;gt;" meta-title="Samsung Galaxy S5 Ultra | Buy online" meta-description="Buy Samsung Galaxy S5 Ultra at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Pro Samsung Galaxy S5 Ultra" slug="pro-samsung-galaxy-s5-ultra-61"/>
@@ -3784,7 +3784,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00062" external-code="EXT-00062" enabled="true">
+        <product code="PROD-00062" external-code="EXT-00062" enabled="true" manufacturer="Apple">
             <translations>
                 <translation locale="en_US" name="Apple iPhone 5 Pro" slug="apple-iphone-5-pro-62" short-description="Apple iPhone 5 Pro — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Apple iPhone 5 Pro. Product index 62 of 100.&amp;lt;/p&amp;gt;" meta-title="Apple iPhone 5 Pro | Buy online" meta-description="Buy Apple iPhone 5 Pro at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Elite Apple iPhone 5 Pro" slug="elite-apple-iphone-5-pro-62"/>
@@ -3841,7 +3841,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00063" external-code="EXT-00063" enabled="true">
+        <product code="PROD-00063" external-code="EXT-00063" enabled="true" manufacturer="Sony">
             <translations>
                 <translation locale="en_US" name="Sony WH-5000XM5 Headphones" slug="sony-wh-5000xm5-headphones-63" short-description="Sony WH-5000XM5 Headphones — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Sony WH-5000XM5 Headphones. Product index 63 of 100.&amp;lt;/p&amp;gt;" meta-title="Sony WH-5000XM5 Headphones | Buy online" meta-description="Buy Sony WH-5000XM5 Headphones at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Ultra Sony WH-5000XM5 Headphones" slug="ultra-sony-wh-5000xm5-headphones-63"/>
@@ -3909,7 +3909,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00064" external-code="EXT-00064" enabled="true">
+        <product code="PROD-00064" external-code="EXT-00064" enabled="true" manufacturer="LG">
             <translations>
                 <translation locale="en_US" name="LG OLED5C Laptop" slug="lg-oled5c-laptop-64" short-description="LG OLED5C Laptop — high quality product." description="&amp;lt;p&amp;gt;Detailed description of LG OLED5C Laptop. Product index 64 of 100.&amp;lt;/p&amp;gt;" meta-title="LG OLED5C Laptop | Buy online" meta-description="Buy LG OLED5C Laptop at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Advanced LG OLED5C Laptop" slug="advanced-lg-oled5c-laptop-64"/>
@@ -3977,7 +3977,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00065" external-code="EXT-00065" enabled="true">
+        <product code="PROD-00065" external-code="EXT-00065" enabled="true" manufacturer="Nike">
             <translations>
                 <translation locale="en_US" name="Nike Air Max 5" slug="nike-air-max-5-65" short-description="Nike Air Max 5 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Nike Air Max 5. Product index 65 of 100.&amp;lt;/p&amp;gt;" meta-title="Nike Air Max 5 | Buy online" meta-description="Buy Nike Air Max 5 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Advanced Nike Air Max 5" slug="advanced-nike-air-max-5-65"/>
@@ -4034,7 +4034,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00066" external-code="EXT-00066" enabled="true">
+        <product code="PROD-00066" external-code="EXT-00066" enabled="true" manufacturer="Adidas">
             <translations>
                 <translation locale="en_US" name="Adidas Ultraboost 5" slug="adidas-ultraboost-5-66" short-description="Adidas Ultraboost 5 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Adidas Ultraboost 5. Product index 66 of 100.&amp;lt;/p&amp;gt;" meta-title="Adidas Ultraboost 5 | Buy online" meta-description="Buy Adidas Ultraboost 5 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Super Adidas Ultraboost 5" slug="super-adidas-ultraboost-5-66"/>
@@ -4102,7 +4102,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00067" external-code="EXT-00067" enabled="true">
+        <product code="PROD-00067" external-code="EXT-00067" enabled="true" manufacturer="Zara">
             <translations>
                 <translation locale="en_US" name="Zara Slim Fit Shirt #5" slug="zara-slim-fit-shirt-5-67" short-description="Zara Slim Fit Shirt #5 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Zara Slim Fit Shirt #5. Product index 67 of 100.&amp;lt;/p&amp;gt;" meta-title="Zara Slim Fit Shirt #5 | Buy online" meta-description="Buy Zara Slim Fit Shirt #5 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Super Zara Slim Fit Shirt #5" slug="super-zara-slim-fit-shirt-5-67"/>
@@ -4148,7 +4148,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00068" external-code="EXT-00068" enabled="true">
+        <product code="PROD-00068" external-code="EXT-00068" enabled="true" manufacturer="H&amp;M">
             <translations>
                 <translation locale="en_US" name="H&amp;M Women's Dress #5" slug="handm-womens-dress-5-68" short-description="H&amp;M Women's Dress #5 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of H&amp;M Women's Dress #5. Product index 68 of 100.&amp;lt;/p&amp;gt;" meta-title="H&amp;M Women's Dress #5 | Buy online" meta-description="Buy H&amp;M Women's Dress #5 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Super H&amp;M Women's Dress #5" slug="super-handm-womens-dress-5-68"/>
@@ -4216,7 +4216,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00069" external-code="EXT-00069" enabled="true">
+        <product code="PROD-00069" external-code="EXT-00069" enabled="true" manufacturer="Specialized">
             <translations>
                 <translation locale="en_US" name="Specialized Bike Part #5" slug="specialized-bike-part-5-69" short-description="Specialized Bike Part #5 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Specialized Bike Part #5. Product index 69 of 100.&amp;lt;/p&amp;gt;" meta-title="Specialized Bike Part #5 | Buy online" meta-description="Buy Specialized Bike Part #5 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Premium Specialized Bike Part #5" slug="premium-specialized-bike-part-5-69"/>
@@ -4305,7 +4305,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00070" external-code="EXT-00070" enabled="true">
+        <product code="PROD-00070" external-code="EXT-00070" enabled="true" manufacturer="Under Armour">
             <translations>
                 <translation locale="en_US" name="Under Armour Training Set #5" slug="under-armour-training-set-5-70" short-description="Under Armour Training Set #5 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Under Armour Training Set #5. Product index 70 of 100.&amp;lt;/p&amp;gt;" meta-title="Under Armour Training Set #5 | Buy online" meta-description="Buy Under Armour Training Set #5 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Ultra Under Armour Training Set #5" slug="ultra-under-armour-training-set-5-70"/>
@@ -4394,7 +4394,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00071" external-code="EXT-00071" enabled="true">
+        <product code="PROD-00071" external-code="EXT-00071" enabled="true" manufacturer="IKEA">
             <translations>
                 <translation locale="en_US" name="IKEA KALLAX Shelf #5" slug="ikea-kallax-shelf-5-71" short-description="IKEA KALLAX Shelf #5 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of IKEA KALLAX Shelf #5. Product index 71 of 100.&amp;lt;/p&amp;gt;" meta-title="IKEA KALLAX Shelf #5 | Buy online" meta-description="Buy IKEA KALLAX Shelf #5 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Ultra IKEA KALLAX Shelf #5" slug="ultra-ikea-kallax-shelf-5-71"/>
@@ -4449,7 +4449,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00072" external-code="EXT-00072" enabled="true">
+        <product code="PROD-00072" external-code="EXT-00072" enabled="true" manufacturer="Philips">
             <translations>
                 <translation locale="en_US" name="Philips Airfryer #5" slug="philips-airfryer-5-72" short-description="Philips Airfryer #5 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Philips Airfryer #5. Product index 72 of 100.&amp;lt;/p&amp;gt;" meta-title="Philips Airfryer #5 | Buy online" meta-description="Buy Philips Airfryer #5 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Elite Philips Airfryer #5" slug="elite-philips-airfryer-5-72"/>
@@ -4537,7 +4537,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00073" external-code="EXT-00073" enabled="true">
+        <product code="PROD-00073" external-code="EXT-00073" enabled="true" manufacturer="Bosch">
             <translations>
                 <translation locale="en_US" name="Bosch Hand Blender #5" slug="bosch-hand-blender-5-73" short-description="Bosch Hand Blender #5 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Bosch Hand Blender #5. Product index 73 of 100.&amp;lt;/p&amp;gt;" meta-title="Bosch Hand Blender #5 | Buy online" meta-description="Buy Bosch Hand Blender #5 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Ultra Bosch Hand Blender #5" slug="ultra-bosch-hand-blender-5-73"/>
@@ -4592,7 +4592,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00074" external-code="EXT-00074" enabled="true">
+        <product code="PROD-00074" external-code="EXT-00074" enabled="true" manufacturer="Dyson">
             <translations>
                 <translation locale="en_US" name="Dyson V5 Vacuum" slug="dyson-v5-vacuum-74" short-description="Dyson V5 Vacuum — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Dyson V5 Vacuum. Product index 74 of 100.&amp;lt;/p&amp;gt;" meta-title="Dyson V5 Vacuum | Buy online" meta-description="Buy Dyson V5 Vacuum at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Elite Dyson V5 Vacuum" slug="elite-dyson-v5-vacuum-74"/>
@@ -4637,7 +4637,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00075" external-code="EXT-00075" enabled="true">
+        <product code="PROD-00075" external-code="EXT-00075" enabled="true" manufacturer="Canon">
             <translations>
                 <translation locale="en_US" name="Canon EOS R5" slug="canon-eos-r5-75" short-description="Canon EOS R5 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Canon EOS R5. Product index 75 of 100.&amp;lt;/p&amp;gt;" meta-title="Canon EOS R5 | Buy online" meta-description="Buy Canon EOS R5 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Super Canon EOS R5" slug="super-canon-eos-r5-75"/>
@@ -4727,7 +4727,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00076" external-code="EXT-00076" enabled="true">
+        <product code="PROD-00076" external-code="EXT-00076" enabled="true" manufacturer="Samsung">
             <translations>
                 <translation locale="en_US" name="Samsung Galaxy S6 Ultra" slug="samsung-galaxy-s6-ultra-76" short-description="Samsung Galaxy S6 Ultra — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Samsung Galaxy S6 Ultra. Product index 76 of 100.&amp;lt;/p&amp;gt;" meta-title="Samsung Galaxy S6 Ultra | Buy online" meta-description="Buy Samsung Galaxy S6 Ultra at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Eco Samsung Galaxy S6 Ultra" slug="eco-samsung-galaxy-s6-ultra-76"/>
@@ -4795,7 +4795,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00077" external-code="EXT-00077" enabled="true">
+        <product code="PROD-00077" external-code="EXT-00077" enabled="true" manufacturer="Apple">
             <translations>
                 <translation locale="en_US" name="Apple iPhone 6 Pro" slug="apple-iphone-6-pro-77" short-description="Apple iPhone 6 Pro — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Apple iPhone 6 Pro. Product index 77 of 100.&amp;lt;/p&amp;gt;" meta-title="Apple iPhone 6 Pro | Buy online" meta-description="Buy Apple iPhone 6 Pro at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Ultra Apple iPhone 6 Pro" slug="ultra-apple-iphone-6-pro-77"/>
@@ -4852,7 +4852,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00078" external-code="EXT-00078" enabled="true">
+        <product code="PROD-00078" external-code="EXT-00078" enabled="true" manufacturer="Sony">
             <translations>
                 <translation locale="en_US" name="Sony WH-6000XM5 Headphones" slug="sony-wh-6000xm5-headphones-78" short-description="Sony WH-6000XM5 Headphones — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Sony WH-6000XM5 Headphones. Product index 78 of 100.&amp;lt;/p&amp;gt;" meta-title="Sony WH-6000XM5 Headphones | Buy online" meta-description="Buy Sony WH-6000XM5 Headphones at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Ultra Sony WH-6000XM5 Headphones" slug="ultra-sony-wh-6000xm5-headphones-78"/>
@@ -4920,7 +4920,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00079" external-code="EXT-00079" enabled="true">
+        <product code="PROD-00079" external-code="EXT-00079" enabled="true" manufacturer="LG">
             <translations>
                 <translation locale="en_US" name="LG OLED6C Laptop" slug="lg-oled6c-laptop-79" short-description="LG OLED6C Laptop — high quality product." description="&amp;lt;p&amp;gt;Detailed description of LG OLED6C Laptop. Product index 79 of 100.&amp;lt;/p&amp;gt;" meta-title="LG OLED6C Laptop | Buy online" meta-description="Buy LG OLED6C Laptop at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Elite LG OLED6C Laptop" slug="elite-lg-oled6c-laptop-79"/>
@@ -4966,7 +4966,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00080" external-code="EXT-00080" enabled="true">
+        <product code="PROD-00080" external-code="EXT-00080" enabled="true" manufacturer="Nike">
             <translations>
                 <translation locale="en_US" name="Nike Air Max 6" slug="nike-air-max-6-80" short-description="Nike Air Max 6 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Nike Air Max 6. Product index 80 of 100.&amp;lt;/p&amp;gt;" meta-title="Nike Air Max 6 | Buy online" meta-description="Buy Nike Air Max 6 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Advanced Nike Air Max 6" slug="advanced-nike-air-max-6-80"/>
@@ -5012,7 +5012,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00081" external-code="EXT-00081" enabled="true">
+        <product code="PROD-00081" external-code="EXT-00081" enabled="true" manufacturer="Adidas">
             <translations>
                 <translation locale="en_US" name="Adidas Ultraboost 6" slug="adidas-ultraboost-6-81" short-description="Adidas Ultraboost 6 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Adidas Ultraboost 6. Product index 81 of 100.&amp;lt;/p&amp;gt;" meta-title="Adidas Ultraboost 6 | Buy online" meta-description="Buy Adidas Ultraboost 6 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Super Adidas Ultraboost 6" slug="super-adidas-ultraboost-6-81"/>
@@ -5102,7 +5102,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00082" external-code="EXT-00082" enabled="true">
+        <product code="PROD-00082" external-code="EXT-00082" enabled="true" manufacturer="Zara">
             <translations>
                 <translation locale="en_US" name="Zara Slim Fit Shirt #6" slug="zara-slim-fit-shirt-6-82" short-description="Zara Slim Fit Shirt #6 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Zara Slim Fit Shirt #6. Product index 82 of 100.&amp;lt;/p&amp;gt;" meta-title="Zara Slim Fit Shirt #6 | Buy online" meta-description="Buy Zara Slim Fit Shirt #6 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Eco Zara Slim Fit Shirt #6" slug="eco-zara-slim-fit-shirt-6-82"/>
@@ -5170,7 +5170,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00083" external-code="EXT-00083" enabled="true">
+        <product code="PROD-00083" external-code="EXT-00083" enabled="true" manufacturer="H&amp;M">
             <translations>
                 <translation locale="en_US" name="H&amp;M Women's Dress #6" slug="handm-womens-dress-6-83" short-description="H&amp;M Women's Dress #6 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of H&amp;M Women's Dress #6. Product index 83 of 100.&amp;lt;/p&amp;gt;" meta-title="H&amp;M Women's Dress #6 | Buy online" meta-description="Buy H&amp;M Women's Dress #6 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Ultra H&amp;M Women's Dress #6" slug="ultra-handm-womens-dress-6-83"/>
@@ -5260,7 +5260,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00084" external-code="EXT-00084" enabled="true">
+        <product code="PROD-00084" external-code="EXT-00084" enabled="true" manufacturer="Specialized">
             <translations>
                 <translation locale="en_US" name="Specialized Bike Part #6" slug="specialized-bike-part-6-84" short-description="Specialized Bike Part #6 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Specialized Bike Part #6. Product index 84 of 100.&amp;lt;/p&amp;gt;" meta-title="Specialized Bike Part #6 | Buy online" meta-description="Buy Specialized Bike Part #6 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Eco Specialized Bike Part #6" slug="eco-specialized-bike-part-6-84"/>
@@ -5305,7 +5305,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00085" external-code="EXT-00085" enabled="true">
+        <product code="PROD-00085" external-code="EXT-00085" enabled="true" manufacturer="Under Armour">
             <translations>
                 <translation locale="en_US" name="Under Armour Training Set #6" slug="under-armour-training-set-6-85" short-description="Under Armour Training Set #6 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Under Armour Training Set #6. Product index 85 of 100.&amp;lt;/p&amp;gt;" meta-title="Under Armour Training Set #6 | Buy online" meta-description="Buy Under Armour Training Set #6 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Elite Under Armour Training Set #6" slug="elite-under-armour-training-set-6-85"/>
@@ -5394,7 +5394,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00086" external-code="EXT-00086" enabled="true">
+        <product code="PROD-00086" external-code="EXT-00086" enabled="true" manufacturer="IKEA">
             <translations>
                 <translation locale="en_US" name="IKEA KALLAX Shelf #6" slug="ikea-kallax-shelf-6-86" short-description="IKEA KALLAX Shelf #6 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of IKEA KALLAX Shelf #6. Product index 86 of 100.&amp;lt;/p&amp;gt;" meta-title="IKEA KALLAX Shelf #6 | Buy online" meta-description="Buy IKEA KALLAX Shelf #6 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Pro IKEA KALLAX Shelf #6" slug="pro-ikea-kallax-shelf-6-86"/>
@@ -5460,7 +5460,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00087" external-code="EXT-00087" enabled="true">
+        <product code="PROD-00087" external-code="EXT-00087" enabled="true" manufacturer="Philips">
             <translations>
                 <translation locale="en_US" name="Philips Airfryer #6" slug="philips-airfryer-6-87" short-description="Philips Airfryer #6 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Philips Airfryer #6. Product index 87 of 100.&amp;lt;/p&amp;gt;" meta-title="Philips Airfryer #6 | Buy online" meta-description="Buy Philips Airfryer #6 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Ultra Philips Airfryer #6" slug="ultra-philips-airfryer-6-87"/>
@@ -5504,7 +5504,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00088" external-code="EXT-00088" enabled="true">
+        <product code="PROD-00088" external-code="EXT-00088" enabled="true" manufacturer="Bosch">
             <translations>
                 <translation locale="en_US" name="Bosch Hand Blender #6" slug="bosch-hand-blender-6-88" short-description="Bosch Hand Blender #6 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Bosch Hand Blender #6. Product index 88 of 100.&amp;lt;/p&amp;gt;" meta-title="Bosch Hand Blender #6 | Buy online" meta-description="Buy Bosch Hand Blender #6 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Elite Bosch Hand Blender #6" slug="elite-bosch-hand-blender-6-88"/>
@@ -5548,7 +5548,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00089" external-code="EXT-00089" enabled="true">
+        <product code="PROD-00089" external-code="EXT-00089" enabled="true" manufacturer="Dyson">
             <translations>
                 <translation locale="en_US" name="Dyson V6 Vacuum" slug="dyson-v6-vacuum-89" short-description="Dyson V6 Vacuum — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Dyson V6 Vacuum. Product index 89 of 100.&amp;lt;/p&amp;gt;" meta-title="Dyson V6 Vacuum | Buy online" meta-description="Buy Dyson V6 Vacuum at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Eco Dyson V6 Vacuum" slug="eco-dyson-v6-vacuum-89"/>
@@ -5604,7 +5604,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00090" external-code="EXT-00090" enabled="true">
+        <product code="PROD-00090" external-code="EXT-00090" enabled="true" manufacturer="Canon">
             <translations>
                 <translation locale="en_US" name="Canon EOS R6" slug="canon-eos-r6-90" short-description="Canon EOS R6 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Canon EOS R6. Product index 90 of 100.&amp;lt;/p&amp;gt;" meta-title="Canon EOS R6 | Buy online" meta-description="Buy Canon EOS R6 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Super Canon EOS R6" slug="super-canon-eos-r6-90"/>
@@ -5694,7 +5694,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00091" external-code="EXT-00091" enabled="true">
+        <product code="PROD-00091" external-code="EXT-00091" enabled="true" manufacturer="Samsung">
             <translations>
                 <translation locale="en_US" name="Samsung Galaxy S7 Ultra" slug="samsung-galaxy-s7-ultra-91" short-description="Samsung Galaxy S7 Ultra — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Samsung Galaxy S7 Ultra. Product index 91 of 100.&amp;lt;/p&amp;gt;" meta-title="Samsung Galaxy S7 Ultra | Buy online" meta-description="Buy Samsung Galaxy S7 Ultra at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Ultra Samsung Galaxy S7 Ultra" slug="ultra-samsung-galaxy-s7-ultra-91"/>
@@ -5751,7 +5751,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00092" external-code="EXT-00092" enabled="true">
+        <product code="PROD-00092" external-code="EXT-00092" enabled="true" manufacturer="Apple">
             <translations>
                 <translation locale="en_US" name="Apple iPhone 7 Pro" slug="apple-iphone-7-pro-92" short-description="Apple iPhone 7 Pro — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Apple iPhone 7 Pro. Product index 92 of 100.&amp;lt;/p&amp;gt;" meta-title="Apple iPhone 7 Pro | Buy online" meta-description="Buy Apple iPhone 7 Pro at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Ultra Apple iPhone 7 Pro" slug="ultra-apple-iphone-7-pro-92"/>
@@ -5819,7 +5819,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00093" external-code="EXT-00093" enabled="true">
+        <product code="PROD-00093" external-code="EXT-00093" enabled="true" manufacturer="Sony">
             <translations>
                 <translation locale="en_US" name="Sony WH-7000XM5 Headphones" slug="sony-wh-7000xm5-headphones-93" short-description="Sony WH-7000XM5 Headphones — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Sony WH-7000XM5 Headphones. Product index 93 of 100.&amp;lt;/p&amp;gt;" meta-title="Sony WH-7000XM5 Headphones | Buy online" meta-description="Buy Sony WH-7000XM5 Headphones at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Pro Sony WH-7000XM5 Headphones" slug="pro-sony-wh-7000xm5-headphones-93"/>
@@ -5876,7 +5876,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00094" external-code="EXT-00094" enabled="true">
+        <product code="PROD-00094" external-code="EXT-00094" enabled="true" manufacturer="LG">
             <translations>
                 <translation locale="en_US" name="LG OLED7C Laptop" slug="lg-oled7c-laptop-94" short-description="LG OLED7C Laptop — high quality product." description="&amp;lt;p&amp;gt;Detailed description of LG OLED7C Laptop. Product index 94 of 100.&amp;lt;/p&amp;gt;" meta-title="LG OLED7C Laptop | Buy online" meta-description="Buy LG OLED7C Laptop at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Elite LG OLED7C Laptop" slug="elite-lg-oled7c-laptop-94"/>
@@ -5922,7 +5922,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00095" external-code="EXT-00095" enabled="true">
+        <product code="PROD-00095" external-code="EXT-00095" enabled="true" manufacturer="Nike">
             <translations>
                 <translation locale="en_US" name="Nike Air Max 7" slug="nike-air-max-7-95" short-description="Nike Air Max 7 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Nike Air Max 7. Product index 95 of 100.&amp;lt;/p&amp;gt;" meta-title="Nike Air Max 7 | Buy online" meta-description="Buy Nike Air Max 7 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Smart Nike Air Max 7" slug="smart-nike-air-max-7-95"/>
@@ -5979,7 +5979,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00096" external-code="EXT-00096" enabled="true">
+        <product code="PROD-00096" external-code="EXT-00096" enabled="true" manufacturer="Adidas">
             <translations>
                 <translation locale="en_US" name="Adidas Ultraboost 7" slug="adidas-ultraboost-7-96" short-description="Adidas Ultraboost 7 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Adidas Ultraboost 7. Product index 96 of 100.&amp;lt;/p&amp;gt;" meta-title="Adidas Ultraboost 7 | Buy online" meta-description="Buy Adidas Ultraboost 7 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Pro Adidas Ultraboost 7" slug="pro-adidas-ultraboost-7-96"/>
@@ -6025,7 +6025,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00097" external-code="EXT-00097" enabled="true">
+        <product code="PROD-00097" external-code="EXT-00097" enabled="true" manufacturer="Zara">
             <translations>
                 <translation locale="en_US" name="Zara Slim Fit Shirt #7" slug="zara-slim-fit-shirt-7-97" short-description="Zara Slim Fit Shirt #7 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Zara Slim Fit Shirt #7. Product index 97 of 100.&amp;lt;/p&amp;gt;" meta-title="Zara Slim Fit Shirt #7 | Buy online" meta-description="Buy Zara Slim Fit Shirt #7 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Advanced Zara Slim Fit Shirt #7" slug="advanced-zara-slim-fit-shirt-7-97"/>
@@ -6082,7 +6082,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00098" external-code="EXT-00098" enabled="true">
+        <product code="PROD-00098" external-code="EXT-00098" enabled="true" manufacturer="H&amp;M">
             <translations>
                 <translation locale="en_US" name="H&amp;M Women's Dress #7" slug="handm-womens-dress-7-98" short-description="H&amp;M Women's Dress #7 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of H&amp;M Women's Dress #7. Product index 98 of 100.&amp;lt;/p&amp;gt;" meta-title="H&amp;M Women's Dress #7 | Buy online" meta-description="Buy H&amp;M Women's Dress #7 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Elite H&amp;M Women's Dress #7" slug="elite-handm-womens-dress-7-98"/>
@@ -6128,7 +6128,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00099" external-code="EXT-00099" enabled="true">
+        <product code="PROD-00099" external-code="EXT-00099" enabled="true" manufacturer="Specialized">
             <translations>
                 <translation locale="en_US" name="Specialized Bike Part #7" slug="specialized-bike-part-7-99" short-description="Specialized Bike Part #7 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Specialized Bike Part #7. Product index 99 of 100.&amp;lt;/p&amp;gt;" meta-title="Specialized Bike Part #7 | Buy online" meta-description="Buy Specialized Bike Part #7 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Eco Specialized Bike Part #7" slug="eco-specialized-bike-part-7-99"/>
@@ -6195,7 +6195,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00100" external-code="EXT-00100" enabled="true">
+        <product code="PROD-00100" external-code="EXT-00100" enabled="true" manufacturer="Under Armour">
             <translations>
                 <translation locale="en_US" name="Under Armour Training Set #7" slug="under-armour-training-set-7-100" short-description="Under Armour Training Set #7 — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Under Armour Training Set #7. Product index 100 of 100.&amp;lt;/p&amp;gt;" meta-title="Under Armour Training Set #7 | Buy online" meta-description="Buy Under Armour Training Set #7 at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Ultra Under Armour Training Set #7" slug="ultra-under-armour-training-set-7-100"/>

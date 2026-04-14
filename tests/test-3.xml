@@ -2,7 +2,7 @@
 <!-- Test import file: 3 products -->
 <sylius-import xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0" default-locale="en_US" channel="default" xsi:noNamespaceSchemaLocation="https://elcuro.github.io/sylius-import-schema/sylius-import-2.0.xsd">
     <products>
-        <product code="PROD-00001" external-code="EXT-00001" enabled="true">
+        <product code="PROD-00001" external-code="EXT-00001" enabled="true" manufacturer="Samsung">
             <translations>
                 <translation locale="en_US" name="Samsung Galaxy S1 Ultra" slug="samsung-galaxy-s1-ultra-1" short-description="Samsung Galaxy S1 Ultra — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Samsung Galaxy S1 Ultra. Product index 1 of 3.&amp;lt;/p&amp;gt;" meta-title="Samsung Galaxy S1 Ultra | Buy online" meta-description="Buy Samsung Galaxy S1 Ultra at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Elite Samsung Galaxy S1 Ultra" slug="elite-samsung-galaxy-s1-ultra-1"/>
@@ -48,7 +48,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00002" external-code="EXT-00002" enabled="true">
+        <product code="PROD-00002" external-code="EXT-00002" enabled="true" manufacturer="Apple">
             <translations>
                 <translation locale="en_US" name="Apple iPhone 1 Pro" slug="apple-iphone-1-pro-2" short-description="Apple iPhone 1 Pro — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Apple iPhone 1 Pro. Product index 2 of 3.&amp;lt;/p&amp;gt;" meta-title="Apple iPhone 1 Pro | Buy online" meta-description="Buy Apple iPhone 1 Pro at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Super Apple iPhone 1 Pro" slug="super-apple-iphone-1-pro-2"/>
@@ -116,7 +116,7 @@
                 </variant>
             </variants>
         </product>
-        <product code="PROD-00003" external-code="EXT-00003" enabled="true">
+        <product code="PROD-00003" external-code="EXT-00003" enabled="true" manufacturer="Sony">
             <translations>
                 <translation locale="en_US" name="Sony WH-1000XM5 Headphones" slug="sony-wh-1000xm5-headphones-3" short-description="Sony WH-1000XM5 Headphones — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Sony WH-1000XM5 Headphones. Product index 3 of 3.&amp;lt;/p&amp;gt;" meta-title="Sony WH-1000XM5 Headphones | Buy online" meta-description="Buy Sony WH-1000XM5 Headphones at the best price. Free shipping available."/>
                 <translation locale="de_DE" name="Smart Sony WH-1000XM5 Headphones" slug="smart-sony-wh-1000xm5-headphones-3"/>

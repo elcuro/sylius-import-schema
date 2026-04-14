@@ -135,6 +135,8 @@
         <xs:attribute name="code"          type="NonEmptyString" use="optional"/>
         <xs:attribute name="external-code" type="NonEmptyString" use="optional"/>
         <xs:attribute name="enabled"       type="xs:boolean"     use="optional" default="true"/>
+        <!-- manufacturer — name of the product manufacturer (e.g. "Apple", "Samsung") -->
+        <xs:attribute name="manufacturer"  type="xs:string"      use="optional"/>
     </xs:complexType>
 
     <!-- ═══════════════════════════════════════════

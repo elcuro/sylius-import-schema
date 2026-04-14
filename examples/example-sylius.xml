@@ -22,7 +22,7 @@
              EXAMPLE 1: Product with variants
              Sylius to Sylius: all codes are our internal Sylius codes.
              ═══════════════════════════════════════ -->
-        <product code="IPHONE-15-PRO" enabled="true">
+        <product code="IPHONE-15-PRO" enabled="true" manufacturer="Apple">
 
             <translations>
                 <!-- slug is preserved from the source Sylius instance -->
@@ -129,7 +129,7 @@
              Sylius codes + preserved supplier external codes.
              Useful when migrating from a supplier-fed catalog.
              ═══════════════════════════════════════ -->
-        <product code="CABLE-USB-C-1M" external-code="BB-CABLE-001" enabled="true">
+        <product code="CABLE-USB-C-1M" external-code="BB-CABLE-001" enabled="true" manufacturer="Baseus">
 
             <translations>
                 <translation locale="en_US"

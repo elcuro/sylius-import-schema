@@ -124,6 +124,12 @@ Expected output for every file: `filename validates`
 - After any XSD change, re-validate all example and test files
 - Bump `version` in the XSD header comment when making breaking changes
 - Never remove existing elements — add new optional ones instead (backwards compatibility)
+- **When adding any new element or attribute to the XSD, always update all of the following:**
+  1. `examples/example-external.xml` — add a realistic value using the external-supplier style
+  2. `examples/example-sylius.xml` — add a realistic value using the Sylius-to-Sylius style
+  3. `README.md` — document the new field in the relevant section (table + example)
+  4. `generate_test_xml.py` — include the new field in generated test data
+  5. Re-run `python3 generate_test_xml.py` to regenerate `tests/`
 
 ---
 
