@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!--
+        Sylius Product Import Schema — version 2.0
+        https://github.com/elcuro/sylius-import-schema
+
+    -->
+
+    <!-- ═══════════════════════════════════════════
+         SIMPLE TYPES
+         ═══════════════════════════════════════════ -->
+
+    <xs:simpleType name="LocaleType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-z]{2}_[A-Z]{2}"/>
+            <!-- examples: sk_SK, en_US, cs_CZ, de_DE -->
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="CurrencyType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Z]{3}"/>
+            <!-- ISO 4217: EUR, CZK, USD, GBP... -->
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="ImageTypeType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="main"/>
+            <xs:enumeration value="additional"/>
+            <xs:enumeration value="thumbnail"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="NonEmptyString">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="PositiveAmount">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0"/>
+            <!--
+                Amounts are always in the smallest currency unit (cents).
+                Example: 119900 = 1,199.00 EUR
+            -->
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- ═══════════════════════════════════════════
+         ROOT ELEMENT
+         ═══════════════════════════════════════════ -->
+
+    <xs:element name="sylius-import">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="products" type="ProductsType"/>
+            </xs:sequence>
+            <!--
+                version        — schema version, must be "2.0"
+                default-locale — primary content language (sk_SK, en_US...)
+                                 used for <translation> elements without a locale attribute
+                channel        — optional Sylius channel code
+                                 if omitted, the importer uses the default channel
+            -->
+            <xs:attribute name="version"        type="NonEmptyString" use="required"/>
+            <xs:attribute name="default-locale" type="LocaleType"     use="required"/>
+            <xs:attribute name="channel"        type="NonEmptyString" use="optional"/>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- ═══════════════════════════════════════════
+         MANIFEST ROOT ELEMENT
+         Used when splitting a large export into multiple files.
+         The importer processes each file in the order listed.
+         Each referenced file must be a valid sylius-import document.
+         ═══════════════════════════════════════════ -->
+
+    <xs:element name="sylius-import-manifest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="files" type="ManifestFilesType"/>
+            </xs:sequence>
+            <!--
+                version — schema version, must be "2.0"
+            -->
+            <xs:attribute name="version" type="NonEmptyString" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="ManifestFilesType">
+        <xs:sequence>
+            <xs:element name="file" type="ManifestFileType"
+                        minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="ManifestFileType">
+        <!--
+            path — relative path to a sylius-import XML file
+                   processed in the order listed in this manifest
+        -->
+        <xs:attribute name="path" type="NonEmptyString" use="required"/>
+    </xs:complexType>
+
+    <!-- ═══════════════════════════════════════════
+         PRODUCTS
+         ═══════════════════════════════════════════ -->
+
+    <xs:complexType name="ProductsType">
+        <xs:sequence>
+            <xs:element name="product" type="ProductType"
+                        minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="ProductType">
+        <xs:sequence>
+            <xs:element name="translations" type="ProductTranslationsType"/>
+            <xs:element name="taxons"       type="TaxonsType"     minOccurs="0"/>
+            <xs:element name="attributes"   type="AttributesType" minOccurs="0"/>
+            <xs:element name="images"       type="ImagesType"     minOccurs="0"/>
+            <xs:element name="variants"     type="VariantsType"/>
+        </xs:sequence>
+        <!--
+            code          — our internal product code (SKU, UUID...)
+            external-code — product code in the supplier's system
+            enabled       — whether the product is active, default true
+
+            Rule: at least one of code / external-code must be present.
+                  Validated by the importer (XSD 1.0 cannot express this).
+        -->
+        <xs:attribute name="code"          type="NonEmptyString" use="optional"/>
+        <xs:attribute name="external-code" type="NonEmptyString" use="optional"/>
+        <xs:attribute name="enabled"       type="xs:boolean"     use="optional" default="true"/>
+    </xs:complexType>
+
+    <!-- ═══════════════════════════════════════════
+         PRODUCT TRANSLATIONS
+         ═══════════════════════════════════════════ -->
+
+    <xs:complexType name="ProductTranslationsType">
+        <xs:sequence>
+            <xs:element name="translation" type="ProductTranslationType"
+                        minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="ProductTranslationType">
+        <!--
+            locale            — translation language (sk_SK, en_US...)
+                                if omitted, default-locale from root element is used
+            name              — product name, required
+            slug              — URL slug; generated from name if omitted
+            short-description — short description (plain text)
+            description       — long description (HTML, must be escaped: &lt;p&gt;...&lt;/p&gt;)
+            meta-title        — SEO title; falls back to name if omitted
+            meta-description  — SEO description
+        -->
+        <xs:attribute name="locale"            type="LocaleType"     use="optional"/>
+        <xs:attribute name="name"              type="NonEmptyString" use="required"/>
+        <xs:attribute name="slug"              type="xs:string"      use="optional"/>
+        <xs:attribute name="short-description" type="xs:string"      use="optional"/>
+        <xs:attribute name="description"       type="xs:string"      use="optional"/>
+        <xs:attribute name="meta-title"        type="xs:string"      use="optional"/>
+        <xs:attribute name="meta-description"  type="xs:string"      use="optional"/>
+    </xs:complexType>
+
+    <!-- ═══════════════════════════════════════════
+         TAXONS (categories)
+         ═══════════════════════════════════════════ -->
+
+    <xs:complexType name="TaxonsType">
+        <xs:sequence>
+            <xs:element name="taxon" type="TaxonType"
+                        minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <!--
+            main — code of the main taxon
+                   if omitted, the first taxon in the list is used
+        -->
+        <xs:attribute name="main" type="xs:string" use="optional"/>
+    </xs:complexType>
+
+    <xs:complexType name="TaxonType">
+        <!--
+            code          — our internal taxon code
+            external-code — taxon code in the supplier's system
+            name          — human-readable taxon name from the supplier
+
+            Rule: at least one of code / name must be present.
+                  Validated by the importer.
+        -->
+        <xs:attribute name="code"          type="xs:string" use="optional"/>
+        <xs:attribute name="external-code" type="xs:string" use="optional"/>
+        <xs:attribute name="name"          type="xs:string" use="optional"/>
+    </xs:complexType>
+
+    <!-- ═══════════════════════════════════════════
+         PRODUCT ATTRIBUTES
+         ═══════════════════════════════════════════ -->
+
+    <xs:complexType name="AttributesType">
+        <xs:sequence>
+            <xs:element name="attribute" type="AttributeType"
+                        minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="AttributeType">
+        <!--
+            code                — our internal attribute code
+            name                — human-readable attribute name from the supplier (e.g. "Brand")
+            external-code       — attribute name code in the supplier's system
+
+            value               — human-readable attribute value (e.g. "Apple")
+            value-code          — value code (our internal code for select type, or supplier's code)
+            external-value-code — attribute value code in the supplier's system
+
+            Importer resolution order:
+              1. code present       → used directly as the Sylius code
+              2. name without code  → mapped via configuration
+              3. external-code      → stored for future mapping
+        -->
+        <xs:attribute name="code"                type="xs:string" use="optional"/>
+        <xs:attribute name="name"                type="xs:string" use="optional"/>
+        <xs:attribute name="external-code"       type="xs:string" use="optional"/>
+        <xs:attribute name="value"               type="xs:string" use="optional"/>
+        <xs:attribute name="value-code"          type="xs:string" use="optional"/>
+        <xs:attribute name="external-value-code" type="xs:string" use="optional"/>
+    </xs:complexType>
+
+    <!-- ═══════════════════════════════════════════
+         IMAGES
+         ═══════════════════════════════════════════ -->
+
+    <xs:complexType name="ImagesType">
+        <xs:sequence>
+            <xs:element name="image" type="ImageType"
+                        minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="ImageType">
+        <!--
+            url  — absolute image URL (https://...)
+            path — relative path on disk (used for Sylius to Sylius export)
+            type — image type: main / additional / thumbnail
+                   default: additional
+
+            Rule: at least one of url / path must be present.
+                  Validated by the importer.
+        -->
+        <xs:attribute name="url"  type="xs:anyURI"    use="optional"/>
+        <xs:attribute name="path" type="xs:string"     use="optional"/>
+        <xs:attribute name="type" type="ImageTypeType" use="optional" default="additional"/>
+    </xs:complexType>
+
+    <!-- ═══════════════════════════════════════════
+         VARIANTS
+         ═══════════════════════════════════════════ -->
+
+    <xs:complexType name="VariantsType">
+        <xs:sequence>
+            <xs:element name="variant" type="VariantType"
+                        minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="VariantType">
+        <xs:sequence>
+            <xs:element name="translation" type="VariantTranslationType"
+                        minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="options"     type="OptionsType"    minOccurs="0"/>
+            <xs:element name="price"       type="PriceType"/>
+            <xs:element name="stock"       type="StockType"      minOccurs="0"/>
+            <xs:element name="dimensions"  type="DimensionsType" minOccurs="0"/>
+        </xs:sequence>
+        <!--
+            code          — our internal variant code (EAN, variant SKU...)
+            external-code — variant code in the supplier's system
+            enabled       — whether the variant is active, default true
+        -->
+        <xs:attribute name="code"          type="xs:string"  use="optional"/>
+        <xs:attribute name="external-code" type="xs:string"  use="optional"/>
+        <xs:attribute name="enabled"       type="xs:boolean" use="optional" default="true"/>
+    </xs:complexType>
+
+    <!-- ═══════════════════════════════════════════
+         VARIANT TRANSLATIONS
+         ═══════════════════════════════════════════ -->
+
+    <xs:complexType name="VariantTranslationType">
+        <!--
+            locale — if omitted, default-locale from root element is used
+            slug   — optional; generated by the importer if omitted
+        -->
+        <xs:attribute name="locale" type="LocaleType"     use="optional"/>
+        <xs:attribute name="name"   type="NonEmptyString" use="required"/>
+        <xs:attribute name="slug"   type="xs:string"      use="optional"/>
+    </xs:complexType>
+
+    <!-- ═══════════════════════════════════════════
+         VARIANT OPTIONS (color, size...)
+         ═══════════════════════════════════════════ -->
+
+    <xs:complexType name="OptionsType">
+        <xs:sequence>
+            <xs:element name="option" type="OptionType"
+                        minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="OptionType">
+        <!--
+            code                — our internal option code (e.g. "color")
+            name                — human-readable option name from supplier (e.g. "Color")
+            external-code       — option name code in the supplier's system
+
+            value               — human-readable option value (e.g. "Red")
+            value-code          — option value code
+            external-value-code — option value code in the supplier's system
+
+            locale              — language of name/value if different from default-locale
+        -->
+        <xs:attribute name="code"                type="xs:string"  use="optional"/>
+        <xs:attribute name="name"                type="xs:string"  use="optional"/>
+        <xs:attribute name="external-code"       type="xs:string"  use="optional"/>
+        <xs:attribute name="value"               type="xs:string"  use="optional"/>
+        <xs:attribute name="value-code"          type="xs:string"  use="optional"/>
+        <xs:attribute name="external-value-code" type="xs:string"  use="optional"/>
+        <xs:attribute name="locale"              type="LocaleType" use="optional"/>
+    </xs:complexType>
+
+    <!-- ═══════════════════════════════════════════
+         PRICE
+         ═══════════════════════════════════════════ -->
+
+    <xs:complexType name="PriceType">
+        <!--
+            currency — ISO 4217 currency code (EUR, CZK, USD...)
+            amount   — price in the smallest currency unit (cents)
+                       Example: 119900 = 1,199.00 EUR
+        -->
+        <xs:attribute name="currency" type="CurrencyType"   use="required"/>
+        <xs:attribute name="amount"   type="PositiveAmount" use="required"/>
+    </xs:complexType>
+
+    <!-- ═══════════════════════════════════════════
+         STOCK
+         ═══════════════════════════════════════════ -->
+
+    <xs:complexType name="StockType">
+        <!--
+            on-hand — physical quantity available in stock
+        -->
+        <xs:attribute name="on-hand" type="PositiveAmount" use="required"/>
+    </xs:complexType>
+
+    <!-- ═══════════════════════════════════════════
+         DIMENSIONS
+         Fixed units: weight = kg, all other dimensions = mm
+         ═══════════════════════════════════════════ -->
+
+    <xs:complexType name="DimensionsType">
+        <xs:attribute name="weight" type="xs:decimal" use="optional"/>
+        <!-- kg -->
+        <xs:attribute name="width"  type="xs:decimal" use="optional"/>
+        <!-- mm -->
+        <xs:attribute name="height" type="xs:decimal" use="optional"/>
+        <!-- mm -->
+        <xs:attribute name="depth"  type="xs:decimal" use="optional"/>
+        <!-- mm -->
+    </xs:complexType>
+
+</xs:schema>

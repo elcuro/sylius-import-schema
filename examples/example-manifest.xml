@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Example MANIFEST file for multi-file imports
+    ══════════════════════════════════════════════════════════════════
+    Use this file when your export is split across multiple XML files.
+    The importer processes each file in the order listed here.
+    Each referenced file must be a valid sylius-import document.
+
+    Single-file export:  send one sylius-import XML file directly.
+    Multi-file export:   send this manifest alongside the product files.
+    ══════════════════════════════════════════════════════════════════
+-->
+<sylius-import-manifest version="2.0"
+                        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                        xsi:noNamespaceSchemaLocation="https://elcuro.github.io/sylius-import-schema/sylius-import-2.0.xsd">
+
+    <files>
+        <file path="products-001.xml" />
+        <file path="products-002.xml" />
+        <file path="products-003.xml" />
+    </files>
+
+</sylius-import-manifest>
