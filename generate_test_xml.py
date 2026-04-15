@@ -278,9 +278,24 @@ def build_product(idx, total):
 
         # price increases slightly per variant
         variant_price = base_price + (vi * random.randint(500, 2000))
+        vat_rate = random.choice([20, 21, 10, 5])
+        vat_amount = int(round(variant_price * (1 + vat_rate / 100)))
         price_el = ET.SubElement(variant, "price")
         price_el.set("currency", "EUR")
-        price_el.set("amount",   str(variant_price))
+        # Rotate through the three supported pricing shapes so test data exercises each one.
+        price_shape = vi % 3
+        if price_shape == 0:
+            # Net price only
+            price_el.set("amount", str(variant_price))
+        elif price_shape == 1:
+            # Gross price only — vat is required alongside vat-amount
+            price_el.set("vat-amount", str(vat_amount))
+            price_el.set("vat",       str(vat_rate))
+        else:
+            # Net + gross + vat
+            price_el.set("amount",    str(variant_price))
+            price_el.set("vat-amount", str(vat_amount))
+            price_el.set("vat",       str(vat_rate))
 
         stock_el = ET.SubElement(variant, "stock")
         stock_el.set("on-hand", str(random.randint(0, 200)))

@@ -86,7 +86,8 @@
                         <option code="storage" value-code="storage_128" />
                     </options>
 
-                    <price currency="EUR" amount="119900" />
+                    <!-- Sylius-to-Sylius: net amount is known; vat carries the rate for re-use -->
+                    <price currency="EUR" amount="119900" vat="20" />
                     <stock on-hand="50" />
                     <dimensions weight="0.187" width="71.5" height="146.6" depth="8.25" />
                 </variant>
@@ -101,7 +102,8 @@
                         <option code="color"   value-code="color_black" />
                         <option code="storage" value-code="storage_256" />
                     </options>
-                    <price currency="EUR" amount="134900" />
+                    <!-- Both net and gross supplied — importer reconciles against vat -->
+                    <price currency="EUR" amount="134900" vat-amount="161880" vat="20" />
                     <stock on-hand="30" />
                     <dimensions weight="0.187" width="71.5" height="146.6" depth="8.25" />
                 </variant>
@@ -116,7 +118,7 @@
                         <option code="color"   value-code="color_white" />
                         <option code="storage" value-code="storage_128" />
                     </options>
-                    <price currency="EUR" amount="119900" />
+                    <price currency="EUR" amount="119900" vat="20" />
                     <stock on-hand="25" />
                     <dimensions weight="0.187" width="71.5" height="146.6" depth="8.25" />
                 </variant>
@@ -159,7 +161,7 @@
                 <variant code="CABLE-USB-C-1M-DEFAULT" external-code="BB-CABLE-001-DEF" enabled="true" condition="new">
                     <translation locale="en_US" name="USB-C Cable 1m"
                                  slug="usb-c-cable-1m-default" />
-                    <price currency="EUR" amount="1490" />
+                    <price currency="EUR" amount="1490" vat="20" />
                     <stock on-hand="200" />
                     <dimensions weight="0.05" width="15" height="150" depth="10" />
                 </variant>

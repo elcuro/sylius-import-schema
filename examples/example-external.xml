@@ -86,8 +86,10 @@
                                 value="128 GB"  external-value-code="MEM-128" />
                     </options>
 
-                    <!-- Price in cents: 119900 = 1,199.00 EUR -->
-                    <price currency="EUR" amount="119900" />
+                    <!-- Price in cents (with VAT): 143880 = 1,438.80 EUR incl. 20 % VAT
+                         Supplier quotes gross prices → use vat-amount + vat.
+                         The importer derives the net amount from vat-amount / (1 + vat/100). -->
+                    <price currency="EUR" vat-amount="143880" vat="20" />
 
                     <!-- Stock on hand -->
                     <stock on-hand="50" />
@@ -106,7 +108,7 @@
                         <option name="Storage"  external-code="OPT-MEM"
                                 value="256 GB"  external-value-code="MEM-256" />
                     </options>
-                    <price currency="EUR" amount="134900" />
+                    <price currency="EUR" vat-amount="161880" vat="20" />
                     <stock on-hand="30" />
                     <dimensions weight="0.187" width="71.5" height="146.6" depth="8.25" />
                 </variant>
@@ -121,6 +123,7 @@
                         <option name="Storage"  external-code="OPT-MEM"
                                 value="128 GB"  external-value-code="MEM-128" />
                     </options>
+                    <!-- Alternative: supplier is a VAT payer and reports net prices → use amount only -->
                     <price currency="EUR" amount="119900" />
                     <stock on-hand="25" />
                     <dimensions weight="0.187" width="71.5" height="146.6" depth="8.25" />
@@ -157,7 +160,7 @@
                 <!-- Single variant with no options -->
                 <variant external-code="CABLE-001-DEFAULT" enabled="true" ean="5901234000015" condition="new">
                     <translation name="USB-C Cable 1m" />
-                    <price currency="EUR" amount="1490" />
+                    <price currency="EUR" vat-amount="1788" vat="20" />
                     <stock on-hand="200" />
                     <dimensions weight="0.05" width="15" height="150" depth="10" />
                 </variant>

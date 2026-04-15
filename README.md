@@ -303,13 +303,34 @@ Add the following to your root element to enable inline validation and autocompl
 | Attribute | Required | Description |
 |---|---|---|
 | `currency` | yes | ISO 4217 currency code (`EUR`, `CZK`, `USD`...) |
-| `amount` | yes | Price in the **smallest currency unit** (cents) |
+| `amount` | * | **Net** price (without VAT), in the **smallest currency unit** (cents) |
+| `vat-amount` | * | **Gross** price (with VAT), in the **smallest currency unit** (cents) |
+| `vat` | ** | VAT rate in percent (e.g. `20`, `21`, `10`, `5.5`) — no `%` sign |
 
-> **Important:** `amount` is always an integer in cents.
-> Example: `119900` = 1,199.00 EUR
+*\* At least one of `amount` / `vat-amount` must be present.*
+*\*\* `vat` is **required** whenever `vat-amount` is supplied, so the importer can derive the net amount.*
+
+> **Important:** `amount` and `vat-amount` are always integers in cents.
+> Example: `119900` = 1,199.00 EUR — `143880` = 1,438.80 EUR
+
+**When to use which:**
+
+- Supplier is a **VAT payer** and reports net prices → use `amount` (optionally add `vat` to carry the rate)
+- Supplier (or external feed) reports **gross prices only** → use `vat-amount` + `vat`
+- Both are known → supply all three; the importer reconciles them against the `vat` rate
 
 ```xml
+<!-- Net price only (supplier quotes without VAT) -->
 <price currency="EUR" amount="119900" />
+
+<!-- Gross price only (typical external supplier feed) -->
+<price currency="EUR" vat-amount="143880" vat="20" />
+
+<!-- Net + VAT rate (Sylius-to-Sylius; carries the rate for re-use) -->
+<price currency="EUR" amount="119900" vat="20" />
+
+<!-- Both net and gross — reconciled against vat -->
+<price currency="EUR" amount="119900" vat-amount="143880" vat="20" />
 ```
 
 ### `<stock>`

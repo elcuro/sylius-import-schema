@@ -57,6 +57,17 @@
         </xs:restriction>
     </xs:simpleType>
 
+    <xs:simpleType name="VatRate">
+        <xs:restriction base="xs:decimal">
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="100"/>
+            <!--
+                VAT rate expressed as a percentage, e.g. 20, 21, 10, 5.5.
+                Do not include the % sign.
+            -->
+        </xs:restriction>
+    </xs:simpleType>
+
     <!-- ═══════════════════════════════════════════
          ROOT ELEMENT
          ═══════════════════════════════════════════ -->
@@ -354,12 +365,25 @@
 
     <xs:complexType name="PriceType">
         <!--
-            currency — ISO 4217 currency code (EUR, CZK, USD...)
-            amount   — price in the smallest currency unit (cents)
-                       Example: 119900 = 1,199.00 EUR
+            currency  — ISO 4217 currency code (EUR, CZK, USD...)
+            amount    — net price (without VAT) in the smallest currency unit (cents)
+                        Example: 119900 = 1,199.00 EUR
+                        Used when the supplier is a VAT payer and reports net prices.
+            vat-amount — gross price (with VAT) in the smallest currency unit (cents)
+                        Example: 143880 = 1,438.80 EUR incl. 20 % VAT
+            vat       — VAT rate in percent (e.g. 20, 21, 10, 5.5)
+
+            Rules (validated by the importer, XSD 1.0 cannot express them):
+              - at least one of amount / vat-amount must be present
+              - if vat-amount is present, vat is required
+                (so the importer can derive the net amount)
+              - if both amount and vat-amount are present, they must be
+                consistent with the given vat rate (importer will reconcile)
         -->
-        <xs:attribute name="currency" type="CurrencyType"   use="required"/>
-        <xs:attribute name="amount"   type="PositiveAmount" use="required"/>
+        <xs:attribute name="currency"  type="CurrencyType"   use="required"/>
+        <xs:attribute name="amount"    type="PositiveAmount" use="optional"/>
+        <xs:attribute name="vat-amount" type="PositiveAmount" use="optional"/>
+        <xs:attribute name="vat"       type="VatRate"        use="optional"/>
     </xs:complexType>
 
     <!-- ═══════════════════════════════════════════
