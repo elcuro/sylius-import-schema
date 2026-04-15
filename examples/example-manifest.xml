@@ -8,6 +8,8 @@
 
     Single-file export:  send one sylius-import XML file directly.
     Multi-file export:   send this manifest alongside the product files.
+
+    Each <file> element contains the relative path as text content.
     ══════════════════════════════════════════════════════════════════
 -->
 <sylius-import-manifest version="2.0"
@@ -15,9 +17,9 @@
                         xsi:noNamespaceSchemaLocation="https://elcuro.github.io/sylius-import-schema/sylius-import-2.0.xsd">
 
     <files>
-        <file path="products-001.xml" />
-        <file path="products-002.xml" />
-        <file path="products-003.xml" />
+        <file>products-001.xml</file>
+        <file>products-002.xml</file>
+        <file>products-003.xml</file>
     </files>
 
 </sylius-import-manifest>

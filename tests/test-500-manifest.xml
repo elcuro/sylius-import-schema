@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sylius-import-manifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0" xsi:noNamespaceSchemaLocation="https://elcuro.github.io/sylius-import-schema/sylius-import-2.0.xsd">
     <files>
-        <file path="test-500-part-a.xml"/>
-        <file path="test-500-part-b.xml"/>
+        <file>test-500-part-a.xml</file>
+        <file>test-500-part-b.xml</file>
     </files>
 </sylius-import-manifest>

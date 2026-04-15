@@ -13,6 +13,25 @@ This repository contains the XML schema for importing products into the Sylius e
 
 ---
 
+## Design rule — content in child elements
+
+All string content (names, descriptions, codes, slugs, values, URLs, paths…)
+lives in **child elements**, not attributes. Attributes are reserved for
+typed tokens — enums, numbers, booleans, locale and currency patterns —
+and document-level metadata (`version`, `default-locale`, `channel`).
+
+This lets you safely include quotes, apostrophes, ampersands and HTML
+without escaping — just wrap the content in a `CDATA` block:
+
+```xml
+<translation>
+    <name>Ben &amp; Jerry's "Chunky Monkey"</name>
+    <description><![CDATA[<p>HTML with <strong>tags</strong> & quotes.</p>]]></description>
+</translation>
+```
+
+---
+
 ## Quick start
 
 ### 1. Choose the right approach
@@ -71,23 +90,40 @@ Add the following to your root element to enable inline validation and autocompl
 <sylius-import>
   <products>
     <product>
+      <code/> <external-code/> <manufacturer/>
       <translations>
-        <translation />
+        <translation>
+          <name/> <slug/> <short-description/> <description/>
+          <meta-title/> <meta-description/>
+        </translation>
       </translations>
       <taxons>
-        <taxon />
+        <taxon>
+          <code/> <external-code/> <name/>
+        </taxon>
       </taxons>
       <attributes>
-        <attribute />
+        <attribute>
+          <code/> <name/> <external-code/>
+          <value/> <value-code/> <external-value-code/>
+        </attribute>
       </attributes>
       <images>
-        <image />
+        <image>
+          <url/> <path/>
+        </image>
       </images>
       <variants>
         <variant>
-          <translation />
+          <code/> <external-code/> <ean/>
+          <translation>
+            <name/> <slug/>
+          </translation>
           <options>
-            <option />
+            <option>
+              <code/> <name/> <external-code/>
+              <value/> <value-code/> <external-value-code/>
+            </option>
           </options>
           <price />
           <stock />
@@ -119,85 +155,110 @@ Add the following to your root element to enable inline validation and autocompl
 
 | Attribute | Required | Description |
 |---|---|---|
-| `code` | * | Our internal product code |
-| `external-code` | * | Your internal product code |
 | `enabled` | no | Whether the product is active, default `true` |
-| `manufacturer` | no | Manufacturer name (e.g. `Apple`, `Samsung`) |
+
+| Child element | Required | Description |
+|---|---|---|
+| `<code>` | * | Our internal product code |
+| `<external-code>` | * | Your internal product code |
+| `<manufacturer>` | no | Manufacturer name (e.g. `Apple`, `Samsung`) |
 
 *At least one of `code` / `external-code` must be present.*
 
 ```xml
 <!-- External supplier — your code only -->
-<product external-code="BB-987654">
+<product enabled="true">
+    <external-code>BB-987654</external-code>
+    <manufacturer>Apple</manufacturer>
+    ...
+</product>
 
 <!-- Sylius to Sylius — our internal code -->
-<product code="IPHONE-15-PRO">
-
-<!-- Both — our code and your code -->
-<product code="IPHONE-15-PRO" external-code="BB-987654">
+<product enabled="true">
+    <code>IPHONE-15-PRO</code>
+    <manufacturer>Apple</manufacturer>
+    ...
+</product>
 ```
 
 ---
 
 ## `<translation>` (product)
 
-| Attribute | Required | Description |
+| Attribute | Description |
+|---|---|
+| `locale` | Language; falls back to `default-locale` if omitted |
+
+| Child element | Required | Description |
 |---|---|---|
-| `name` | yes | Product name |
-| `locale` | no | Language; falls back to `default-locale` if omitted |
-| `slug` | no | URL slug; generated from name by the importer if omitted |
-| `short-description` | no | Short description (plain text) |
-| `description` | no | Long description (HTML, must be escaped) |
-| `meta-title` | no | SEO title; falls back to name if omitted |
-| `meta-description` | no | SEO meta description |
+| `<name>` | yes | Product name |
+| `<slug>` | no | URL slug; generated from name by the importer if omitted |
+| `<short-description>` | no | Short description (plain text) |
+| `<description>` | no | Long description (HTML allowed; wrap in CDATA) |
+| `<meta-title>` | no | SEO title; falls back to name if omitted |
+| `<meta-description>` | no | SEO meta description |
 
 **Minimal example:**
 ```xml
 <translations>
-    <translation name="Apple iPhone 15 Pro" />
+    <translation>
+        <name>Apple iPhone 15 Pro</name>
+    </translation>
 </translations>
 ```
 
 **Full example:**
 ```xml
 <translations>
-    <translation locale="en_US"
-                 name="Apple iPhone 15 Pro"
-                 slug="apple-iphone-15-pro"
-                 short-description="The most powerful iPhone ever."
-                 description="&lt;p&gt;iPhone 15 Pro with A17 Pro chip.&lt;/p&gt;"
-                 meta-title="Apple iPhone 15 Pro | Buy online"
-                 meta-description="Buy Apple iPhone 15 Pro at the best price." />
-    <translation locale="de_DE"
-                 name="Apple iPhone 15 Pro" />
+    <translation locale="en_US">
+        <name>Apple iPhone 15 Pro</name>
+        <slug>apple-iphone-15-pro</slug>
+        <short-description>The most powerful iPhone ever.</short-description>
+        <description><![CDATA[<p>iPhone 15 Pro with A17 Pro chip.</p>]]></description>
+        <meta-title>Apple iPhone 15 Pro | Buy online</meta-title>
+        <meta-description>Buy Apple iPhone 15 Pro at the best price.</meta-description>
+    </translation>
+    <translation locale="de_DE">
+        <name>Apple iPhone 15 Pro</name>
+    </translation>
 </translations>
 ```
 
-> **Note on HTML in description:** The characters `<` and `>` must be escaped as `&lt;` and `&gt;`.
-> Example: `&lt;p&gt;Product description.&lt;/p&gt;`
+> **Note on HTML in `<description>`:** wrap the HTML in `<![CDATA[ ... ]]>`
+> so you do not have to escape `<`, `>` or `&`. If you prefer, you can also
+> escape them manually (`&lt;p&gt;...&lt;/p&gt;`) — both forms are valid.
 
 ---
 
 ## `<taxons>` (categories)
 
-| Attribute | Where | Description |
-|---|---|---|
-| `main` | on `<taxons>` | Code of the main taxon; first taxon is used if omitted |
-| `code` | on `<taxon>` | Our internal taxon code |
-| `name` | on `<taxon>` | Human-readable taxon name from your system |
-| `external-code` | on `<taxon>` | Your internal taxon code |
+| Attribute (on `<taxons>`) | Description |
+|---|---|
+| `main` | Code of the main taxon; first taxon is used if omitted |
+
+| Child element (of `<taxon>`) | Description |
+|---|---|
+| `<code>` | Our internal taxon code |
+| `<external-code>` | Your internal taxon code |
+| `<name>` | Human-readable taxon name from your system |
 
 ```xml
 <!-- External supplier — human-readable names -->
 <taxons>
-    <taxon name="Smartphones"   external-code="CAT-SMART" />
-    <taxon name="Apple"         external-code="CAT-APPLE" />
+    <taxon>
+        <external-code>CAT-SMART</external-code>
+        <name>Smartphones</name>
+    </taxon>
+    <taxon>
+        <external-code>CAT-APPLE</external-code>
+        <name>Apple</name>
+    </taxon>
 </taxons>
 
 <!-- Sylius to Sylius — our internal codes -->
 <taxons main="electronics-phones">
-    <taxon code="electronics-phones" />
-    <taxon code="electronics" />
+    <taxon><code>electronics-phones</code></taxon>
+    <taxon><code>electronics</code></taxon>
 </taxons>
 ```
 
@@ -205,27 +266,40 @@ Add the following to your root element to enable inline validation and autocompl
 
 ## `<attributes>`
 
-| Attribute | Description |
+| Child element (of `<attribute>`) | Description |
 |---|---|
-| `code` | Our internal attribute code |
-| `name` | Human-readable attribute name from your system |
-| `external-code` | Your internal attribute code |
-| `value` | Human-readable attribute value |
-| `value-code` | Value code |
-| `external-value-code` | Your internal value code |
+| `<code>` | Our internal attribute code |
+| `<name>` | Human-readable attribute name from your system |
+| `<external-code>` | Your internal attribute code |
+| `<value>` | Human-readable attribute value |
+| `<value-code>` | Value code |
+| `<external-value-code>` | Your internal value code |
 
 ```xml
 <!-- External supplier -->
 <attributes>
-    <attribute name="Brand"  external-code="ATTR-BRD"
-               value="Apple" external-value-code="BRD-001" />
-    <attribute name="Screen size" value="6.1" />
+    <attribute>
+        <name>Brand</name>
+        <external-code>ATTR-BRD</external-code>
+        <value>Apple</value>
+        <external-value-code>BRD-001</external-value-code>
+    </attribute>
+    <attribute>
+        <name>Screen size</name>
+        <value>6.1"</value>
+    </attribute>
 </attributes>
 
 <!-- Sylius to Sylius -->
 <attributes>
-    <attribute code="brand"       value-code="apple" />
-    <attribute code="screen_size" value="6.1" />
+    <attribute>
+        <code>brand</code>
+        <value-code>apple</value-code>
+    </attribute>
+    <attribute>
+        <code>screen_size</code>
+        <value>6.1</value>
+    </attribute>
 </attributes>
 ```
 
@@ -233,18 +307,25 @@ Add the following to your root element to enable inline validation and autocompl
 
 ## `<images>`
 
-| Attribute | Required | Description |
+| Attribute (on `<image>`) | Description |
+|---|---|
+| `type` | `main` / `additional` / `thumbnail`, default `additional` |
+
+| Child element (of `<image>`) | Required | Description |
 |---|---|---|
-| `url` | * | Absolute image URL |
-| `path` | * | Relative path on disk (Sylius export) |
-| `type` | no | `main` / `additional` / `thumbnail`, default `additional` |
+| `<url>` | * | Absolute image URL |
+| `<path>` | * | Relative path on disk (Sylius export) |
 
 *At least one of `url` / `path` must be present.*
 
 ```xml
 <images>
-    <image url="https://cdn.supplier.eu/product/main.jpg" type="main" />
-    <image url="https://cdn.supplier.eu/product/side.jpg" type="additional" />
+    <image type="main">
+        <url>https://cdn.supplier.eu/product/main.jpg?v=2&amp;size=800</url>
+    </image>
+    <image type="additional">
+        <url>https://cdn.supplier.eu/product/side.jpg</url>
+    </image>
 </images>
 ```
 
@@ -252,53 +333,79 @@ Add the following to your root element to enable inline validation and autocompl
 
 ## `<variant>`
 
-| Attribute | Required | Description |
+| Attribute | Description |
+|---|---|
+| `enabled` | Whether the variant is active, default `true` |
+| `condition` | Physical condition: `new` / `used` / `refurbished`, default `new` |
+
+| Child element | Required | Description |
 |---|---|---|
-| `code` | * | Our internal variant code (EAN, SKU...) |
-| `external-code` | * | Your internal variant code |
-| `enabled` | no | Whether the variant is active, default `true` |
-| `ean` | no | EAN-13 barcode (e.g. `5901234123457`); omit if not available |
-| `condition` | no | Physical condition: `new` / `used` / `refurbished`, default `new` |
+| `<code>` | * | Our internal variant code (EAN, SKU...) |
+| `<external-code>` | * | Your internal variant code |
+| `<ean>` | no | EAN-13 barcode (e.g. `5901234123457`); omit if not available |
 
 *At least one of `code` / `external-code` must be present.*
 
 ### `<translation>` (variant)
 
-| Attribute | Required | Description |
+| Attribute | Description |
+|---|---|
+| `locale` | Language; falls back to `default-locale` if omitted |
+
+| Child element | Required | Description |
 |---|---|---|
-| `name` | yes | Variant name |
-| `locale` | no | Language; falls back to `default-locale` if omitted |
-| `slug` | no | URL slug; generated by the importer if omitted |
+| `<name>` | yes | Variant name |
+| `<slug>` | no | URL slug; generated by the importer if omitted |
 
 ### `<options>`
 
-| Attribute | Description |
+| Attribute (on `<option>`) | Description |
 |---|---|
-| `code` | Our internal option code (e.g. `color`) |
-| `name` | Human-readable option name (e.g. `Color`) |
-| `external-code` | Your internal option code |
-| `value` | Human-readable option value (e.g. `Red`) |
-| `value-code` | Option value code |
-| `external-value-code` | Your internal option value code |
-| `locale` | Language of `name`/`value` if different from `default-locale` |
+| `locale` | Language of `<name>`/`<value>` if different from `default-locale` |
+
+| Child element (of `<option>`) | Description |
+|---|---|
+| `<code>` | Our internal option code (e.g. `color`) |
+| `<name>` | Human-readable option name (e.g. `Color`) |
+| `<external-code>` | Your internal option code |
+| `<value>` | Human-readable option value (e.g. `Red`) |
+| `<value-code>` | Option value code |
+| `<external-value-code>` | Your internal option value code |
 
 ```xml
 <!-- External supplier -->
 <options>
-    <option name="Color"    external-code="OPT-COL"
-            value="Black"   external-value-code="COL-BLK" />
-    <option name="Storage"  external-code="OPT-MEM"
-            value="128 GB"  external-value-code="MEM-128" />
+    <option>
+        <name>Color</name>
+        <external-code>OPT-COL</external-code>
+        <value>Black</value>
+        <external-value-code>COL-BLK</external-value-code>
+    </option>
+    <option>
+        <name>Storage</name>
+        <external-code>OPT-MEM</external-code>
+        <value>128 GB</value>
+        <external-value-code>MEM-128</external-value-code>
+    </option>
 </options>
 
 <!-- Sylius to Sylius -->
 <options>
-    <option code="color"   value-code="color_black" />
-    <option code="storage" value-code="storage_128" />
+    <option>
+        <code>color</code>
+        <value-code>color_black</value-code>
+    </option>
+    <option>
+        <code>storage</code>
+        <value-code>storage_128</value-code>
+    </option>
 </options>
 ```
 
 ### `<price>`
+
+All price attributes are typed (currency pattern / integer / decimal) so
+they stay as attributes — there is no escaping concern.
 
 | Attribute | Required | Description |
 |---|---|---|
@@ -361,15 +468,14 @@ When your export contains more than ~5,000 products, split it into multiple `syl
                         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                         xsi:noNamespaceSchemaLocation="https://elcuro.github.io/sylius-import-schema/sylius-import-2.0.xsd">
     <files>
-        <file path="products-001.xml" />
-        <file path="products-002.xml" />
-        <file path="products-003.xml" />
+        <file>products-001.xml</file>
+        <file>products-002.xml</file>
+        <file>products-003.xml</file>
     </files>
-
 </sylius-import-manifest>
 ```
 
-Each file in `<files>` is a standard `sylius-import` document. Paths are relative to the manifest file.
+Each `<file>` element contains the relative path to a `sylius-import` document. Paths are resolved relative to the manifest file.
 
 **Recommended directory layout:**
 
@@ -430,19 +536,24 @@ Check the `locale` format — it must follow the pattern `xx_XX` (e.g. `en_US`, 
 <price currency="EUR" amount="119900" />
 ```
 
-### Error: HTML in `description` is not escaped
+### Error: `<name>` is missing on `<translation>`
+
+`<name>` is the only required child element on `<translation>`.
+
+### Error: unescaped `&` in text content
+
+Use CDATA or escape ampersands as `&amp;`:
 
 ```xml
 <!-- wrong -->
-<translation description="<p>Product description.</p>" />
+<name>Ben & Jerry's</name>
 
-<!-- correct -->
-<translation description="&lt;p&gt;Product description.&lt;/p&gt;" />
+<!-- correct — via CDATA -->
+<name><![CDATA[Ben & Jerry's]]></name>
+
+<!-- or via entity -->
+<name>Ben &amp; Jerry's</name>
 ```
-
-### Error: `name` is missing on `<translation>`
-
-`name` is the only required attribute on `<translation>`.
 
 ---
 

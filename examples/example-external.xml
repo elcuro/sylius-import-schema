@@ -7,6 +7,10 @@
       - you do not know our internal codes (categories, attributes, options)
       - you want to include your own codes for later mapping on our side
 
+    All text content (names, descriptions, values, URLs) lives in child
+    elements so you can safely include quotes, apostrophes, ampersands
+    and HTML without escaping — just wrap them in <![CDATA[ ... ]]>.
+
     Validation before sending:
     ══════════════════════════════════════════════════════════════════
 -->
@@ -21,69 +25,123 @@
              EXAMPLE 1: Product with variants (color + storage)
              Supplier does not know our codes — uses their own.
              ═══════════════════════════════════════ -->
-        <product external-code="BB-987654" enabled="true" manufacturer="Apple">
+        <product enabled="true">
+            <external-code>BB-987654</external-code>
+            <manufacturer>Apple</manufacturer>
 
             <!-- At least one translation is required.
                  If locale is omitted, default-locale from root element is used (en_US). -->
             <translations>
-                <translation name="Apple iPhone 15 Pro"
-                             short-description="The most powerful iPhone ever."
-                             description="&lt;p&gt;iPhone 15 Pro with A17 Pro chip and titanium frame.&lt;/p&gt;"
-                             meta-title="Apple iPhone 15 Pro | Buy online"
-                             meta-description="Buy Apple iPhone 15 Pro at the best price." />
-                <translation locale="de_DE"
-                             name="Apple iPhone 15 Pro"
-                             short-description="Das leistungsstärkste iPhone aller Zeiten."
-                             description="&lt;p&gt;iPhone 15 Pro mit A17 Pro Chip und Titanrahmen.&lt;/p&gt;" />
-                <translation locale="fr_FR"
-                             name="Apple iPhone 15 Pro"
-                             short-description="L'iPhone le plus puissant jamais conçu." />
+                <translation>
+                    <name>Apple iPhone 15 Pro</name>
+                    <short-description>The most powerful iPhone ever — with "ProMotion" display.</short-description>
+                    <description><![CDATA[<p>iPhone 15 Pro with A17 Pro chip and titanium frame.</p>
+<ul><li>6.1" Super Retina XDR</li><li>A17 Pro & 8 GB RAM</li></ul>]]></description>
+                    <meta-title>Apple iPhone 15 Pro | Buy online</meta-title>
+                    <meta-description>Buy Apple iPhone 15 Pro at the best price.</meta-description>
+                </translation>
+                <translation locale="de_DE">
+                    <name>Apple iPhone 15 Pro</name>
+                    <short-description>Das leistungsstärkste iPhone aller Zeiten.</short-description>
+                    <description><![CDATA[<p>iPhone 15 Pro mit A17 Pro Chip und Titanrahmen.</p>]]></description>
+                </translation>
+                <translation locale="fr_FR">
+                    <name>Apple iPhone 15 Pro</name>
+                    <short-description>L'iPhone le plus puissant jamais conçu.</short-description>
+                </translation>
             </translations>
 
             <!-- Categories — name is the human-readable name from your system.
                  Our importer will map them to our internal categories. -->
             <taxons>
-                <taxon name="Smartphones"    external-code="CAT-SMART" />
-                <taxon name="Apple"          external-code="CAT-APPLE" />
-                <taxon name="Mobile phones"  external-code="CAT-MOB" />
+                <taxon>
+                    <external-code>CAT-SMART</external-code>
+                    <name>Smartphones</name>
+                </taxon>
+                <taxon>
+                    <external-code>CAT-APPLE</external-code>
+                    <name>Apple</name>
+                </taxon>
+                <taxon>
+                    <external-code>CAT-MOB</external-code>
+                    <name>Mobile phones &amp; accessories</name>
+                </taxon>
             </taxons>
 
             <!-- Attributes — name + value are human-readable text.
                  external-code / external-value-code are your internal codes. -->
             <attributes>
-                <attribute name="Brand"        external-code="ATTR-BRD"
-                           value="Apple"       external-value-code="BRD-001" />
-                <attribute name="Screen size"  external-code="ATTR-SCR"
-                           value="6.1" />
-                <attribute name="OS"           external-code="ATTR-OS"
-                           value="iOS 17"      external-value-code="OS-IOS17" />
-                <attribute name="Material"     external-code="ATTR-MAT"
-                           value="Titanium"    external-value-code="MAT-TIT" />
+                <attribute>
+                    <name>Brand</name>
+                    <external-code>ATTR-BRD</external-code>
+                    <value>Apple</value>
+                    <external-value-code>BRD-001</external-value-code>
+                </attribute>
+                <attribute>
+                    <name>Screen size</name>
+                    <external-code>ATTR-SCR</external-code>
+                    <value>6.1"</value>
+                </attribute>
+                <attribute>
+                    <name>OS</name>
+                    <external-code>ATTR-OS</external-code>
+                    <value>iOS 17</value>
+                    <external-value-code>OS-IOS17</external-value-code>
+                </attribute>
+                <attribute>
+                    <name>Material</name>
+                    <external-code>ATTR-MAT</external-code>
+                    <value>Titanium</value>
+                    <external-value-code>MAT-TIT</external-value-code>
+                </attribute>
             </attributes>
 
-            <!-- Images — url must be an absolute URL to the image.
-                 The first image with type="main" will be used as the primary image. -->
+            <!-- Images — url is the absolute URL to the image.
+                 The first image with type="main" will be used as the primary image.
+                 URLs with query strings (&) are fine in element content. -->
             <images>
-                <image url="https://cdn.supplier.eu/iphone15pro/front.jpg"  type="main" />
-                <image url="https://cdn.supplier.eu/iphone15pro/side.jpg"   type="additional" />
-                <image url="https://cdn.supplier.eu/iphone15pro/back.jpg"   type="additional" />
-                <image url="https://cdn.supplier.eu/iphone15pro/thumb.jpg"  type="thumbnail" />
+                <image type="main">
+                    <url>https://cdn.supplier.eu/iphone15pro/front.jpg?v=2&amp;size=800</url>
+                </image>
+                <image type="additional">
+                    <url>https://cdn.supplier.eu/iphone15pro/side.jpg</url>
+                </image>
+                <image type="additional">
+                    <url>https://cdn.supplier.eu/iphone15pro/back.jpg</url>
+                </image>
+                <image type="thumbnail">
+                    <url>https://cdn.supplier.eu/iphone15pro/thumb.jpg</url>
+                </image>
             </images>
 
             <variants>
 
                 <!-- Variant: Black / 128 GB -->
-                <variant external-code="BB-987654-BLK-128" enabled="true" ean="5901234100128" condition="new">
-                    <translation name="Black / 128 GB" />
-                    <translation locale="de_DE" name="Schwarz / 128 GB" />
+                <variant enabled="true" condition="new">
+                    <external-code>BB-987654-BLK-128</external-code>
+                    <ean>5901234100128</ean>
+                    <translation>
+                        <name>Black / 128 GB</name>
+                    </translation>
+                    <translation locale="de_DE">
+                        <name>Schwarz / 128 GB</name>
+                    </translation>
 
                     <!-- Options — name + value are human-readable text from your system.
                          external-code / external-value-code are your internal codes. -->
                     <options>
-                        <option name="Color"    external-code="OPT-COL"
-                                value="Black"   external-value-code="COL-BLK" />
-                        <option name="Storage"  external-code="OPT-MEM"
-                                value="128 GB"  external-value-code="MEM-128" />
+                        <option>
+                            <name>Color</name>
+                            <external-code>OPT-COL</external-code>
+                            <value>Black</value>
+                            <external-value-code>COL-BLK</external-value-code>
+                        </option>
+                        <option>
+                            <name>Storage</name>
+                            <external-code>OPT-MEM</external-code>
+                            <value>128 GB</value>
+                            <external-value-code>MEM-128</external-value-code>
+                        </option>
                     </options>
 
                     <!-- Price in cents (with VAT): 143880 = 1,438.80 EUR incl. 20 % VAT
@@ -99,14 +157,28 @@
                 </variant>
 
                 <!-- Variant: Black / 256 GB -->
-                <variant external-code="BB-987654-BLK-256" enabled="true" ean="5901234100256" condition="refurbished">
-                    <translation name="Black / 256 GB" />
-                    <translation locale="de_DE" name="Schwarz / 256 GB" />
+                <variant enabled="true" condition="refurbished">
+                    <external-code>BB-987654-BLK-256</external-code>
+                    <ean>5901234100256</ean>
+                    <translation>
+                        <name>Black / 256 GB</name>
+                    </translation>
+                    <translation locale="de_DE">
+                        <name>Schwarz / 256 GB</name>
+                    </translation>
                     <options>
-                        <option name="Color"    external-code="OPT-COL"
-                                value="Black"   external-value-code="COL-BLK" />
-                        <option name="Storage"  external-code="OPT-MEM"
-                                value="256 GB"  external-value-code="MEM-256" />
+                        <option>
+                            <name>Color</name>
+                            <external-code>OPT-COL</external-code>
+                            <value>Black</value>
+                            <external-value-code>COL-BLK</external-value-code>
+                        </option>
+                        <option>
+                            <name>Storage</name>
+                            <external-code>OPT-MEM</external-code>
+                            <value>256 GB</value>
+                            <external-value-code>MEM-256</external-value-code>
+                        </option>
                     </options>
                     <price currency="EUR" vat-amount="161880" vat="20" />
                     <stock on-hand="30" />
@@ -114,14 +186,28 @@
                 </variant>
 
                 <!-- Variant: White / 128 GB -->
-                <variant external-code="BB-987654-WHT-128" enabled="true" ean="5901234200128" condition="used">
-                    <translation name="White / 128 GB" />
-                    <translation locale="de_DE" name="Weiß / 128 GB" />
+                <variant enabled="true" condition="used">
+                    <external-code>BB-987654-WHT-128</external-code>
+                    <ean>5901234200128</ean>
+                    <translation>
+                        <name>White / 128 GB</name>
+                    </translation>
+                    <translation locale="de_DE">
+                        <name>Weiß / 128 GB</name>
+                    </translation>
                     <options>
-                        <option name="Color"    external-code="OPT-COL"
-                                value="White"   external-value-code="COL-WHT" />
-                        <option name="Storage"  external-code="OPT-MEM"
-                                value="128 GB"  external-value-code="MEM-128" />
+                        <option>
+                            <name>Color</name>
+                            <external-code>OPT-COL</external-code>
+                            <value>White</value>
+                            <external-value-code>COL-WHT</external-value-code>
+                        </option>
+                        <option>
+                            <name>Storage</name>
+                            <external-code>OPT-MEM</external-code>
+                            <value>128 GB</value>
+                            <external-value-code>MEM-128</external-value-code>
+                        </option>
                     </options>
                     <!-- Alternative: supplier is a VAT payer and reports net prices → use amount only -->
                     <price currency="EUR" amount="119900" />
@@ -134,32 +220,55 @@
 
         <!-- ═══════════════════════════════════════
              EXAMPLE 2: Simple product (single variant, no options)
+             Demonstrates ampersands, apostrophes and unescaped HTML via CDATA.
              ═══════════════════════════════════════ -->
-        <product external-code="CABLE-001" enabled="true" manufacturer="Baseus">
+        <product enabled="true">
+            <external-code>CABLE-001</external-code>
+            <manufacturer>Ben &amp; Jerry's Electronics</manufacturer>
 
             <translations>
-                <translation name="USB-C Cable 1m"
-                             description="&lt;p&gt;Fast-charging USB-C cable, 1 meter length.&lt;/p&gt;" />
-                <translation locale="de_DE" name="USB-C Kabel 1m" />
+                <translation>
+                    <name>USB-C Cable 1m "Fast Charge"</name>
+                    <description><![CDATA[<p>Fast-charging USB-C cable, 1 meter length.</p><p>Works with iPhone & Android.</p>]]></description>
+                </translation>
+                <translation locale="de_DE">
+                    <name>USB-C Kabel 1m</name>
+                </translation>
             </translations>
 
             <taxons>
-                <taxon name="Cables &amp; Adapters" external-code="CAT-CABLE" />
+                <taxon>
+                    <external-code>CAT-CABLE</external-code>
+                    <name>Cables &amp; Adapters</name>
+                </taxon>
             </taxons>
 
             <attributes>
-                <attribute name="Brand"  value="Baseus" external-value-code="BRD-BAS" />
-                <attribute name="Length" value="1m" />
+                <attribute>
+                    <name>Brand</name>
+                    <value>Ben &amp; Jerry's</value>
+                    <external-value-code>BRD-BJ</external-value-code>
+                </attribute>
+                <attribute>
+                    <name>Length</name>
+                    <value>1m</value>
+                </attribute>
             </attributes>
 
             <images>
-                <image url="https://cdn.supplier.eu/cables/usb-c-1m.jpg" type="main" />
+                <image type="main">
+                    <url>https://cdn.supplier.eu/cables/usb-c-1m.jpg</url>
+                </image>
             </images>
 
             <variants>
                 <!-- Single variant with no options -->
-                <variant external-code="CABLE-001-DEFAULT" enabled="true" ean="5901234000015" condition="new">
-                    <translation name="USB-C Cable 1m" />
+                <variant enabled="true" condition="new">
+                    <external-code>CABLE-001-DEFAULT</external-code>
+                    <ean>5901234000015</ean>
+                    <translation>
+                        <name>USB-C Cable 1m</name>
+                    </translation>
                     <price currency="EUR" vat-amount="1788" vat="20" />
                     <stock on-hand="200" />
                     <dimensions weight="0.05" width="15" height="150" depth="10" />

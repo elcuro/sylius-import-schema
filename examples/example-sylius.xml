@@ -7,7 +7,9 @@
       - you know the target internal codes (categories, attributes, options)
       - you want to preserve slugs, Sylius codes and the full data structure
 
-    Validation before sending:
+    All text content (names, descriptions, codes, slugs) lives in child
+    elements so CDATA is available for HTML descriptions and product
+    names that contain quotes or ampersands.
     ══════════════════════════════════════════════════════════════════
 -->
 <sylius-import version="2.0"
@@ -22,68 +24,111 @@
              EXAMPLE 1: Product with variants
              Sylius to Sylius: all codes are our internal Sylius codes.
              ═══════════════════════════════════════ -->
-        <product code="IPHONE-15-PRO" enabled="true" manufacturer="Apple">
+        <product enabled="true">
+            <code>IPHONE-15-PRO</code>
+            <manufacturer>Apple</manufacturer>
 
             <translations>
                 <!-- slug is preserved from the source Sylius instance -->
-                <translation locale="en_US"
-                             name="Apple iPhone 15 Pro"
-                             slug="apple-iphone-15-pro-en"
-                             short-description="The most powerful iPhone ever."
-                             description="&lt;p&gt;iPhone 15 Pro with A17 Pro chip and titanium frame.&lt;/p&gt;"
-                             meta-title="Apple iPhone 15 Pro | Buy online"
-                             meta-description="Buy Apple iPhone 15 Pro at the best price." />
-                <translation locale="de_DE"
-                             name="Apple iPhone 15 Pro"
-                             slug="apple-iphone-15-pro-de"
-                             short-description="Das leistungsstärkste iPhone aller Zeiten."
-                             description="&lt;p&gt;iPhone 15 Pro mit A17 Pro Chip und Titanrahmen.&lt;/p&gt;"
-                             meta-title="Apple iPhone 15 Pro | Online kaufen" />
-                <translation locale="fr_FR"
-                             name="Apple iPhone 15 Pro"
-                             slug="apple-iphone-15-pro-fr"
-                             short-description="L'iPhone le plus puissant jamais conçu." />
+                <translation locale="en_US">
+                    <name>Apple iPhone 15 Pro</name>
+                    <slug>apple-iphone-15-pro-en</slug>
+                    <short-description>The most powerful iPhone ever.</short-description>
+                    <description><![CDATA[<p>iPhone 15 Pro with A17 Pro chip and titanium frame.</p>]]></description>
+                    <meta-title>Apple iPhone 15 Pro | Buy online</meta-title>
+                    <meta-description>Buy Apple iPhone 15 Pro at the best price.</meta-description>
+                </translation>
+                <translation locale="de_DE">
+                    <name>Apple iPhone 15 Pro</name>
+                    <slug>apple-iphone-15-pro-de</slug>
+                    <short-description>Das leistungsstärkste iPhone aller Zeiten.</short-description>
+                    <description><![CDATA[<p>iPhone 15 Pro mit A17 Pro Chip und Titanrahmen.</p>]]></description>
+                    <meta-title>Apple iPhone 15 Pro | Online kaufen</meta-title>
+                </translation>
+                <translation locale="fr_FR">
+                    <name>Apple iPhone 15 Pro</name>
+                    <slug>apple-iphone-15-pro-fr</slug>
+                    <short-description>L'iPhone le plus puissant jamais conçu.</short-description>
+                </translation>
             </translations>
 
             <!-- Taxons — code is our Sylius code.
                  main = code of the main taxon. -->
             <taxons main="electronics-phones">
-                <taxon code="electronics-phones" />
-                <taxon code="electronics" />
-                <taxon code="apple-products" />
+                <taxon>
+                    <code>electronics-phones</code>
+                </taxon>
+                <taxon>
+                    <code>electronics</code>
+                </taxon>
+                <taxon>
+                    <code>apple-products</code>
+                </taxon>
             </taxons>
 
             <!-- Attributes — code is the Sylius attribute code.
                  Use value-code for select types, value for text / float / integer. -->
             <attributes>
-                <attribute code="brand"       value-code="apple" />
-                <attribute code="screen_size" value="6.1" />
-                <attribute code="os"          value-code="ios_17" />
-                <attribute code="material"    value-code="titanium" />
+                <attribute>
+                    <code>brand</code>
+                    <value-code>apple</value-code>
+                </attribute>
+                <attribute>
+                    <code>screen_size</code>
+                    <value>6.1</value>
+                </attribute>
+                <attribute>
+                    <code>os</code>
+                    <value-code>ios_17</value-code>
+                </attribute>
+                <attribute>
+                    <code>material</code>
+                    <value-code>titanium</value-code>
+                </attribute>
             </attributes>
 
             <!-- Images — path is the relative path in the Sylius media directory.
                  You may also use url if images are publicly accessible online. -->
             <images>
-                <image path="iphone-15-pro/front.jpg"  type="main" />
-                <image path="iphone-15-pro/side.jpg"   type="additional" />
-                <image path="iphone-15-pro/back.jpg"   type="additional" />
-                <image path="iphone-15-pro/thumb.jpg"  type="thumbnail" />
+                <image type="main">
+                    <path>iphone-15-pro/front.jpg</path>
+                </image>
+                <image type="additional">
+                    <path>iphone-15-pro/side.jpg</path>
+                </image>
+                <image type="additional">
+                    <path>iphone-15-pro/back.jpg</path>
+                </image>
+                <image type="thumbnail">
+                    <path>iphone-15-pro/thumb.jpg</path>
+                </image>
             </images>
 
             <variants>
 
                 <!-- Variant: Black / 128 GB -->
-                <variant code="IPHONE-15-PRO-BLK-128" enabled="true" ean="5901234100128" condition="new">
-                    <translation locale="en_US" name="Black / 128 GB"
-                                 slug="apple-iphone-15-pro-black-128gb" />
-                    <translation locale="de_DE" name="Schwarz / 128 GB"
-                                 slug="apple-iphone-15-pro-schwarz-128gb" />
+                <variant enabled="true" condition="new">
+                    <code>IPHONE-15-PRO-BLK-128</code>
+                    <ean>5901234100128</ean>
+                    <translation locale="en_US">
+                        <name>Black / 128 GB</name>
+                        <slug>apple-iphone-15-pro-black-128gb</slug>
+                    </translation>
+                    <translation locale="de_DE">
+                        <name>Schwarz / 128 GB</name>
+                        <slug>apple-iphone-15-pro-schwarz-128gb</slug>
+                    </translation>
 
                     <!-- Options — code is the Sylius option code, value-code is the Sylius value code -->
                     <options>
-                        <option code="color"   value-code="color_black" />
-                        <option code="storage" value-code="storage_128" />
+                        <option>
+                            <code>color</code>
+                            <value-code>color_black</value-code>
+                        </option>
+                        <option>
+                            <code>storage</code>
+                            <value-code>storage_128</value-code>
+                        </option>
                     </options>
 
                     <!-- Sylius-to-Sylius: net amount is known; vat carries the rate for re-use -->
@@ -93,14 +138,26 @@
                 </variant>
 
                 <!-- Variant: Black / 256 GB -->
-                <variant code="IPHONE-15-PRO-BLK-256" enabled="true" ean="5901234100256" condition="refurbished">
-                    <translation locale="en_US" name="Black / 256 GB"
-                                 slug="apple-iphone-15-pro-black-256gb" />
-                    <translation locale="de_DE" name="Schwarz / 256 GB"
-                                 slug="apple-iphone-15-pro-schwarz-256gb" />
+                <variant enabled="true" condition="refurbished">
+                    <code>IPHONE-15-PRO-BLK-256</code>
+                    <ean>5901234100256</ean>
+                    <translation locale="en_US">
+                        <name>Black / 256 GB</name>
+                        <slug>apple-iphone-15-pro-black-256gb</slug>
+                    </translation>
+                    <translation locale="de_DE">
+                        <name>Schwarz / 256 GB</name>
+                        <slug>apple-iphone-15-pro-schwarz-256gb</slug>
+                    </translation>
                     <options>
-                        <option code="color"   value-code="color_black" />
-                        <option code="storage" value-code="storage_256" />
+                        <option>
+                            <code>color</code>
+                            <value-code>color_black</value-code>
+                        </option>
+                        <option>
+                            <code>storage</code>
+                            <value-code>storage_256</value-code>
+                        </option>
                     </options>
                     <!-- Both net and gross supplied — importer reconciles against vat -->
                     <price currency="EUR" amount="134900" vat-amount="161880" vat="20" />
@@ -109,14 +166,25 @@
                 </variant>
 
                 <!-- Variant: White / 128 GB -->
-                <variant code="IPHONE-15-PRO-WHT-128" enabled="true" condition="used">
-                    <translation locale="en_US" name="White / 128 GB"
-                                 slug="apple-iphone-15-pro-white-128gb" />
-                    <translation locale="de_DE" name="Weiß / 128 GB"
-                                 slug="apple-iphone-15-pro-weiss-128gb" />
+                <variant enabled="true" condition="used">
+                    <code>IPHONE-15-PRO-WHT-128</code>
+                    <translation locale="en_US">
+                        <name>White / 128 GB</name>
+                        <slug>apple-iphone-15-pro-white-128gb</slug>
+                    </translation>
+                    <translation locale="de_DE">
+                        <name>Weiß / 128 GB</name>
+                        <slug>apple-iphone-15-pro-weiss-128gb</slug>
+                    </translation>
                     <options>
-                        <option code="color"   value-code="color_white" />
-                        <option code="storage" value-code="storage_128" />
+                        <option>
+                            <code>color</code>
+                            <value-code>color_white</value-code>
+                        </option>
+                        <option>
+                            <code>storage</code>
+                            <value-code>storage_128</value-code>
+                        </option>
                     </options>
                     <price currency="EUR" amount="119900" vat="20" />
                     <stock on-hand="25" />
@@ -131,36 +199,57 @@
              Sylius codes + preserved supplier external codes.
              Useful when migrating from a supplier-fed catalog.
              ═══════════════════════════════════════ -->
-        <product code="CABLE-USB-C-1M" external-code="BB-CABLE-001" enabled="true" manufacturer="Baseus">
+        <product enabled="true">
+            <code>CABLE-USB-C-1M</code>
+            <external-code>BB-CABLE-001</external-code>
+            <manufacturer>Baseus</manufacturer>
 
             <translations>
-                <translation locale="en_US"
-                             name="USB-C Cable 1m"
-                             slug="usb-c-cable-1m"
-                             description="&lt;p&gt;Fast-charging USB-C cable, 1 meter length.&lt;/p&gt;" />
-                <translation locale="de_DE"
-                             name="USB-C Kabel 1m"
-                             slug="usb-c-kabel-1m" />
+                <translation locale="en_US">
+                    <name>USB-C Cable 1m</name>
+                    <slug>usb-c-cable-1m</slug>
+                    <description><![CDATA[<p>Fast-charging USB-C cable, 1 meter length.</p>]]></description>
+                </translation>
+                <translation locale="de_DE">
+                    <name>USB-C Kabel 1m</name>
+                    <slug>usb-c-kabel-1m</slug>
+                </translation>
             </translations>
 
             <taxons main="cables">
-                <taxon code="cables" />
-                <taxon code="accessories" />
+                <taxon>
+                    <code>cables</code>
+                </taxon>
+                <taxon>
+                    <code>accessories</code>
+                </taxon>
             </taxons>
 
             <attributes>
-                <attribute code="brand"  value-code="baseus" />
-                <attribute code="length" value="1" />
+                <attribute>
+                    <code>brand</code>
+                    <value-code>baseus</value-code>
+                </attribute>
+                <attribute>
+                    <code>length</code>
+                    <value>1</value>
+                </attribute>
             </attributes>
 
             <images>
-                <image path="cables/usb-c-1m.jpg" type="main" />
+                <image type="main">
+                    <path>cables/usb-c-1m.jpg</path>
+                </image>
             </images>
 
             <variants>
-                <variant code="CABLE-USB-C-1M-DEFAULT" external-code="BB-CABLE-001-DEF" enabled="true" condition="new">
-                    <translation locale="en_US" name="USB-C Cable 1m"
-                                 slug="usb-c-cable-1m-default" />
+                <variant enabled="true" condition="new">
+                    <code>CABLE-USB-C-1M-DEFAULT</code>
+                    <external-code>BB-CABLE-001-DEF</external-code>
+                    <translation locale="en_US">
+                        <name>USB-C Cable 1m</name>
+                        <slug>usb-c-cable-1m-default</slug>
+                    </translation>
                     <price currency="EUR" amount="1490" vat="20" />
                     <stock on-hand="200" />
                     <dimensions weight="0.05" width="15" height="150" depth="10" />

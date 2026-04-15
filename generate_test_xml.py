@@ -2,12 +2,14 @@
 """
 Generate test sylius-import XML files with realistic product data.
 Produces: test-3.xml, test-50.xml, test-100.xml, test-500.xml
+
+All string content is emitted as child elements (matching the v2.0
+design rule — attributes reserved for typed values only).
 """
 
 import xml.etree.ElementTree as ET
 from xml.dom import minidom
 import random
-import math
 import os
 
 random.seed(42)
@@ -125,6 +127,13 @@ def indent_xml(elem):
     return "\n".join(lines[1:])
 
 
+def child(parent, tag, text):
+    """Add a child element with text content."""
+    el = ET.SubElement(parent, tag)
+    el.text = text
+    return el
+
+
 def slugify(text):
     return text.lower().replace(" ", "-").replace("'", "").replace("&", "and").replace("/", "-").replace("#", "").replace(",", "").strip("-")
 
@@ -170,40 +179,40 @@ def build_product(idx, total):
     sylius_code = f"PROD-{idx+1:05d}"
 
     prod = ET.Element("product")
-    prod.set("code",          sylius_code)
-    prod.set("external-code", ext_code)
-    prod.set("enabled",       "true")
-    prod.set("manufacturer",  manufacturer)
+    prod.set("enabled", "true")
+    child(prod, "code",          sylius_code)
+    child(prod, "external-code", ext_code)
+    child(prod, "manufacturer",  manufacturer)
 
     # ── Translations
     translations = ET.SubElement(prod, "translations")
 
     tr_en = ET.SubElement(translations, "translation")
-    tr_en.set("locale",            "en_US")
-    tr_en.set("name",              name_en)
-    tr_en.set("slug",              slugify(f"{name_en}-{idx+1}"))
-    tr_en.set("short-description", f"{name_en} — high quality product.")
-    tr_en.set("description",       f"&lt;p&gt;Detailed description of {name_en}. Product index {idx+1} of {total}.&lt;/p&gt;")
-    tr_en.set("meta-title",        f"{name_en} | Buy online")
-    tr_en.set("meta-description",  f"Buy {name_en} at the best price. Free shipping available.")
+    tr_en.set("locale", "en_US")
+    child(tr_en, "name",              name_en)
+    child(tr_en, "slug",              slugify(f"{name_en}-{idx+1}"))
+    child(tr_en, "short-description", f"{name_en} — high quality product.")
+    child(tr_en, "description",       f"<p>Detailed description of {name_en}. Product index {idx+1} of {total}.</p>")
+    child(tr_en, "meta-title",        f"{name_en} | Buy online")
+    child(tr_en, "meta-description",  f"Buy {name_en} at the best price. Free shipping available.")
 
     de_name = f"{random.choice(DE_PREFIXES)} {name_en}"
     tr_de = ET.SubElement(translations, "translation")
     tr_de.set("locale", "de_DE")
-    tr_de.set("name",   de_name)
-    tr_de.set("slug",   slugify(f"{de_name}-{idx+1}"))
+    child(tr_de, "name", de_name)
+    child(tr_de, "slug", slugify(f"{de_name}-{idx+1}"))
 
     fr_name = f"{name_en} {random.choice(FR_SUFFIXES)}"
     tr_fr = ET.SubElement(translations, "translation")
     tr_fr.set("locale", "fr_FR")
-    tr_fr.set("name",   fr_name)
-    tr_fr.set("slug",   slugify(f"{fr_name}-{idx+1}"))
+    child(tr_fr, "name", fr_name)
+    child(tr_fr, "slug", slugify(f"{fr_name}-{idx+1}"))
 
     # ── Taxons
     taxons = ET.SubElement(prod, "taxons")
     taxons.set("main", sub_cat)
-    t1 = ET.SubElement(taxons, "taxon"); t1.set("code", sub_cat)
-    t2 = ET.SubElement(taxons, "taxon"); t2.set("code", main_cat)
+    t1 = ET.SubElement(taxons, "taxon"); child(t1, "code", sub_cat)
+    t2 = ET.SubElement(taxons, "taxon"); child(t2, "code", main_cat)
 
     # ── Attributes
     attr_set = get_attr_set(sub_cat)
@@ -212,25 +221,24 @@ def build_product(idx, total):
         for attr_code, attr_name, attr_values in attr_set:
             val = random.choice(attr_values)
             a = ET.SubElement(attributes, "attribute")
-            a.set("code",          attr_code)
-            a.set("name",          attr_name)
-            a.set("external-code", f"ATTR-{attr_code.upper()}")
-            a.set("value",         val)
-            a.set("value-code",    slugify(val))
-            a.set("external-value-code", f"VAL-{slugify(val).upper()[:8]}")
+            child(a, "code",                attr_code)
+            child(a, "name",                attr_name)
+            child(a, "external-code",       f"ATTR-{attr_code.upper()}")
+            child(a, "value",               val)
+            child(a, "value-code",          slugify(val))
+            child(a, "external-value-code", f"VAL-{slugify(val).upper()[:8]}")
 
     # ── Images (dummyimage.com placeholders so URLs actually resolve in tests)
     images = ET.SubElement(prod, "images")
     img_slug = slugify(name_en)
-    i1 = ET.SubElement(images, "image")
-    i1.set("url",  f"https://dummyimage.com/800x600/cccccc/333333.jpg&text={img_slug}-main")
-    i1.set("type", "main")
-    i2 = ET.SubElement(images, "image")
-    i2.set("url",  f"https://dummyimage.com/800x600/cccccc/333333.jpg&text={img_slug}-detail")
-    i2.set("type", "additional")
-    i3 = ET.SubElement(images, "image")
-    i3.set("url",  f"https://dummyimage.com/200x200/cccccc/333333.jpg&text={img_slug}-thumb")
-    i3.set("type", "thumbnail")
+    for variant_tag, size, label in [
+        ("main",       "800x600", "main"),
+        ("additional", "800x600", "detail"),
+        ("thumbnail",  "200x200", "thumb"),
+    ]:
+        img = ET.SubElement(images, "image")
+        img.set("type", variant_tag)
+        child(img, "url", f"https://dummyimage.com/{size}/cccccc/333333.jpg&text={img_slug}-{label}")
 
     # ── Variants
     option_set = get_option_set(sub_cat)
@@ -240,41 +248,42 @@ def build_product(idx, total):
     variants = ET.SubElement(prod, "variants")
     for vi, combo in enumerate(combos):
         variant = ET.SubElement(variants, "variant")
-        combo_slug = "-".join(slugify(v) for _, v in combo.values()) if combo else "default"
-        variant.set("code",          f"{sylius_code}-{combo_slug.upper()[:20]}")
-        variant.set("external-code", f"{ext_code}-{vi+1:02d}")
-        variant.set("enabled",       "true")
-        # EAN is optional — roughly 70 % of variants have one
-        if random.random() < 0.7:
-            ean_base = 5900000000000 + (idx * 100) + vi
-            variant.set("ean", str(ean_base))
+        variant.set("enabled", "true")
         # condition — mostly new, occasionally used / refurbished
         variant.set("condition", random.choices(
             ["new", "used", "refurbished"],
             weights=[85, 8, 7],
         )[0])
 
+        combo_slug = "-".join(slugify(v) for _, v in combo.values()) if combo else "default"
+        child(variant, "code",          f"{sylius_code}-{combo_slug.upper()[:20]}")
+        child(variant, "external-code", f"{ext_code}-{vi+1:02d}")
+        # EAN is optional — roughly 70 % of variants have one
+        if random.random() < 0.7:
+            ean_base = 5900000000000 + (idx * 100) + vi
+            child(variant, "ean", str(ean_base))
+
         # variant name = combination of values
         combo_label = " / ".join(v for _, v in combo.values()) if combo else name_en
         vtr = ET.SubElement(variant, "translation")
         vtr.set("locale", "en_US")
-        vtr.set("name",   combo_label)
-        vtr.set("slug",   slugify(f"{name_en}-{combo_label}-{idx+1}"))
+        child(vtr, "name", combo_label)
+        child(vtr, "slug", slugify(f"{name_en}-{combo_label}-{idx+1}"))
 
         vtr_de = ET.SubElement(variant, "translation")
         vtr_de.set("locale", "de_DE")
-        vtr_de.set("name",   combo_label)
+        child(vtr_de, "name", combo_label)
 
         if combo:
             options_el = ET.SubElement(variant, "options")
             for opt_code, (opt_name, opt_val) in combo.items():
                 o = ET.SubElement(options_el, "option")
-                o.set("code",                opt_code)
-                o.set("name",                opt_name)
-                o.set("external-code",       f"OPT-{opt_code.upper()}")
-                o.set("value",               opt_val)
-                o.set("value-code",          slugify(opt_val))
-                o.set("external-value-code", f"VAL-{slugify(opt_val).upper()[:8]}")
+                child(o, "code",                opt_code)
+                child(o, "name",                opt_name)
+                child(o, "external-code",       f"OPT-{opt_code.upper()}")
+                child(o, "value",               opt_val)
+                child(o, "value-code",          slugify(opt_val))
+                child(o, "external-value-code", f"VAL-{slugify(opt_val).upper()[:8]}")
 
         # price increases slightly per variant
         variant_price = base_price + (vi * random.randint(500, 2000))
@@ -290,12 +299,12 @@ def build_product(idx, total):
         elif price_shape == 1:
             # Gross price only — vat is required alongside vat-amount
             price_el.set("vat-amount", str(vat_amount))
-            price_el.set("vat",       str(vat_rate))
+            price_el.set("vat",        str(vat_rate))
         else:
             # Net + gross + vat
-            price_el.set("amount",    str(variant_price))
+            price_el.set("amount",     str(variant_price))
             price_el.set("vat-amount", str(vat_amount))
-            price_el.set("vat",       str(vat_rate))
+            price_el.set("vat",        str(vat_rate))
 
         stock_el = ET.SubElement(variant, "stock")
         stock_el.set("on-hand", str(random.randint(0, 200)))
@@ -345,8 +354,7 @@ def build_manifest(files, output_path):
 
     files_el = ET.SubElement(root, "files")
     for path in files:
-        f = ET.SubElement(files_el, "file")
-        f.set("path", os.path.basename(path))
+        child(files_el, "file", os.path.basename(path))
 
     xml_body = indent_xml(root)
     with open(output_path, "w", encoding="utf-8") as fh:

@@ -90,6 +90,31 @@ Slugs are **optional** in all translation elements.
 The importer generates slugs from `name` when omitted.
 Include slugs only when preserving them from a source Sylius instance.
 
+### Content lives in child elements, not attributes
+
+**All string/text content must be modelled as child elements**, never as
+XML attributes. This applies to names, descriptions, codes, slugs,
+values, URLs, paths — anything a supplier types or copy-pastes.
+
+**Why:** XML attributes cannot contain `CDATA` blocks and force callers
+to escape `<`, `>`, `&` and quotes. That breaks on realistic supplier
+content like `Ben & Jerry's`, `L'Oréal`, HTML descriptions and URLs
+with query strings (`?a=1&b=2`). Moving content to child elements lets
+suppliers use `<![CDATA[ ... ]]>` and drop escaping entirely.
+
+**How to apply:** when adding a new field to the XSD:
+
+- If it is a free-form string (`xs:string`, `NonEmptyString`, `xs:anyURI`)
+  → add it as a **child element** inside the complex type's `xs:sequence`.
+- If it is a typed/constrained value (enum, integer, decimal, boolean,
+  locale pattern, currency pattern) → it may stay as an **attribute**.
+- Document-level metadata on the root (`version`, `default-locale`,
+  `channel`) stays as attributes.
+- References/selectors to a code elsewhere in the document (e.g.
+  `<taxons main="...">`) may stay as attributes.
+
+When in doubt: child element.
+
 ### default-locale
 
 The `default-locale` attribute on `<sylius-import>` is a fallback.
@@ -150,6 +175,7 @@ the host — do not `sudo apt-get install` on your own.
 - After any XSD change, re-validate all example and test files
 - Bump `version` in the XSD header comment when making breaking changes
 - Never remove existing elements — add new optional ones instead (backwards compatibility)
+- **When adding a new field, default to a child element** (see *Content lives in child elements*). Only use an attribute for typed/enum/numeric values, references, or root metadata.
 - **When adding any new element or attribute to the XSD, always update all of the following:**
   1. `examples/example-external.xml` — add a realistic value using the external-supplier style
   2. `examples/example-sylius.xml` — add a realistic value using the Sylius-to-Sylius style
@@ -161,9 +187,10 @@ the host — do not `sudo apt-get install` on your own.
 
 ## Rules when editing examples
 
-- `examples/example-external.xml` — must use only `name`, `value`, `external-code`, `external-value-code` for options and attributes (no `code` / `value-code`)
-- `examples/example-sylius.xml` — must use `code` and `value-code` throughout; `slug` must be present on all translations
+- `examples/example-external.xml` — must use only `<name>`, `<value>`, `<external-code>`, `<external-value-code>` for options and attributes (no `<code>` / `<value-code>`)
+- `examples/example-sylius.xml` — must use `<code>` and `<value-code>` throughout; `<slug>` must be present on all translations
 - Both examples must include at least 2 products and 2 locales
+- Both examples must include at least one CDATA block (e.g. in `<description>`) to exercise the "content in child elements" rule
 - Both examples must validate against the XSD before committing
 
 ---
