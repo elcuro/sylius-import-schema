@@ -116,6 +116,32 @@ Expected output for every file: `filename validates`
 
 ---
 
+## Environment policy — no host installs
+
+Never install packages or tools on the host machine (no `apt install`,
+`pip install`, `npm install -g`, `brew`, etc.). The host must stay clean.
+
+If a tool is missing (xmllint, python packages, node tooling, ...), run it
+inside a disposable container instead:
+
+```bash
+# Validate XML with xmllint inside an ephemeral container
+docker run --rm -v "$PWD":/work -w /work alpine:latest \
+    sh -c "apk add --no-cache libxml2-utils >/dev/null && \
+           for f in examples/*.xml tests/*.xml; do \
+               echo -n \"\$f: \"; xmllint --schema sylius-import-2.0.xsd \"\$f\" --noout; \
+           done"
+
+# Run Python with lxml / xmlschema inside a container
+docker run --rm -v "$PWD":/work -w /work python:3.12-slim \
+    sh -c "pip install --quiet lxml && python3 your-script.py"
+```
+
+If Docker itself is unavailable, ask the user before installing anything on
+the host — do not `sudo apt-get install` on your own.
+
+---
+
 ## Rules when editing the XSD
 
 - All comments must be in **English**

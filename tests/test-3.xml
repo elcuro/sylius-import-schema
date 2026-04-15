@@ -24,7 +24,7 @@
                 <image url="https://cdn.example.com/samsung-galaxy-s1-ultra/thumb.jpg" type="thumbnail"/>
             </images>
             <variants>
-                <variant code="PROD-00001-128-GB-BLUE" external-code="EXT-00001-01" enabled="true" ean="5900000000000">
+                <variant code="PROD-00001-128-GB-BLUE" external-code="EXT-00001-01" enabled="true" ean="5900000000000" condition="new">
                     <translation locale="en_US" name="128 GB / Blue" slug="samsung-galaxy-s1-ultra-128-gb---blue-1"/>
                     <translation locale="de_DE" name="128 GB / Blue"/>
                     <options>
@@ -32,37 +32,37 @@
                         <option code="color" name="Color" external-code="OPT-COLOR" value="Blue" value-code="blue" external-value-code="VAL-BLUE"/>
                     </options>
                     <price currency="EUR" amount="121805"/>
-                    <stock on-hand="71"/>
-                    <dimensions weight="0.23" width="88.9" height="387.2" depth="57.1"/>
+                    <stock on-hand="55"/>
+                    <dimensions weight="0.23" width="289.3" height="201.0" depth="23.0"/>
                 </variant>
-                <variant code="PROD-00001-128-GB-BLACK" external-code="EXT-00001-02" enabled="true" ean="5900000000001">
+                <variant code="PROD-00001-128-GB-BLACK" external-code="EXT-00001-02" enabled="true" ean="5900000000001" condition="new">
                     <translation locale="en_US" name="128 GB / Black" slug="samsung-galaxy-s1-ultra-128-gb---black-1"/>
                     <translation locale="de_DE" name="128 GB / Black"/>
                     <options>
                         <option code="storage" name="Storage" external-code="OPT-STORAGE" value="128 GB" value-code="128-gb" external-value-code="VAL-128-GB"/>
                         <option code="color" name="Color" external-code="OPT-COLOR" value="Black" value-code="black" external-value-code="VAL-BLACK"/>
                     </options>
-                    <price currency="EUR" amount="122503"/>
-                    <stock on-hand="91"/>
-                    <dimensions weight="0.24" width="261.9" height="281.1" depth="123.0"/>
+                    <price currency="EUR" amount="123541"/>
+                    <stock on-hand="67"/>
+                    <dimensions weight="0.24" width="251.8" height="318.9" depth="85.1"/>
                 </variant>
             </variants>
         </product>
         <product code="PROD-00002" external-code="EXT-00002" enabled="true" manufacturer="Apple">
             <translations>
                 <translation locale="en_US" name="Apple iPhone 1 Pro" slug="apple-iphone-1-pro-2" short-description="Apple iPhone 1 Pro — high quality product." description="&amp;lt;p&amp;gt;Detailed description of Apple iPhone 1 Pro. Product index 2 of 3.&amp;lt;/p&amp;gt;" meta-title="Apple iPhone 1 Pro | Buy online" meta-description="Buy Apple iPhone 1 Pro at the best price. Free shipping available."/>
-                <translation locale="de_DE" name="Premium Apple iPhone 1 Pro" slug="premium-apple-iphone-1-pro-2"/>
-                <translation locale="fr_FR" name="Apple iPhone 1 Pro Modèle" slug="apple-iphone-1-pro-modèle-2"/>
+                <translation locale="de_DE" name="Elite Apple iPhone 1 Pro" slug="elite-apple-iphone-1-pro-2"/>
+                <translation locale="fr_FR" name="Apple iPhone 1 Pro Version" slug="apple-iphone-1-pro-version-2"/>
             </translations>
             <taxons main="electronics-phones">
                 <taxon code="electronics-phones"/>
                 <taxon code="electronics"/>
             </taxons>
             <attributes>
-                <attribute code="brand" name="Brand" external-code="ATTR-BRAND" value="Samsung" value-code="samsung" external-value-code="VAL-SAMSUNG"/>
+                <attribute code="brand" name="Brand" external-code="ATTR-BRAND" value="Sony" value-code="sony" external-value-code="VAL-SONY"/>
                 <attribute code="color" name="Color" external-code="ATTR-COLOR" value="Space Gray" value-code="space-gray" external-value-code="VAL-SPACE-GR"/>
-                <attribute code="warranty" name="Warranty" external-code="ATTR-WARRANTY" value="24 months" value-code="24-months" external-value-code="VAL-24-MONTH"/>
-                <attribute code="country" name="Country of origin" external-code="ATTR-COUNTRY" value="Japan" value-code="japan" external-value-code="VAL-JAPAN"/>
+                <attribute code="warranty" name="Warranty" external-code="ATTR-WARRANTY" value="12 months" value-code="12-months" external-value-code="VAL-12-MONTH"/>
+                <attribute code="country" name="Country of origin" external-code="ATTR-COUNTRY" value="South Korea" value-code="south-korea" external-value-code="VAL-SOUTH-KO"/>
             </attributes>
             <images>
                 <image url="https://cdn.example.com/apple-iphone-1-pro/main.jpg" type="main"/>
@@ -70,38 +70,27 @@
                 <image url="https://cdn.example.com/apple-iphone-1-pro/thumb.jpg" type="thumbnail"/>
             </images>
             <variants>
-                <variant code="PROD-00002-256-GB-BLACK" external-code="EXT-00002-01" enabled="true" ean="5900000000100">
-                    <translation locale="en_US" name="256 GB / Black" slug="apple-iphone-1-pro-256-gb---black-2"/>
-                    <translation locale="de_DE" name="256 GB / Black"/>
-                    <options>
-                        <option code="storage" name="Storage" external-code="OPT-STORAGE" value="256 GB" value-code="256-gb" external-value-code="VAL-256-GB"/>
-                        <option code="color" name="Color" external-code="OPT-COLOR" value="Black" value-code="black" external-value-code="VAL-BLACK"/>
-                    </options>
-                    <price currency="EUR" amount="147723"/>
-                    <stock on-hand="136"/>
-                    <dimensions weight="0.203" width="232.3" height="149.0" depth="63.1"/>
-                </variant>
-                <variant code="PROD-00002-64-GB-BLACK" external-code="EXT-00002-02" enabled="true">
-                    <translation locale="en_US" name="64 GB / Black" slug="apple-iphone-1-pro-64-gb---black-2"/>
-                    <translation locale="de_DE" name="64 GB / Black"/>
-                    <options>
-                        <option code="storage" name="Storage" external-code="OPT-STORAGE" value="64 GB" value-code="64-gb" external-value-code="VAL-64-GB"/>
-                        <option code="color" name="Color" external-code="OPT-COLOR" value="Black" value-code="black" external-value-code="VAL-BLACK"/>
-                    </options>
-                    <price currency="EUR" amount="149533"/>
-                    <stock on-hand="176"/>
-                    <dimensions weight="0.213" width="189.2" height="305.4" depth="128.0"/>
-                </variant>
-                <variant code="PROD-00002-256-GB-SILVER" external-code="EXT-00002-03" enabled="true">
+                <variant code="PROD-00002-256-GB-SILVER" external-code="EXT-00002-01" enabled="true" ean="5900000000100" condition="new">
                     <translation locale="en_US" name="256 GB / Silver" slug="apple-iphone-1-pro-256-gb---silver-2"/>
                     <translation locale="de_DE" name="256 GB / Silver"/>
                     <options>
                         <option code="storage" name="Storage" external-code="OPT-STORAGE" value="256 GB" value-code="256-gb" external-value-code="VAL-256-GB"/>
                         <option code="color" name="Color" external-code="OPT-COLOR" value="Silver" value-code="silver" external-value-code="VAL-SILVER"/>
                     </options>
-                    <price currency="EUR" amount="149661"/>
-                    <stock on-hand="8"/>
-                    <dimensions weight="0.223" width="251.3" height="220.3" depth="19.3"/>
+                    <price currency="EUR" amount="124707"/>
+                    <stock on-hand="97"/>
+                    <dimensions weight="0.19" width="117.5" height="377.6" depth="106.3"/>
+                </variant>
+                <variant code="PROD-00002-512-GB-BLACK" external-code="EXT-00002-02" enabled="true" ean="5900000000101" condition="new">
+                    <translation locale="en_US" name="512 GB / Black" slug="apple-iphone-1-pro-512-gb---black-2"/>
+                    <translation locale="de_DE" name="512 GB / Black"/>
+                    <options>
+                        <option code="storage" name="Storage" external-code="OPT-STORAGE" value="512 GB" value-code="512-gb" external-value-code="VAL-512-GB"/>
+                        <option code="color" name="Color" external-code="OPT-COLOR" value="Black" value-code="black" external-value-code="VAL-BLACK"/>
+                    </options>
+                    <price currency="EUR" amount="125321"/>
+                    <stock on-hand="58"/>
+                    <dimensions weight="0.2" width="255.5" height="341.5" depth="66.2"/>
                 </variant>
             </variants>
         </product>
@@ -127,38 +116,38 @@
                 <image url="https://cdn.example.com/sony-wh-1000xm5-headphones/thumb.jpg" type="thumbnail"/>
             </images>
             <variants>
-                <variant code="PROD-00003-BLACK-WIRED" external-code="EXT-00003-01" enabled="true">
+                <variant code="PROD-00003-BLACK-WIRED" external-code="EXT-00003-01" enabled="true" condition="new">
                     <translation locale="en_US" name="Black / Wired" slug="sony-wh-1000xm5-headphones-black---wired-3"/>
                     <translation locale="de_DE" name="Black / Wired"/>
                     <options>
                         <option code="color" name="Color" external-code="OPT-COLOR" value="Black" value-code="black" external-value-code="VAL-BLACK"/>
                         <option code="connection" name="Connection" external-code="OPT-CONNECTION" value="Wired" value-code="wired" external-value-code="VAL-WIRED"/>
                     </options>
-                    <price currency="EUR" amount="39860"/>
-                    <stock on-hand="92"/>
-                    <dimensions weight="0.297" width="104.8" height="399.3" depth="81.3"/>
+                    <price currency="EUR" amount="25984"/>
+                    <stock on-hand="35"/>
+                    <dimensions weight="0.261" width="177.4" height="127.3" depth="16.6"/>
                 </variant>
-                <variant code="PROD-00003-SILVER-WIRED" external-code="EXT-00003-02" enabled="true" ean="5900000000201">
+                <variant code="PROD-00003-SILVER-WIRED" external-code="EXT-00003-02" enabled="true" ean="5900000000201" condition="new">
                     <translation locale="en_US" name="Silver / Wired" slug="sony-wh-1000xm5-headphones-silver---wired-3"/>
                     <translation locale="de_DE" name="Silver / Wired"/>
                     <options>
                         <option code="color" name="Color" external-code="OPT-COLOR" value="Silver" value-code="silver" external-value-code="VAL-SILVER"/>
                         <option code="connection" name="Connection" external-code="OPT-CONNECTION" value="Wired" value-code="wired" external-value-code="VAL-WIRED"/>
                     </options>
-                    <price currency="EUR" amount="40456"/>
-                    <stock on-hand="28"/>
-                    <dimensions weight="0.307" width="88.2" height="148.0" depth="105.3"/>
+                    <price currency="EUR" amount="27877"/>
+                    <stock on-hand="108"/>
+                    <dimensions weight="0.271" width="199.1" height="215.4" depth="93.4"/>
                 </variant>
-                <variant code="PROD-00003-WHITE-WIRED" external-code="EXT-00003-03" enabled="true" ean="5900000000202">
+                <variant code="PROD-00003-WHITE-WIRED" external-code="EXT-00003-03" enabled="true" ean="5900000000202" condition="new">
                     <translation locale="en_US" name="White / Wired" slug="sony-wh-1000xm5-headphones-white---wired-3"/>
                     <translation locale="de_DE" name="White / Wired"/>
                     <options>
                         <option code="color" name="Color" external-code="OPT-COLOR" value="White" value-code="white" external-value-code="VAL-WHITE"/>
                         <option code="connection" name="Connection" external-code="OPT-CONNECTION" value="Wired" value-code="wired" external-value-code="VAL-WIRED"/>
                     </options>
-                    <price currency="EUR" amount="42436"/>
-                    <stock on-hand="97"/>
-                    <dimensions weight="0.317" width="199.0" height="240.4" depth="45.2"/>
+                    <price currency="EUR" amount="29250"/>
+                    <stock on-hand="2"/>
+                    <dimensions weight="0.281" width="220.1" height="134.4" depth="133.9"/>
                 </variant>
             </variants>
         </product>

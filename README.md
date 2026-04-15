@@ -258,6 +258,7 @@ Add the following to your root element to enable inline validation and autocompl
 | `external-code` | * | Your internal variant code |
 | `enabled` | no | Whether the variant is active, default `true` |
 | `ean` | no | EAN-13 barcode (e.g. `5901234123457`); omit if not available |
+| `condition` | no | Physical condition: `new` / `used` / `refurbished`, default `new` |
 
 *At least one of `code` / `external-code` must be present.*
 

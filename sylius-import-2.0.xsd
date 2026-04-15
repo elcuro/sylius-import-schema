@@ -33,6 +33,14 @@
         </xs:restriction>
     </xs:simpleType>
 
+    <xs:simpleType name="ConditionType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="new"/>
+            <xs:enumeration value="used"/>
+            <xs:enumeration value="refurbished"/>
+        </xs:restriction>
+    </xs:simpleType>
+
     <xs:simpleType name="NonEmptyString">
         <xs:restriction base="xs:string">
             <xs:minLength value="1"/>
@@ -290,6 +298,8 @@
         <xs:attribute name="enabled"       type="xs:boolean" use="optional" default="true"/>
         <!-- ean — EAN-13 barcode of the variant (e.g. "5901234123457") -->
         <xs:attribute name="ean"           type="xs:string"  use="optional"/>
+        <!-- condition — physical condition of the variant: new / used / refurbished, default "new" -->
+        <xs:attribute name="condition"     type="ConditionType" use="optional" default="new"/>
     </xs:complexType>
 
     <!-- ═══════════════════════════════════════════

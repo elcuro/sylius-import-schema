@@ -74,7 +74,7 @@
             <variants>
 
                 <!-- Variant: Black / 128 GB -->
-                <variant code="IPHONE-15-PRO-BLK-128" enabled="true" ean="5901234100128">
+                <variant code="IPHONE-15-PRO-BLK-128" enabled="true" ean="5901234100128" condition="new">
                     <translation locale="en_US" name="Black / 128 GB"
                                  slug="apple-iphone-15-pro-black-128gb" />
                     <translation locale="de_DE" name="Schwarz / 128 GB"
@@ -92,7 +92,7 @@
                 </variant>
 
                 <!-- Variant: Black / 256 GB -->
-                <variant code="IPHONE-15-PRO-BLK-256" enabled="true" ean="5901234100256">
+                <variant code="IPHONE-15-PRO-BLK-256" enabled="true" ean="5901234100256" condition="refurbished">
                     <translation locale="en_US" name="Black / 256 GB"
                                  slug="apple-iphone-15-pro-black-256gb" />
                     <translation locale="de_DE" name="Schwarz / 256 GB"
@@ -107,7 +107,7 @@
                 </variant>
 
                 <!-- Variant: White / 128 GB -->
-                <variant code="IPHONE-15-PRO-WHT-128" enabled="true">
+                <variant code="IPHONE-15-PRO-WHT-128" enabled="true" condition="used">
                     <translation locale="en_US" name="White / 128 GB"
                                  slug="apple-iphone-15-pro-white-128gb" />
                     <translation locale="de_DE" name="Weiß / 128 GB"
@@ -156,7 +156,7 @@
             </images>
 
             <variants>
-                <variant code="CABLE-USB-C-1M-DEFAULT" external-code="BB-CABLE-001-DEF" enabled="true">
+                <variant code="CABLE-USB-C-1M-DEFAULT" external-code="BB-CABLE-001-DEF" enabled="true" condition="new">
                     <translation locale="en_US" name="USB-C Cable 1m"
                                  slug="usb-c-cable-1m-default" />
                     <price currency="EUR" amount="1490" />

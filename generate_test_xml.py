@@ -248,6 +248,11 @@ def build_product(idx, total):
         if random.random() < 0.7:
             ean_base = 5900000000000 + (idx * 100) + vi
             variant.set("ean", str(ean_base))
+        # condition — mostly new, occasionally used / refurbished
+        variant.set("condition", random.choices(
+            ["new", "used", "refurbished"],
+            weights=[85, 8, 7],
+        )[0])
 
         # variant name = combination of values
         combo_label = " / ".join(v for _, v in combo.values()) if combo else name_en
