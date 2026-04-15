@@ -19,9 +19,9 @@
                 <attribute code="country" name="Country of origin" external-code="ATTR-COUNTRY" value="South Korea" value-code="south-korea" external-value-code="VAL-SOUTH-KO"/>
             </attributes>
             <images>
-                <image url="https://cdn.example.com/samsung-galaxy-s1-ultra/main.jpg" type="main"/>
-                <image url="https://cdn.example.com/samsung-galaxy-s1-ultra/detail.jpg" type="additional"/>
-                <image url="https://cdn.example.com/samsung-galaxy-s1-ultra/thumb.jpg" type="thumbnail"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=samsung-galaxy-s1-ultra-main" type="main"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=samsung-galaxy-s1-ultra-detail" type="additional"/>
+                <image url="https://dummyimage.com/200x200/cccccc/333333.jpg&amp;text=samsung-galaxy-s1-ultra-thumb" type="thumbnail"/>
             </images>
             <variants>
                 <variant code="PROD-00001-128-GB-BLUE" external-code="EXT-00001-01" enabled="true" ean="5900000000000" condition="new">
@@ -65,9 +65,9 @@
                 <attribute code="country" name="Country of origin" external-code="ATTR-COUNTRY" value="USA" value-code="usa" external-value-code="VAL-USA"/>
             </attributes>
             <images>
-                <image url="https://cdn.example.com/apple-iphone-1-pro/main.jpg" type="main"/>
-                <image url="https://cdn.example.com/apple-iphone-1-pro/detail.jpg" type="additional"/>
-                <image url="https://cdn.example.com/apple-iphone-1-pro/thumb.jpg" type="thumbnail"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=apple-iphone-1-pro-main" type="main"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=apple-iphone-1-pro-detail" type="additional"/>
+                <image url="https://dummyimage.com/200x200/cccccc/333333.jpg&amp;text=apple-iphone-1-pro-thumb" type="thumbnail"/>
             </images>
             <variants>
                 <variant code="PROD-00002-512-GB-BLACK" external-code="EXT-00002-01" enabled="true" ean="5900000000100" condition="new">
@@ -133,9 +133,9 @@
                 <attribute code="country" name="Country of origin" external-code="ATTR-COUNTRY" value="China" value-code="china" external-value-code="VAL-CHINA"/>
             </attributes>
             <images>
-                <image url="https://cdn.example.com/sony-wh-1000xm5-headphones/main.jpg" type="main"/>
-                <image url="https://cdn.example.com/sony-wh-1000xm5-headphones/detail.jpg" type="additional"/>
-                <image url="https://cdn.example.com/sony-wh-1000xm5-headphones/thumb.jpg" type="thumbnail"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=sony-wh-1000xm5-headphones-main" type="main"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=sony-wh-1000xm5-headphones-detail" type="additional"/>
+                <image url="https://dummyimage.com/200x200/cccccc/333333.jpg&amp;text=sony-wh-1000xm5-headphones-thumb" type="thumbnail"/>
             </images>
             <variants>
                 <variant code="PROD-00003-BLACK-WIRELESS" external-code="EXT-00003-01" enabled="true" ean="5900000000200" condition="new">

@@ -19,9 +19,9 @@
                 <attribute code="country" name="Country of origin" external-code="ATTR-COUNTRY" value="South Korea" value-code="south-korea" external-value-code="VAL-SOUTH-KO"/>
             </attributes>
             <images>
-                <image url="https://cdn.example.com/samsung-galaxy-s1-ultra/main.jpg" type="main"/>
-                <image url="https://cdn.example.com/samsung-galaxy-s1-ultra/detail.jpg" type="additional"/>
-                <image url="https://cdn.example.com/samsung-galaxy-s1-ultra/thumb.jpg" type="thumbnail"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=samsung-galaxy-s1-ultra-main" type="main"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=samsung-galaxy-s1-ultra-detail" type="additional"/>
+                <image url="https://dummyimage.com/200x200/cccccc/333333.jpg&amp;text=samsung-galaxy-s1-ultra-thumb" type="thumbnail"/>
             </images>
             <variants>
                 <variant code="PROD-00001-256-GB-GOLD" external-code="EXT-00001-01" enabled="true" condition="new">
@@ -87,9 +87,9 @@
                 <attribute code="country" name="Country of origin" external-code="ATTR-COUNTRY" value="South Korea" value-code="south-korea" external-value-code="VAL-SOUTH-KO"/>
             </attributes>
             <images>
-                <image url="https://cdn.example.com/apple-iphone-1-pro/main.jpg" type="main"/>
-                <image url="https://cdn.example.com/apple-iphone-1-pro/detail.jpg" type="additional"/>
-                <image url="https://cdn.example.com/apple-iphone-1-pro/thumb.jpg" type="thumbnail"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=apple-iphone-1-pro-main" type="main"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=apple-iphone-1-pro-detail" type="additional"/>
+                <image url="https://dummyimage.com/200x200/cccccc/333333.jpg&amp;text=apple-iphone-1-pro-thumb" type="thumbnail"/>
             </images>
             <variants>
                 <variant code="PROD-00002-64-GB-GOLD" external-code="EXT-00002-01" enabled="true" ean="5900000000100" condition="new">
@@ -133,9 +133,9 @@
                 <attribute code="country" name="Country of origin" external-code="ATTR-COUNTRY" value="China" value-code="china" external-value-code="VAL-CHINA"/>
             </attributes>
             <images>
-                <image url="https://cdn.example.com/sony-wh-1000xm5-headphones/main.jpg" type="main"/>
-                <image url="https://cdn.example.com/sony-wh-1000xm5-headphones/detail.jpg" type="additional"/>
-                <image url="https://cdn.example.com/sony-wh-1000xm5-headphones/thumb.jpg" type="thumbnail"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=sony-wh-1000xm5-headphones-main" type="main"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=sony-wh-1000xm5-headphones-detail" type="additional"/>
+                <image url="https://dummyimage.com/200x200/cccccc/333333.jpg&amp;text=sony-wh-1000xm5-headphones-thumb" type="thumbnail"/>
             </images>
             <variants>
                 <variant code="PROD-00003-BLACK-WIRELESS" external-code="EXT-00003-01" enabled="true" ean="5900000000200" condition="refurbished">
@@ -201,9 +201,9 @@
                 <attribute code="country" name="Country of origin" external-code="ATTR-COUNTRY" value="South Korea" value-code="south-korea" external-value-code="VAL-SOUTH-KO"/>
             </attributes>
             <images>
-                <image url="https://cdn.example.com/lg-oled1c-laptop/main.jpg" type="main"/>
-                <image url="https://cdn.example.com/lg-oled1c-laptop/detail.jpg" type="additional"/>
-                <image url="https://cdn.example.com/lg-oled1c-laptop/thumb.jpg" type="thumbnail"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=lg-oled1c-laptop-main" type="main"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=lg-oled1c-laptop-detail" type="additional"/>
+                <image url="https://dummyimage.com/200x200/cccccc/333333.jpg&amp;text=lg-oled1c-laptop-thumb" type="thumbnail"/>
             </images>
             <variants>
                 <variant code="PROD-00004-1-TB-SSD-8-GB" external-code="EXT-00004-01" enabled="true" ean="5900000000300" condition="new">
@@ -247,9 +247,9 @@
                 <attribute code="fit" name="Fit" external-code="ATTR-FIT" value="Oversized" value-code="oversized" external-value-code="VAL-OVERSIZE"/>
             </attributes>
             <images>
-                <image url="https://cdn.example.com/nike-air-max-1/main.jpg" type="main"/>
-                <image url="https://cdn.example.com/nike-air-max-1/detail.jpg" type="additional"/>
-                <image url="https://cdn.example.com/nike-air-max-1/thumb.jpg" type="thumbnail"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=nike-air-max-1-main" type="main"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=nike-air-max-1-detail" type="additional"/>
+                <image url="https://dummyimage.com/200x200/cccccc/333333.jpg&amp;text=nike-air-max-1-thumb" type="thumbnail"/>
             </images>
             <variants>
                 <variant code="PROD-00005-WHITE-M" external-code="EXT-00005-01" enabled="true" condition="new">
@@ -315,9 +315,9 @@
                 <attribute code="fit" name="Fit" external-code="ATTR-FIT" value="Slim" value-code="slim" external-value-code="VAL-SLIM"/>
             </attributes>
             <images>
-                <image url="https://cdn.example.com/adidas-ultraboost-1/main.jpg" type="main"/>
-                <image url="https://cdn.example.com/adidas-ultraboost-1/detail.jpg" type="additional"/>
-                <image url="https://cdn.example.com/adidas-ultraboost-1/thumb.jpg" type="thumbnail"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=adidas-ultraboost-1-main" type="main"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=adidas-ultraboost-1-detail" type="additional"/>
+                <image url="https://dummyimage.com/200x200/cccccc/333333.jpg&amp;text=adidas-ultraboost-1-thumb" type="thumbnail"/>
             </images>
             <variants>
                 <variant code="PROD-00006-BLUE-M" external-code="EXT-00006-01" enabled="true" ean="5900000000500" condition="new">
@@ -361,9 +361,9 @@
                 <attribute code="fit" name="Fit" external-code="ATTR-FIT" value="Regular" value-code="regular" external-value-code="VAL-REGULAR"/>
             </attributes>
             <images>
-                <image url="https://cdn.example.com/zara-slim-fit-shirt-1/main.jpg" type="main"/>
-                <image url="https://cdn.example.com/zara-slim-fit-shirt-1/detail.jpg" type="additional"/>
-                <image url="https://cdn.example.com/zara-slim-fit-shirt-1/thumb.jpg" type="thumbnail"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=zara-slim-fit-shirt-1-main" type="main"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=zara-slim-fit-shirt-1-detail" type="additional"/>
+                <image url="https://dummyimage.com/200x200/cccccc/333333.jpg&amp;text=zara-slim-fit-shirt-1-thumb" type="thumbnail"/>
             </images>
             <variants>
                 <variant code="PROD-00007-BLACK-L" external-code="EXT-00007-01" enabled="true" ean="5900000000600" condition="new">
@@ -451,9 +451,9 @@
                 <attribute code="fit" name="Fit" external-code="ATTR-FIT" value="Oversized" value-code="oversized" external-value-code="VAL-OVERSIZE"/>
             </attributes>
             <images>
-                <image url="https://cdn.example.com/handm-womens-dress-1/main.jpg" type="main"/>
-                <image url="https://cdn.example.com/handm-womens-dress-1/detail.jpg" type="additional"/>
-                <image url="https://cdn.example.com/handm-womens-dress-1/thumb.jpg" type="thumbnail"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=handm-womens-dress-1-main" type="main"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=handm-womens-dress-1-detail" type="additional"/>
+                <image url="https://dummyimage.com/200x200/cccccc/333333.jpg&amp;text=handm-womens-dress-1-thumb" type="thumbnail"/>
             </images>
             <variants>
                 <variant code="PROD-00008-BLACK-L" external-code="EXT-00008-01" enabled="true" ean="5900000000700" condition="refurbished">
@@ -540,9 +540,9 @@
                 <attribute code="material" name="Material" external-code="ATTR-MATERIAL" value="Mesh" value-code="mesh" external-value-code="VAL-MESH"/>
             </attributes>
             <images>
-                <image url="https://cdn.example.com/specialized-bike-part-1/main.jpg" type="main"/>
-                <image url="https://cdn.example.com/specialized-bike-part-1/detail.jpg" type="additional"/>
-                <image url="https://cdn.example.com/specialized-bike-part-1/thumb.jpg" type="thumbnail"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=specialized-bike-part-1-main" type="main"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=specialized-bike-part-1-detail" type="additional"/>
+                <image url="https://dummyimage.com/200x200/cccccc/333333.jpg&amp;text=specialized-bike-part-1-thumb" type="thumbnail"/>
             </images>
             <variants>
                 <variant code="PROD-00009-BLACK-L" external-code="EXT-00009-01" enabled="true" ean="5900000000800" condition="new">
@@ -607,9 +607,9 @@
                 <attribute code="material" name="Material" external-code="ATTR-MATERIAL" value="Neoprene" value-code="neoprene" external-value-code="VAL-NEOPRENE"/>
             </attributes>
             <images>
-                <image url="https://cdn.example.com/under-armour-training-set-1/main.jpg" type="main"/>
-                <image url="https://cdn.example.com/under-armour-training-set-1/detail.jpg" type="additional"/>
-                <image url="https://cdn.example.com/under-armour-training-set-1/thumb.jpg" type="thumbnail"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=under-armour-training-set-1-main" type="main"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=under-armour-training-set-1-detail" type="additional"/>
+                <image url="https://dummyimage.com/200x200/cccccc/333333.jpg&amp;text=under-armour-training-set-1-thumb" type="thumbnail"/>
             </images>
             <variants>
                 <variant code="PROD-00010-L-BLUE" external-code="EXT-00010-01" enabled="true" ean="5900000000900" condition="used">
@@ -651,9 +651,9 @@
                 <attribute code="color" name="Color" external-code="ATTR-COLOR" value="Blue" value-code="blue" external-value-code="VAL-BLUE"/>
             </attributes>
             <images>
-                <image url="https://cdn.example.com/ikea-kallax-shelf-1/main.jpg" type="main"/>
-                <image url="https://cdn.example.com/ikea-kallax-shelf-1/detail.jpg" type="additional"/>
-                <image url="https://cdn.example.com/ikea-kallax-shelf-1/thumb.jpg" type="thumbnail"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=ikea-kallax-shelf-1-main" type="main"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=ikea-kallax-shelf-1-detail" type="additional"/>
+                <image url="https://dummyimage.com/200x200/cccccc/333333.jpg&amp;text=ikea-kallax-shelf-1-thumb" type="thumbnail"/>
             </images>
             <variants>
                 <variant code="PROD-00011-BLACK-M" external-code="EXT-00011-01" enabled="true" ean="5900000001000" condition="new">
@@ -695,9 +695,9 @@
                 <attribute code="color" name="Color" external-code="ATTR-COLOR" value="Red" value-code="red" external-value-code="VAL-RED"/>
             </attributes>
             <images>
-                <image url="https://cdn.example.com/philips-airfryer-1/main.jpg" type="main"/>
-                <image url="https://cdn.example.com/philips-airfryer-1/detail.jpg" type="additional"/>
-                <image url="https://cdn.example.com/philips-airfryer-1/thumb.jpg" type="thumbnail"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=philips-airfryer-1-main" type="main"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=philips-airfryer-1-detail" type="additional"/>
+                <image url="https://dummyimage.com/200x200/cccccc/333333.jpg&amp;text=philips-airfryer-1-thumb" type="thumbnail"/>
             </images>
             <variants>
                 <variant code="PROD-00012-BLACK-S" external-code="EXT-00012-01" enabled="true" ean="5900000001100" condition="new">
@@ -761,9 +761,9 @@
                 <attribute code="color" name="Color" external-code="ATTR-COLOR" value="Blue" value-code="blue" external-value-code="VAL-BLUE"/>
             </attributes>
             <images>
-                <image url="https://cdn.example.com/bosch-hand-blender-1/main.jpg" type="main"/>
-                <image url="https://cdn.example.com/bosch-hand-blender-1/detail.jpg" type="additional"/>
-                <image url="https://cdn.example.com/bosch-hand-blender-1/thumb.jpg" type="thumbnail"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=bosch-hand-blender-1-main" type="main"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=bosch-hand-blender-1-detail" type="additional"/>
+                <image url="https://dummyimage.com/200x200/cccccc/333333.jpg&amp;text=bosch-hand-blender-1-thumb" type="thumbnail"/>
             </images>
             <variants>
                 <variant code="PROD-00013-WHITE-M" external-code="EXT-00013-01" enabled="true" condition="new">
@@ -828,9 +828,9 @@
                 <attribute code="material" name="Material" external-code="ATTR-MATERIAL" value="Ceramic" value-code="ceramic" external-value-code="VAL-CERAMIC"/>
             </attributes>
             <images>
-                <image url="https://cdn.example.com/dyson-v1-vacuum/main.jpg" type="main"/>
-                <image url="https://cdn.example.com/dyson-v1-vacuum/detail.jpg" type="additional"/>
-                <image url="https://cdn.example.com/dyson-v1-vacuum/thumb.jpg" type="thumbnail"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=dyson-v1-vacuum-main" type="main"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=dyson-v1-vacuum-detail" type="additional"/>
+                <image url="https://dummyimage.com/200x200/cccccc/333333.jpg&amp;text=dyson-v1-vacuum-thumb" type="thumbnail"/>
             </images>
             <variants>
                 <variant code="PROD-00014-WHITE-S" external-code="EXT-00014-01" enabled="true" ean="5900000001300" condition="new">
@@ -918,9 +918,9 @@
                 <attribute code="country" name="Country of origin" external-code="ATTR-COUNTRY" value="China" value-code="china" external-value-code="VAL-CHINA"/>
             </attributes>
             <images>
-                <image url="https://cdn.example.com/canon-eos-r1/main.jpg" type="main"/>
-                <image url="https://cdn.example.com/canon-eos-r1/detail.jpg" type="additional"/>
-                <image url="https://cdn.example.com/canon-eos-r1/thumb.jpg" type="thumbnail"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=canon-eos-r1-main" type="main"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=canon-eos-r1-detail" type="additional"/>
+                <image url="https://dummyimage.com/200x200/cccccc/333333.jpg&amp;text=canon-eos-r1-thumb" type="thumbnail"/>
             </images>
             <variants>
                 <variant code="PROD-00015-BLUE-S" external-code="EXT-00015-01" enabled="true" ean="5900000001400" condition="new">
@@ -1008,9 +1008,9 @@
                 <attribute code="country" name="Country of origin" external-code="ATTR-COUNTRY" value="China" value-code="china" external-value-code="VAL-CHINA"/>
             </attributes>
             <images>
-                <image url="https://cdn.example.com/samsung-galaxy-s2-ultra/main.jpg" type="main"/>
-                <image url="https://cdn.example.com/samsung-galaxy-s2-ultra/detail.jpg" type="additional"/>
-                <image url="https://cdn.example.com/samsung-galaxy-s2-ultra/thumb.jpg" type="thumbnail"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=samsung-galaxy-s2-ultra-main" type="main"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=samsung-galaxy-s2-ultra-detail" type="additional"/>
+                <image url="https://dummyimage.com/200x200/cccccc/333333.jpg&amp;text=samsung-galaxy-s2-ultra-thumb" type="thumbnail"/>
             </images>
             <variants>
                 <variant code="PROD-00016-128-GB-SILVER" external-code="EXT-00016-01" enabled="true" ean="5900000001500" condition="new">
@@ -1065,9 +1065,9 @@
                 <attribute code="country" name="Country of origin" external-code="ATTR-COUNTRY" value="USA" value-code="usa" external-value-code="VAL-USA"/>
             </attributes>
             <images>
-                <image url="https://cdn.example.com/apple-iphone-2-pro/main.jpg" type="main"/>
-                <image url="https://cdn.example.com/apple-iphone-2-pro/detail.jpg" type="additional"/>
-                <image url="https://cdn.example.com/apple-iphone-2-pro/thumb.jpg" type="thumbnail"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=apple-iphone-2-pro-main" type="main"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=apple-iphone-2-pro-detail" type="additional"/>
+                <image url="https://dummyimage.com/200x200/cccccc/333333.jpg&amp;text=apple-iphone-2-pro-thumb" type="thumbnail"/>
             </images>
             <variants>
                 <variant code="PROD-00017-256-GB-GOLD" external-code="EXT-00017-01" enabled="true" ean="5900000001600" condition="new">
@@ -1155,9 +1155,9 @@
                 <attribute code="country" name="Country of origin" external-code="ATTR-COUNTRY" value="Japan" value-code="japan" external-value-code="VAL-JAPAN"/>
             </attributes>
             <images>
-                <image url="https://cdn.example.com/sony-wh-2000xm5-headphones/main.jpg" type="main"/>
-                <image url="https://cdn.example.com/sony-wh-2000xm5-headphones/detail.jpg" type="additional"/>
-                <image url="https://cdn.example.com/sony-wh-2000xm5-headphones/thumb.jpg" type="thumbnail"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=sony-wh-2000xm5-headphones-main" type="main"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=sony-wh-2000xm5-headphones-detail" type="additional"/>
+                <image url="https://dummyimage.com/200x200/cccccc/333333.jpg&amp;text=sony-wh-2000xm5-headphones-thumb" type="thumbnail"/>
             </images>
             <variants>
                 <variant code="PROD-00018-WHITE-WIRED" external-code="EXT-00018-01" enabled="true" condition="used">
@@ -1223,9 +1223,9 @@
                 <attribute code="country" name="Country of origin" external-code="ATTR-COUNTRY" value="USA" value-code="usa" external-value-code="VAL-USA"/>
             </attributes>
             <images>
-                <image url="https://cdn.example.com/lg-oled2c-laptop/main.jpg" type="main"/>
-                <image url="https://cdn.example.com/lg-oled2c-laptop/detail.jpg" type="additional"/>
-                <image url="https://cdn.example.com/lg-oled2c-laptop/thumb.jpg" type="thumbnail"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=lg-oled2c-laptop-main" type="main"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=lg-oled2c-laptop-detail" type="additional"/>
+                <image url="https://dummyimage.com/200x200/cccccc/333333.jpg&amp;text=lg-oled2c-laptop-thumb" type="thumbnail"/>
             </images>
             <variants>
                 <variant code="PROD-00019-256-GB-SSD-16-GB" external-code="EXT-00019-01" enabled="true" ean="5900000001800" condition="new">
@@ -1313,9 +1313,9 @@
                 <attribute code="fit" name="Fit" external-code="ATTR-FIT" value="Oversized" value-code="oversized" external-value-code="VAL-OVERSIZE"/>
             </attributes>
             <images>
-                <image url="https://cdn.example.com/nike-air-max-2/main.jpg" type="main"/>
-                <image url="https://cdn.example.com/nike-air-max-2/detail.jpg" type="additional"/>
-                <image url="https://cdn.example.com/nike-air-max-2/thumb.jpg" type="thumbnail"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=nike-air-max-2-main" type="main"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=nike-air-max-2-detail" type="additional"/>
+                <image url="https://dummyimage.com/200x200/cccccc/333333.jpg&amp;text=nike-air-max-2-thumb" type="thumbnail"/>
             </images>
             <variants>
                 <variant code="PROD-00020-WHITE-L" external-code="EXT-00020-01" enabled="true" ean="5900000001900" condition="new">
@@ -1381,9 +1381,9 @@
                 <attribute code="fit" name="Fit" external-code="ATTR-FIT" value="Regular" value-code="regular" external-value-code="VAL-REGULAR"/>
             </attributes>
             <images>
-                <image url="https://cdn.example.com/adidas-ultraboost-2/main.jpg" type="main"/>
-                <image url="https://cdn.example.com/adidas-ultraboost-2/detail.jpg" type="additional"/>
-                <image url="https://cdn.example.com/adidas-ultraboost-2/thumb.jpg" type="thumbnail"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=adidas-ultraboost-2-main" type="main"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=adidas-ultraboost-2-detail" type="additional"/>
+                <image url="https://dummyimage.com/200x200/cccccc/333333.jpg&amp;text=adidas-ultraboost-2-thumb" type="thumbnail"/>
             </images>
             <variants>
                 <variant code="PROD-00021-BLACK-M" external-code="EXT-00021-01" enabled="true" ean="5900000002000" condition="used">
@@ -1449,9 +1449,9 @@
                 <attribute code="fit" name="Fit" external-code="ATTR-FIT" value="Regular" value-code="regular" external-value-code="VAL-REGULAR"/>
             </attributes>
             <images>
-                <image url="https://cdn.example.com/zara-slim-fit-shirt-2/main.jpg" type="main"/>
-                <image url="https://cdn.example.com/zara-slim-fit-shirt-2/detail.jpg" type="additional"/>
-                <image url="https://cdn.example.com/zara-slim-fit-shirt-2/thumb.jpg" type="thumbnail"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=zara-slim-fit-shirt-2-main" type="main"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=zara-slim-fit-shirt-2-detail" type="additional"/>
+                <image url="https://dummyimage.com/200x200/cccccc/333333.jpg&amp;text=zara-slim-fit-shirt-2-thumb" type="thumbnail"/>
             </images>
             <variants>
                 <variant code="PROD-00022-BLACK-M" external-code="EXT-00022-01" enabled="true" ean="5900000002100" condition="used">
@@ -1517,9 +1517,9 @@
                 <attribute code="fit" name="Fit" external-code="ATTR-FIT" value="Oversized" value-code="oversized" external-value-code="VAL-OVERSIZE"/>
             </attributes>
             <images>
-                <image url="https://cdn.example.com/handm-womens-dress-2/main.jpg" type="main"/>
-                <image url="https://cdn.example.com/handm-womens-dress-2/detail.jpg" type="additional"/>
-                <image url="https://cdn.example.com/handm-womens-dress-2/thumb.jpg" type="thumbnail"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=handm-womens-dress-2-main" type="main"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=handm-womens-dress-2-detail" type="additional"/>
+                <image url="https://dummyimage.com/200x200/cccccc/333333.jpg&amp;text=handm-womens-dress-2-thumb" type="thumbnail"/>
             </images>
             <variants>
                 <variant code="PROD-00023-BLUE-S" external-code="EXT-00023-01" enabled="true" condition="new">
@@ -1606,9 +1606,9 @@
                 <attribute code="material" name="Material" external-code="ATTR-MATERIAL" value="Carbon fiber" value-code="carbon-fiber" external-value-code="VAL-CARBON-F"/>
             </attributes>
             <images>
-                <image url="https://cdn.example.com/specialized-bike-part-2/main.jpg" type="main"/>
-                <image url="https://cdn.example.com/specialized-bike-part-2/detail.jpg" type="additional"/>
-                <image url="https://cdn.example.com/specialized-bike-part-2/thumb.jpg" type="thumbnail"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=specialized-bike-part-2-main" type="main"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=specialized-bike-part-2-detail" type="additional"/>
+                <image url="https://dummyimage.com/200x200/cccccc/333333.jpg&amp;text=specialized-bike-part-2-thumb" type="thumbnail"/>
             </images>
             <variants>
                 <variant code="PROD-00024-BLUE-L" external-code="EXT-00024-01" enabled="true" ean="5900000002300" condition="new">
@@ -1651,9 +1651,9 @@
                 <attribute code="material" name="Material" external-code="ATTR-MATERIAL" value="Mesh" value-code="mesh" external-value-code="VAL-MESH"/>
             </attributes>
             <images>
-                <image url="https://cdn.example.com/under-armour-training-set-2/main.jpg" type="main"/>
-                <image url="https://cdn.example.com/under-armour-training-set-2/detail.jpg" type="additional"/>
-                <image url="https://cdn.example.com/under-armour-training-set-2/thumb.jpg" type="thumbnail"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=under-armour-training-set-2-main" type="main"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=under-armour-training-set-2-detail" type="additional"/>
+                <image url="https://dummyimage.com/200x200/cccccc/333333.jpg&amp;text=under-armour-training-set-2-thumb" type="thumbnail"/>
             </images>
             <variants>
                 <variant code="PROD-00025-S-WHITE" external-code="EXT-00025-01" enabled="true" ean="5900000002400" condition="new">
@@ -1706,9 +1706,9 @@
                 <attribute code="color" name="Color" external-code="ATTR-COLOR" value="Red" value-code="red" external-value-code="VAL-RED"/>
             </attributes>
             <images>
-                <image url="https://cdn.example.com/ikea-kallax-shelf-2/main.jpg" type="main"/>
-                <image url="https://cdn.example.com/ikea-kallax-shelf-2/detail.jpg" type="additional"/>
-                <image url="https://cdn.example.com/ikea-kallax-shelf-2/thumb.jpg" type="thumbnail"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=ikea-kallax-shelf-2-main" type="main"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=ikea-kallax-shelf-2-detail" type="additional"/>
+                <image url="https://dummyimage.com/200x200/cccccc/333333.jpg&amp;text=ikea-kallax-shelf-2-thumb" type="thumbnail"/>
             </images>
             <variants>
                 <variant code="PROD-00026-BLACK-S" external-code="EXT-00026-01" enabled="true" ean="5900000002500" condition="new">
@@ -1794,9 +1794,9 @@
                 <attribute code="color" name="Color" external-code="ATTR-COLOR" value="Red" value-code="red" external-value-code="VAL-RED"/>
             </attributes>
             <images>
-                <image url="https://cdn.example.com/philips-airfryer-2/main.jpg" type="main"/>
-                <image url="https://cdn.example.com/philips-airfryer-2/detail.jpg" type="additional"/>
-                <image url="https://cdn.example.com/philips-airfryer-2/thumb.jpg" type="thumbnail"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=philips-airfryer-2-main" type="main"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=philips-airfryer-2-detail" type="additional"/>
+                <image url="https://dummyimage.com/200x200/cccccc/333333.jpg&amp;text=philips-airfryer-2-thumb" type="thumbnail"/>
             </images>
             <variants>
                 <variant code="PROD-00027-BLACK-S" external-code="EXT-00027-01" enabled="true" condition="new">
@@ -1838,9 +1838,9 @@
                 <attribute code="color" name="Color" external-code="ATTR-COLOR" value="Blue" value-code="blue" external-value-code="VAL-BLUE"/>
             </attributes>
             <images>
-                <image url="https://cdn.example.com/bosch-hand-blender-2/main.jpg" type="main"/>
-                <image url="https://cdn.example.com/bosch-hand-blender-2/detail.jpg" type="additional"/>
-                <image url="https://cdn.example.com/bosch-hand-blender-2/thumb.jpg" type="thumbnail"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=bosch-hand-blender-2-main" type="main"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=bosch-hand-blender-2-detail" type="additional"/>
+                <image url="https://dummyimage.com/200x200/cccccc/333333.jpg&amp;text=bosch-hand-blender-2-thumb" type="thumbnail"/>
             </images>
             <variants>
                 <variant code="PROD-00028-BLACK-L" external-code="EXT-00028-01" enabled="true" condition="new">
@@ -1883,9 +1883,9 @@
                 <attribute code="material" name="Material" external-code="ATTR-MATERIAL" value="Metal" value-code="metal" external-value-code="VAL-METAL"/>
             </attributes>
             <images>
-                <image url="https://cdn.example.com/dyson-v2-vacuum/main.jpg" type="main"/>
-                <image url="https://cdn.example.com/dyson-v2-vacuum/detail.jpg" type="additional"/>
-                <image url="https://cdn.example.com/dyson-v2-vacuum/thumb.jpg" type="thumbnail"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=dyson-v2-vacuum-main" type="main"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=dyson-v2-vacuum-detail" type="additional"/>
+                <image url="https://dummyimage.com/200x200/cccccc/333333.jpg&amp;text=dyson-v2-vacuum-thumb" type="thumbnail"/>
             </images>
             <variants>
                 <variant code="PROD-00029-BLUE-S" external-code="EXT-00029-01" enabled="true" condition="new">
@@ -1929,9 +1929,9 @@
                 <attribute code="country" name="Country of origin" external-code="ATTR-COUNTRY" value="USA" value-code="usa" external-value-code="VAL-USA"/>
             </attributes>
             <images>
-                <image url="https://cdn.example.com/canon-eos-r2/main.jpg" type="main"/>
-                <image url="https://cdn.example.com/canon-eos-r2/detail.jpg" type="additional"/>
-                <image url="https://cdn.example.com/canon-eos-r2/thumb.jpg" type="thumbnail"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=canon-eos-r2-main" type="main"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=canon-eos-r2-detail" type="additional"/>
+                <image url="https://dummyimage.com/200x200/cccccc/333333.jpg&amp;text=canon-eos-r2-thumb" type="thumbnail"/>
             </images>
             <variants>
                 <variant code="PROD-00030-BLUE-M" external-code="EXT-00030-01" enabled="true" ean="5900000002900" condition="new">
@@ -1986,9 +1986,9 @@
                 <attribute code="country" name="Country of origin" external-code="ATTR-COUNTRY" value="USA" value-code="usa" external-value-code="VAL-USA"/>
             </attributes>
             <images>
-                <image url="https://cdn.example.com/samsung-galaxy-s3-ultra/main.jpg" type="main"/>
-                <image url="https://cdn.example.com/samsung-galaxy-s3-ultra/detail.jpg" type="additional"/>
-                <image url="https://cdn.example.com/samsung-galaxy-s3-ultra/thumb.jpg" type="thumbnail"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=samsung-galaxy-s3-ultra-main" type="main"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=samsung-galaxy-s3-ultra-detail" type="additional"/>
+                <image url="https://dummyimage.com/200x200/cccccc/333333.jpg&amp;text=samsung-galaxy-s3-ultra-thumb" type="thumbnail"/>
             </images>
             <variants>
                 <variant code="PROD-00031-512-GB-BLUE" external-code="EXT-00031-01" enabled="true" ean="5900000003000" condition="used">
@@ -2043,9 +2043,9 @@
                 <attribute code="country" name="Country of origin" external-code="ATTR-COUNTRY" value="China" value-code="china" external-value-code="VAL-CHINA"/>
             </attributes>
             <images>
-                <image url="https://cdn.example.com/apple-iphone-3-pro/main.jpg" type="main"/>
-                <image url="https://cdn.example.com/apple-iphone-3-pro/detail.jpg" type="additional"/>
-                <image url="https://cdn.example.com/apple-iphone-3-pro/thumb.jpg" type="thumbnail"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=apple-iphone-3-pro-main" type="main"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=apple-iphone-3-pro-detail" type="additional"/>
+                <image url="https://dummyimage.com/200x200/cccccc/333333.jpg&amp;text=apple-iphone-3-pro-thumb" type="thumbnail"/>
             </images>
             <variants>
                 <variant code="PROD-00032-128-GB-BLUE" external-code="EXT-00032-01" enabled="true" condition="new">
@@ -2133,9 +2133,9 @@
                 <attribute code="country" name="Country of origin" external-code="ATTR-COUNTRY" value="South Korea" value-code="south-korea" external-value-code="VAL-SOUTH-KO"/>
             </attributes>
             <images>
-                <image url="https://cdn.example.com/sony-wh-3000xm5-headphones/main.jpg" type="main"/>
-                <image url="https://cdn.example.com/sony-wh-3000xm5-headphones/detail.jpg" type="additional"/>
-                <image url="https://cdn.example.com/sony-wh-3000xm5-headphones/thumb.jpg" type="thumbnail"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=sony-wh-3000xm5-headphones-main" type="main"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=sony-wh-3000xm5-headphones-detail" type="additional"/>
+                <image url="https://dummyimage.com/200x200/cccccc/333333.jpg&amp;text=sony-wh-3000xm5-headphones-thumb" type="thumbnail"/>
             </images>
             <variants>
                 <variant code="PROD-00033-WHITE-WIRELESS" external-code="EXT-00033-01" enabled="true" ean="5900000003200" condition="refurbished">
@@ -2190,9 +2190,9 @@
                 <attribute code="country" name="Country of origin" external-code="ATTR-COUNTRY" value="USA" value-code="usa" external-value-code="VAL-USA"/>
             </attributes>
             <images>
-                <image url="https://cdn.example.com/lg-oled3c-laptop/main.jpg" type="main"/>
-                <image url="https://cdn.example.com/lg-oled3c-laptop/detail.jpg" type="additional"/>
-                <image url="https://cdn.example.com/lg-oled3c-laptop/thumb.jpg" type="thumbnail"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=lg-oled3c-laptop-main" type="main"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=lg-oled3c-laptop-detail" type="additional"/>
+                <image url="https://dummyimage.com/200x200/cccccc/333333.jpg&amp;text=lg-oled3c-laptop-thumb" type="thumbnail"/>
             </images>
             <variants>
                 <variant code="PROD-00034-512-GB-SSD-32-GB" external-code="EXT-00034-01" enabled="true" ean="5900000003300" condition="new">
@@ -2258,9 +2258,9 @@
                 <attribute code="fit" name="Fit" external-code="ATTR-FIT" value="Oversized" value-code="oversized" external-value-code="VAL-OVERSIZE"/>
             </attributes>
             <images>
-                <image url="https://cdn.example.com/nike-air-max-3/main.jpg" type="main"/>
-                <image url="https://cdn.example.com/nike-air-max-3/detail.jpg" type="additional"/>
-                <image url="https://cdn.example.com/nike-air-max-3/thumb.jpg" type="thumbnail"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=nike-air-max-3-main" type="main"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=nike-air-max-3-detail" type="additional"/>
+                <image url="https://dummyimage.com/200x200/cccccc/333333.jpg&amp;text=nike-air-max-3-thumb" type="thumbnail"/>
             </images>
             <variants>
                 <variant code="PROD-00035-WHITE-S" external-code="EXT-00035-01" enabled="true" condition="new">
@@ -2315,9 +2315,9 @@
                 <attribute code="fit" name="Fit" external-code="ATTR-FIT" value="Relaxed" value-code="relaxed" external-value-code="VAL-RELAXED"/>
             </attributes>
             <images>
-                <image url="https://cdn.example.com/adidas-ultraboost-3/main.jpg" type="main"/>
-                <image url="https://cdn.example.com/adidas-ultraboost-3/detail.jpg" type="additional"/>
-                <image url="https://cdn.example.com/adidas-ultraboost-3/thumb.jpg" type="thumbnail"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=adidas-ultraboost-3-main" type="main"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=adidas-ultraboost-3-detail" type="additional"/>
+                <image url="https://dummyimage.com/200x200/cccccc/333333.jpg&amp;text=adidas-ultraboost-3-thumb" type="thumbnail"/>
             </images>
             <variants>
                 <variant code="PROD-00036-BLACK-M" external-code="EXT-00036-01" enabled="true" condition="new">
@@ -2361,9 +2361,9 @@
                 <attribute code="fit" name="Fit" external-code="ATTR-FIT" value="Relaxed" value-code="relaxed" external-value-code="VAL-RELAXED"/>
             </attributes>
             <images>
-                <image url="https://cdn.example.com/zara-slim-fit-shirt-3/main.jpg" type="main"/>
-                <image url="https://cdn.example.com/zara-slim-fit-shirt-3/detail.jpg" type="additional"/>
-                <image url="https://cdn.example.com/zara-slim-fit-shirt-3/thumb.jpg" type="thumbnail"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=zara-slim-fit-shirt-3-main" type="main"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=zara-slim-fit-shirt-3-detail" type="additional"/>
+                <image url="https://dummyimage.com/200x200/cccccc/333333.jpg&amp;text=zara-slim-fit-shirt-3-thumb" type="thumbnail"/>
             </images>
             <variants>
                 <variant code="PROD-00037-BLACK-M" external-code="EXT-00037-01" enabled="true" ean="5900000003600" condition="new">
@@ -2429,9 +2429,9 @@
                 <attribute code="fit" name="Fit" external-code="ATTR-FIT" value="Oversized" value-code="oversized" external-value-code="VAL-OVERSIZE"/>
             </attributes>
             <images>
-                <image url="https://cdn.example.com/handm-womens-dress-3/main.jpg" type="main"/>
-                <image url="https://cdn.example.com/handm-womens-dress-3/detail.jpg" type="additional"/>
-                <image url="https://cdn.example.com/handm-womens-dress-3/thumb.jpg" type="thumbnail"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=handm-womens-dress-3-main" type="main"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=handm-womens-dress-3-detail" type="additional"/>
+                <image url="https://dummyimage.com/200x200/cccccc/333333.jpg&amp;text=handm-womens-dress-3-thumb" type="thumbnail"/>
             </images>
             <variants>
                 <variant code="PROD-00038-BLACK-L" external-code="EXT-00038-01" enabled="true" ean="5900000003700" condition="new">
@@ -2485,9 +2485,9 @@
                 <attribute code="material" name="Material" external-code="ATTR-MATERIAL" value="Neoprene" value-code="neoprene" external-value-code="VAL-NEOPRENE"/>
             </attributes>
             <images>
-                <image url="https://cdn.example.com/specialized-bike-part-3/main.jpg" type="main"/>
-                <image url="https://cdn.example.com/specialized-bike-part-3/detail.jpg" type="additional"/>
-                <image url="https://cdn.example.com/specialized-bike-part-3/thumb.jpg" type="thumbnail"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=specialized-bike-part-3-main" type="main"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=specialized-bike-part-3-detail" type="additional"/>
+                <image url="https://dummyimage.com/200x200/cccccc/333333.jpg&amp;text=specialized-bike-part-3-thumb" type="thumbnail"/>
             </images>
             <variants>
                 <variant code="PROD-00039-BLACK-S" external-code="EXT-00039-01" enabled="true" ean="5900000003800" condition="new">
@@ -2552,9 +2552,9 @@
                 <attribute code="material" name="Material" external-code="ATTR-MATERIAL" value="Neoprene" value-code="neoprene" external-value-code="VAL-NEOPRENE"/>
             </attributes>
             <images>
-                <image url="https://cdn.example.com/under-armour-training-set-3/main.jpg" type="main"/>
-                <image url="https://cdn.example.com/under-armour-training-set-3/detail.jpg" type="additional"/>
-                <image url="https://cdn.example.com/under-armour-training-set-3/thumb.jpg" type="thumbnail"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=under-armour-training-set-3-main" type="main"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=under-armour-training-set-3-detail" type="additional"/>
+                <image url="https://dummyimage.com/200x200/cccccc/333333.jpg&amp;text=under-armour-training-set-3-thumb" type="thumbnail"/>
             </images>
             <variants>
                 <variant code="PROD-00040-XS-BLUE" external-code="EXT-00040-01" enabled="true" condition="new">
@@ -2596,9 +2596,9 @@
                 <attribute code="color" name="Color" external-code="ATTR-COLOR" value="Blue" value-code="blue" external-value-code="VAL-BLUE"/>
             </attributes>
             <images>
-                <image url="https://cdn.example.com/ikea-kallax-shelf-3/main.jpg" type="main"/>
-                <image url="https://cdn.example.com/ikea-kallax-shelf-3/detail.jpg" type="additional"/>
-                <image url="https://cdn.example.com/ikea-kallax-shelf-3/thumb.jpg" type="thumbnail"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=ikea-kallax-shelf-3-main" type="main"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=ikea-kallax-shelf-3-detail" type="additional"/>
+                <image url="https://dummyimage.com/200x200/cccccc/333333.jpg&amp;text=ikea-kallax-shelf-3-thumb" type="thumbnail"/>
             </images>
             <variants>
                 <variant code="PROD-00041-BLUE-S" external-code="EXT-00041-01" enabled="true" ean="5900000004000" condition="new">
@@ -2651,9 +2651,9 @@
                 <attribute code="color" name="Color" external-code="ATTR-COLOR" value="Red" value-code="red" external-value-code="VAL-RED"/>
             </attributes>
             <images>
-                <image url="https://cdn.example.com/philips-airfryer-3/main.jpg" type="main"/>
-                <image url="https://cdn.example.com/philips-airfryer-3/detail.jpg" type="additional"/>
-                <image url="https://cdn.example.com/philips-airfryer-3/thumb.jpg" type="thumbnail"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=philips-airfryer-3-main" type="main"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=philips-airfryer-3-detail" type="additional"/>
+                <image url="https://dummyimage.com/200x200/cccccc/333333.jpg&amp;text=philips-airfryer-3-thumb" type="thumbnail"/>
             </images>
             <variants>
                 <variant code="PROD-00042-WHITE-S" external-code="EXT-00042-01" enabled="true" ean="5900000004100" condition="new">
@@ -2717,9 +2717,9 @@
                 <attribute code="color" name="Color" external-code="ATTR-COLOR" value="Red" value-code="red" external-value-code="VAL-RED"/>
             </attributes>
             <images>
-                <image url="https://cdn.example.com/bosch-hand-blender-3/main.jpg" type="main"/>
-                <image url="https://cdn.example.com/bosch-hand-blender-3/detail.jpg" type="additional"/>
-                <image url="https://cdn.example.com/bosch-hand-blender-3/thumb.jpg" type="thumbnail"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=bosch-hand-blender-3-main" type="main"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=bosch-hand-blender-3-detail" type="additional"/>
+                <image url="https://dummyimage.com/200x200/cccccc/333333.jpg&amp;text=bosch-hand-blender-3-thumb" type="thumbnail"/>
             </images>
             <variants>
                 <variant code="PROD-00043-BLUE-S" external-code="EXT-00043-01" enabled="true" ean="5900000004200" condition="new">
@@ -2762,9 +2762,9 @@
                 <attribute code="material" name="Material" external-code="ATTR-MATERIAL" value="Glass" value-code="glass" external-value-code="VAL-GLASS"/>
             </attributes>
             <images>
-                <image url="https://cdn.example.com/dyson-v3-vacuum/main.jpg" type="main"/>
-                <image url="https://cdn.example.com/dyson-v3-vacuum/detail.jpg" type="additional"/>
-                <image url="https://cdn.example.com/dyson-v3-vacuum/thumb.jpg" type="thumbnail"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=dyson-v3-vacuum-main" type="main"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=dyson-v3-vacuum-detail" type="additional"/>
+                <image url="https://dummyimage.com/200x200/cccccc/333333.jpg&amp;text=dyson-v3-vacuum-thumb" type="thumbnail"/>
             </images>
             <variants>
                 <variant code="PROD-00044-WHITE-M" external-code="EXT-00044-01" enabled="true" ean="5900000004300" condition="new">
@@ -2852,9 +2852,9 @@
                 <attribute code="country" name="Country of origin" external-code="ATTR-COUNTRY" value="USA" value-code="usa" external-value-code="VAL-USA"/>
             </attributes>
             <images>
-                <image url="https://cdn.example.com/canon-eos-r3/main.jpg" type="main"/>
-                <image url="https://cdn.example.com/canon-eos-r3/detail.jpg" type="additional"/>
-                <image url="https://cdn.example.com/canon-eos-r3/thumb.jpg" type="thumbnail"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=canon-eos-r3-main" type="main"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=canon-eos-r3-detail" type="additional"/>
+                <image url="https://dummyimage.com/200x200/cccccc/333333.jpg&amp;text=canon-eos-r3-thumb" type="thumbnail"/>
             </images>
             <variants>
                 <variant code="PROD-00045-BLUE-S" external-code="EXT-00045-01" enabled="true" ean="5900000004400" condition="new">
@@ -2942,9 +2942,9 @@
                 <attribute code="country" name="Country of origin" external-code="ATTR-COUNTRY" value="China" value-code="china" external-value-code="VAL-CHINA"/>
             </attributes>
             <images>
-                <image url="https://cdn.example.com/samsung-galaxy-s4-ultra/main.jpg" type="main"/>
-                <image url="https://cdn.example.com/samsung-galaxy-s4-ultra/detail.jpg" type="additional"/>
-                <image url="https://cdn.example.com/samsung-galaxy-s4-ultra/thumb.jpg" type="thumbnail"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=samsung-galaxy-s4-ultra-main" type="main"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=samsung-galaxy-s4-ultra-detail" type="additional"/>
+                <image url="https://dummyimage.com/200x200/cccccc/333333.jpg&amp;text=samsung-galaxy-s4-ultra-thumb" type="thumbnail"/>
             </images>
             <variants>
                 <variant code="PROD-00046-512-GB-GOLD" external-code="EXT-00046-01" enabled="true" ean="5900000004500" condition="new">
@@ -3032,9 +3032,9 @@
                 <attribute code="country" name="Country of origin" external-code="ATTR-COUNTRY" value="Japan" value-code="japan" external-value-code="VAL-JAPAN"/>
             </attributes>
             <images>
-                <image url="https://cdn.example.com/apple-iphone-4-pro/main.jpg" type="main"/>
-                <image url="https://cdn.example.com/apple-iphone-4-pro/detail.jpg" type="additional"/>
-                <image url="https://cdn.example.com/apple-iphone-4-pro/thumb.jpg" type="thumbnail"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=apple-iphone-4-pro-main" type="main"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=apple-iphone-4-pro-detail" type="additional"/>
+                <image url="https://dummyimage.com/200x200/cccccc/333333.jpg&amp;text=apple-iphone-4-pro-thumb" type="thumbnail"/>
             </images>
             <variants>
                 <variant code="PROD-00047-128-GB-WHITE" external-code="EXT-00047-01" enabled="true" ean="5900000004600" condition="new">
@@ -3100,9 +3100,9 @@
                 <attribute code="country" name="Country of origin" external-code="ATTR-COUNTRY" value="China" value-code="china" external-value-code="VAL-CHINA"/>
             </attributes>
             <images>
-                <image url="https://cdn.example.com/sony-wh-4000xm5-headphones/main.jpg" type="main"/>
-                <image url="https://cdn.example.com/sony-wh-4000xm5-headphones/detail.jpg" type="additional"/>
-                <image url="https://cdn.example.com/sony-wh-4000xm5-headphones/thumb.jpg" type="thumbnail"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=sony-wh-4000xm5-headphones-main" type="main"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=sony-wh-4000xm5-headphones-detail" type="additional"/>
+                <image url="https://dummyimage.com/200x200/cccccc/333333.jpg&amp;text=sony-wh-4000xm5-headphones-thumb" type="thumbnail"/>
             </images>
             <variants>
                 <variant code="PROD-00048-BLACK-BLUETOOTH-5.0" external-code="EXT-00048-01" enabled="true" ean="5900000004700" condition="new">
@@ -3157,9 +3157,9 @@
                 <attribute code="country" name="Country of origin" external-code="ATTR-COUNTRY" value="Japan" value-code="japan" external-value-code="VAL-JAPAN"/>
             </attributes>
             <images>
-                <image url="https://cdn.example.com/lg-oled4c-laptop/main.jpg" type="main"/>
-                <image url="https://cdn.example.com/lg-oled4c-laptop/detail.jpg" type="additional"/>
-                <image url="https://cdn.example.com/lg-oled4c-laptop/thumb.jpg" type="thumbnail"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=lg-oled4c-laptop-main" type="main"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=lg-oled4c-laptop-detail" type="additional"/>
+                <image url="https://dummyimage.com/200x200/cccccc/333333.jpg&amp;text=lg-oled4c-laptop-thumb" type="thumbnail"/>
             </images>
             <variants>
                 <variant code="PROD-00049-1-TB-SSD-16-GB" external-code="EXT-00049-01" enabled="true" ean="5900000004800" condition="new">
@@ -3247,9 +3247,9 @@
                 <attribute code="fit" name="Fit" external-code="ATTR-FIT" value="Relaxed" value-code="relaxed" external-value-code="VAL-RELAXED"/>
             </attributes>
             <images>
-                <image url="https://cdn.example.com/nike-air-max-4/main.jpg" type="main"/>
-                <image url="https://cdn.example.com/nike-air-max-4/detail.jpg" type="additional"/>
-                <image url="https://cdn.example.com/nike-air-max-4/thumb.jpg" type="thumbnail"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=nike-air-max-4-main" type="main"/>
+                <image url="https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=nike-air-max-4-detail" type="additional"/>
+                <image url="https://dummyimage.com/200x200/cccccc/333333.jpg&amp;text=nike-air-max-4-thumb" type="thumbnail"/>
             </images>
             <variants>
                 <variant code="PROD-00050-BLACK-S" external-code="EXT-00050-01" enabled="true" ean="5900000004900" condition="new">

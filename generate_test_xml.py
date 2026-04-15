@@ -219,17 +219,17 @@ def build_product(idx, total):
             a.set("value-code",    slugify(val))
             a.set("external-value-code", f"VAL-{slugify(val).upper()[:8]}")
 
-    # ── Images
+    # ── Images (dummyimage.com placeholders so URLs actually resolve in tests)
     images = ET.SubElement(prod, "images")
     img_slug = slugify(name_en)
     i1 = ET.SubElement(images, "image")
-    i1.set("url",  f"https://cdn.example.com/{img_slug}/main.jpg")
+    i1.set("url",  f"https://dummyimage.com/800x600/cccccc/333333.jpg&text={img_slug}-main")
     i1.set("type", "main")
     i2 = ET.SubElement(images, "image")
-    i2.set("url",  f"https://cdn.example.com/{img_slug}/detail.jpg")
+    i2.set("url",  f"https://dummyimage.com/800x600/cccccc/333333.jpg&text={img_slug}-detail")
     i2.set("type", "additional")
     i3 = ET.SubElement(images, "image")
-    i3.set("url",  f"https://cdn.example.com/{img_slug}/thumb.jpg")
+    i3.set("url",  f"https://dummyimage.com/200x200/cccccc/333333.jpg&text={img_slug}-thumb")
     i3.set("type", "thumbnail")
 
     # ── Variants
