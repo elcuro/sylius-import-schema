@@ -27,9 +27,13 @@
             <taxons main="electronics-phones">
                 <taxon>
                     <code>electronics-phones</code>
+                    <external-code>CAT-ELECTRONICS-PHONES</external-code>
+                    <name>Phones</name>
                 </taxon>
                 <taxon>
                     <code>electronics</code>
+                    <external-code>CAT-ELECTRONICS</external-code>
+                    <name>Electronics</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -301,9 +305,13 @@
             <taxons main="electronics-phones">
                 <taxon>
                     <code>electronics-phones</code>
+                    <external-code>CAT-ELECTRONICS-PHONES</external-code>
+                    <name>Phones</name>
                 </taxon>
                 <taxon>
                     <code>electronics</code>
+                    <external-code>CAT-ELECTRONICS</external-code>
+                    <name>Electronics</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -477,9 +485,13 @@
             <taxons main="electronics-audio">
                 <taxon>
                     <code>electronics-audio</code>
+                    <external-code>CAT-ELECTRONICS-AUDIO</external-code>
+                    <name>Audio</name>
                 </taxon>
                 <taxon>
                     <code>electronics</code>
+                    <external-code>CAT-ELECTRONICS</external-code>
+                    <name>Electronics</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -654,9 +666,13 @@
             <taxons main="electronics-laptops">
                 <taxon>
                     <code>electronics-laptops</code>
+                    <external-code>CAT-ELECTRONICS-LAPTOPS</external-code>
+                    <name>Laptops</name>
                 </taxon>
                 <taxon>
                     <code>electronics</code>
+                    <external-code>CAT-ELECTRONICS</external-code>
+                    <name>Electronics</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -830,9 +846,13 @@
             <taxons main="clothing-mens">
                 <taxon>
                     <code>clothing-mens</code>
+                    <external-code>CAT-CLOTHING-MENS</external-code>
+                    <name>Men's Clothing</name>
                 </taxon>
                 <taxon>
                     <code>clothing</code>
+                    <external-code>CAT-CLOTHING</external-code>
+                    <name>Clothing</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -1006,9 +1026,13 @@
             <taxons main="clothing-mens">
                 <taxon>
                     <code>clothing-mens</code>
+                    <external-code>CAT-CLOTHING-MENS</external-code>
+                    <name>Men's Clothing</name>
                 </taxon>
                 <taxon>
                     <code>clothing</code>
+                    <external-code>CAT-CLOTHING</external-code>
+                    <name>Clothing</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -1215,9 +1239,13 @@
             <taxons main="clothing-mens">
                 <taxon>
                     <code>clothing-mens</code>
+                    <external-code>CAT-CLOTHING-MENS</external-code>
+                    <name>Men's Clothing</name>
                 </taxon>
                 <taxon>
                     <code>clothing</code>
+                    <external-code>CAT-CLOTHING</external-code>
+                    <name>Clothing</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -1359,9 +1387,13 @@
             <taxons main="clothing-womens">
                 <taxon>
                     <code>clothing-womens</code>
+                    <external-code>CAT-CLOTHING-WOMENS</external-code>
+                    <name>Women's Clothing</name>
                 </taxon>
                 <taxon>
                     <code>clothing</code>
+                    <external-code>CAT-CLOTHING</external-code>
+                    <name>Clothing</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -1535,9 +1567,13 @@
             <taxons main="sports-cycling">
                 <taxon>
                     <code>sports-cycling</code>
+                    <external-code>CAT-SPORTS-CYCLING</external-code>
+                    <name>Cycling</name>
                 </taxon>
                 <taxon>
                     <code>sports</code>
+                    <external-code>CAT-SPORTS</external-code>
+                    <name>Sports &amp; Outdoors</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -1803,9 +1839,13 @@
             <taxons main="sports-fitness">
                 <taxon>
                     <code>sports-fitness</code>
+                    <external-code>CAT-SPORTS-FITNESS</external-code>
+                    <name>Fitness</name>
                 </taxon>
                 <taxon>
                     <code>sports</code>
+                    <external-code>CAT-SPORTS</external-code>
+                    <name>Sports &amp; Outdoors</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -2004,9 +2044,13 @@
             <taxons main="home-furniture">
                 <taxon>
                     <code>home-furniture</code>
+                    <external-code>CAT-HOME-FURNITURE</external-code>
+                    <name>Furniture</name>
                 </taxon>
                 <taxon>
                     <code>home-garden</code>
+                    <external-code>CAT-HOME-GARDEN</external-code>
+                    <name>Home &amp; Garden</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -2196,9 +2240,13 @@
             <taxons main="home-kitchen">
                 <taxon>
                     <code>home-kitchen</code>
+                    <external-code>CAT-HOME-KITCHEN</external-code>
+                    <name>Kitchen</name>
                 </taxon>
                 <taxon>
                     <code>home-garden</code>
+                    <external-code>CAT-HOME-GARDEN</external-code>
+                    <name>Home &amp; Garden</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -2456,9 +2504,13 @@
             <taxons main="home-kitchen">
                 <taxon>
                     <code>home-kitchen</code>
+                    <external-code>CAT-HOME-KITCHEN</external-code>
+                    <name>Kitchen</name>
                 </taxon>
                 <taxon>
                     <code>home-garden</code>
+                    <external-code>CAT-HOME-GARDEN</external-code>
+                    <name>Home &amp; Garden</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -2713,9 +2765,13 @@
             <taxons main="home-garden">
                 <taxon>
                     <code>home-garden</code>
+                    <external-code>CAT-HOME-GARDEN</external-code>
+                    <name>Home &amp; Garden</name>
                 </taxon>
                 <taxon>
                     <code>home-garden</code>
+                    <external-code>CAT-HOME-GARDEN</external-code>
+                    <name>Home &amp; Garden</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -2882,9 +2938,13 @@
             <taxons main="electronics-cameras">
                 <taxon>
                     <code>electronics-cameras</code>
+                    <external-code>CAT-ELECTRONICS-CAMERAS</external-code>
+                    <name>Cameras</name>
                 </taxon>
                 <taxon>
                     <code>electronics</code>
+                    <external-code>CAT-ELECTRONICS</external-code>
+                    <name>Electronics</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -3090,9 +3150,13 @@
             <taxons main="electronics-phones">
                 <taxon>
                     <code>electronics-phones</code>
+                    <external-code>CAT-ELECTRONICS-PHONES</external-code>
+                    <name>Phones</name>
                 </taxon>
                 <taxon>
                     <code>electronics</code>
+                    <external-code>CAT-ELECTRONICS</external-code>
+                    <name>Electronics</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -3234,9 +3298,13 @@
             <taxons main="electronics-phones">
                 <taxon>
                     <code>electronics-phones</code>
+                    <external-code>CAT-ELECTRONICS-PHONES</external-code>
+                    <name>Phones</name>
                 </taxon>
                 <taxon>
                     <code>electronics</code>
+                    <external-code>CAT-ELECTRONICS</external-code>
+                    <name>Electronics</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -3410,9 +3478,13 @@
             <taxons main="electronics-audio">
                 <taxon>
                     <code>electronics-audio</code>
+                    <external-code>CAT-ELECTRONICS-AUDIO</external-code>
+                    <name>Audio</name>
                 </taxon>
                 <taxon>
                     <code>electronics</code>
+                    <external-code>CAT-ELECTRONICS</external-code>
+                    <name>Electronics</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -3620,9 +3692,13 @@
             <taxons main="electronics-laptops">
                 <taxon>
                     <code>electronics-laptops</code>
+                    <external-code>CAT-ELECTRONICS-LAPTOPS</external-code>
+                    <name>Laptops</name>
                 </taxon>
                 <taxon>
                     <code>electronics</code>
+                    <external-code>CAT-ELECTRONICS</external-code>
+                    <name>Electronics</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -3895,9 +3971,13 @@
             <taxons main="clothing-mens">
                 <taxon>
                     <code>clothing-mens</code>
+                    <external-code>CAT-CLOTHING-MENS</external-code>
+                    <name>Men's Clothing</name>
                 </taxon>
                 <taxon>
                     <code>clothing</code>
+                    <external-code>CAT-CLOTHING</external-code>
+                    <name>Clothing</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -4168,9 +4248,13 @@
             <taxons main="clothing-mens">
                 <taxon>
                     <code>clothing-mens</code>
+                    <external-code>CAT-CLOTHING-MENS</external-code>
+                    <name>Men's Clothing</name>
                 </taxon>
                 <taxon>
                     <code>clothing</code>
+                    <external-code>CAT-CLOTHING</external-code>
+                    <name>Clothing</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -4377,9 +4461,13 @@
             <taxons main="clothing-mens">
                 <taxon>
                     <code>clothing-mens</code>
+                    <external-code>CAT-CLOTHING-MENS</external-code>
+                    <name>Men's Clothing</name>
                 </taxon>
                 <taxon>
                     <code>clothing</code>
+                    <external-code>CAT-CLOTHING</external-code>
+                    <name>Clothing</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -4520,9 +4608,13 @@
             <taxons main="clothing-womens">
                 <taxon>
                     <code>clothing-womens</code>
+                    <external-code>CAT-CLOTHING-WOMENS</external-code>
+                    <name>Women's Clothing</name>
                 </taxon>
                 <taxon>
                     <code>clothing</code>
+                    <external-code>CAT-CLOTHING</external-code>
+                    <name>Clothing</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -4697,9 +4789,13 @@
             <taxons main="sports-cycling">
                 <taxon>
                     <code>sports-cycling</code>
+                    <external-code>CAT-SPORTS-CYCLING</external-code>
+                    <name>Cycling</name>
                 </taxon>
                 <taxon>
                     <code>sports</code>
+                    <external-code>CAT-SPORTS</external-code>
+                    <name>Sports &amp; Outdoors</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -4899,9 +4995,13 @@
             <taxons main="sports-fitness">
                 <taxon>
                     <code>sports-fitness</code>
+                    <external-code>CAT-SPORTS-FITNESS</external-code>
+                    <name>Fitness</name>
                 </taxon>
                 <taxon>
                     <code>sports</code>
+                    <external-code>CAT-SPORTS</external-code>
+                    <name>Sports &amp; Outdoors</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -5167,9 +5267,13 @@
             <taxons main="home-furniture">
                 <taxon>
                     <code>home-furniture</code>
+                    <external-code>CAT-HOME-FURNITURE</external-code>
+                    <name>Furniture</name>
                 </taxon>
                 <taxon>
                     <code>home-garden</code>
+                    <external-code>CAT-HOME-GARDEN</external-code>
+                    <name>Home &amp; Garden</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -5427,9 +5531,13 @@
             <taxons main="home-kitchen">
                 <taxon>
                     <code>home-kitchen</code>
+                    <external-code>CAT-HOME-KITCHEN</external-code>
+                    <name>Kitchen</name>
                 </taxon>
                 <taxon>
                     <code>home-garden</code>
+                    <external-code>CAT-HOME-GARDEN</external-code>
+                    <name>Home &amp; Garden</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -5687,9 +5795,13 @@
             <taxons main="home-kitchen">
                 <taxon>
                     <code>home-kitchen</code>
+                    <external-code>CAT-HOME-KITCHEN</external-code>
+                    <name>Kitchen</name>
                 </taxon>
                 <taxon>
                     <code>home-garden</code>
+                    <external-code>CAT-HOME-GARDEN</external-code>
+                    <name>Home &amp; Garden</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -5815,9 +5927,13 @@
             <taxons main="home-garden">
                 <taxon>
                     <code>home-garden</code>
+                    <external-code>CAT-HOME-GARDEN</external-code>
+                    <name>Home &amp; Garden</name>
                 </taxon>
                 <taxon>
                     <code>home-garden</code>
+                    <external-code>CAT-HOME-GARDEN</external-code>
+                    <name>Home &amp; Garden</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -5984,9 +6100,13 @@
             <taxons main="electronics-cameras">
                 <taxon>
                     <code>electronics-cameras</code>
+                    <external-code>CAT-ELECTRONICS-CAMERAS</external-code>
+                    <name>Cameras</name>
                 </taxon>
                 <taxon>
                     <code>electronics</code>
+                    <external-code>CAT-ELECTRONICS</external-code>
+                    <name>Electronics</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -6194,9 +6314,13 @@
             <taxons main="electronics-phones">
                 <taxon>
                     <code>electronics-phones</code>
+                    <external-code>CAT-ELECTRONICS-PHONES</external-code>
+                    <name>Phones</name>
                 </taxon>
                 <taxon>
                     <code>electronics</code>
+                    <external-code>CAT-ELECTRONICS</external-code>
+                    <name>Electronics</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -6371,9 +6495,13 @@
             <taxons main="electronics-phones">
                 <taxon>
                     <code>electronics-phones</code>
+                    <external-code>CAT-ELECTRONICS-PHONES</external-code>
+                    <name>Phones</name>
                 </taxon>
                 <taxon>
                     <code>electronics</code>
+                    <external-code>CAT-ELECTRONICS</external-code>
+                    <name>Electronics</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -6644,9 +6772,13 @@
             <taxons main="electronics-audio">
                 <taxon>
                     <code>electronics-audio</code>
+                    <external-code>CAT-ELECTRONICS-AUDIO</external-code>
+                    <name>Audio</name>
                 </taxon>
                 <taxon>
                     <code>electronics</code>
+                    <external-code>CAT-ELECTRONICS</external-code>
+                    <name>Electronics</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -6852,9 +6984,13 @@
             <taxons main="electronics-laptops">
                 <taxon>
                     <code>electronics-laptops</code>
+                    <external-code>CAT-ELECTRONICS-LAPTOPS</external-code>
+                    <name>Laptops</name>
                 </taxon>
                 <taxon>
                     <code>electronics</code>
+                    <external-code>CAT-ELECTRONICS</external-code>
+                    <name>Electronics</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -6996,9 +7132,13 @@
             <taxons main="clothing-mens">
                 <taxon>
                     <code>clothing-mens</code>
+                    <external-code>CAT-CLOTHING-MENS</external-code>
+                    <name>Men's Clothing</name>
                 </taxon>
                 <taxon>
                     <code>clothing</code>
+                    <external-code>CAT-CLOTHING</external-code>
+                    <name>Clothing</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -7172,9 +7312,13 @@
             <taxons main="clothing-mens">
                 <taxon>
                     <code>clothing-mens</code>
+                    <external-code>CAT-CLOTHING-MENS</external-code>
+                    <name>Men's Clothing</name>
                 </taxon>
                 <taxon>
                     <code>clothing</code>
+                    <external-code>CAT-CLOTHING</external-code>
+                    <name>Clothing</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -7446,9 +7590,13 @@
             <taxons main="clothing-mens">
                 <taxon>
                     <code>clothing-mens</code>
+                    <external-code>CAT-CLOTHING-MENS</external-code>
+                    <name>Men's Clothing</name>
                 </taxon>
                 <taxon>
                     <code>clothing</code>
+                    <external-code>CAT-CLOTHING</external-code>
+                    <name>Clothing</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -7721,9 +7869,13 @@
             <taxons main="clothing-womens">
                 <taxon>
                     <code>clothing-womens</code>
+                    <external-code>CAT-CLOTHING-WOMENS</external-code>
+                    <name>Women's Clothing</name>
                 </taxon>
                 <taxon>
                     <code>clothing</code>
+                    <external-code>CAT-CLOTHING</external-code>
+                    <name>Clothing</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -7997,9 +8149,13 @@
             <taxons main="sports-cycling">
                 <taxon>
                     <code>sports-cycling</code>
+                    <external-code>CAT-SPORTS-CYCLING</external-code>
+                    <name>Cycling</name>
                 </taxon>
                 <taxon>
                     <code>sports</code>
+                    <external-code>CAT-SPORTS</external-code>
+                    <name>Sports &amp; Outdoors</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -8264,9 +8420,13 @@
             <taxons main="sports-fitness">
                 <taxon>
                     <code>sports-fitness</code>
+                    <external-code>CAT-SPORTS-FITNESS</external-code>
+                    <name>Fitness</name>
                 </taxon>
                 <taxon>
                     <code>sports</code>
+                    <external-code>CAT-SPORTS</external-code>
+                    <name>Sports &amp; Outdoors</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -8466,9 +8626,13 @@
             <taxons main="home-furniture">
                 <taxon>
                     <code>home-furniture</code>
+                    <external-code>CAT-HOME-FURNITURE</external-code>
+                    <name>Furniture</name>
                 </taxon>
                 <taxon>
                     <code>home-garden</code>
+                    <external-code>CAT-HOME-GARDEN</external-code>
+                    <name>Home &amp; Garden</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -8627,9 +8791,13 @@
             <taxons main="home-kitchen">
                 <taxon>
                     <code>home-kitchen</code>
+                    <external-code>CAT-HOME-KITCHEN</external-code>
+                    <name>Kitchen</name>
                 </taxon>
                 <taxon>
                     <code>home-garden</code>
+                    <external-code>CAT-HOME-GARDEN</external-code>
+                    <name>Home &amp; Garden</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -8887,9 +9055,13 @@
             <taxons main="home-kitchen">
                 <taxon>
                     <code>home-kitchen</code>
+                    <external-code>CAT-HOME-KITCHEN</external-code>
+                    <name>Kitchen</name>
                 </taxon>
                 <taxon>
                     <code>home-garden</code>
+                    <external-code>CAT-HOME-GARDEN</external-code>
+                    <name>Home &amp; Garden</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -9080,9 +9252,13 @@
             <taxons main="home-garden">
                 <taxon>
                     <code>home-garden</code>
+                    <external-code>CAT-HOME-GARDEN</external-code>
+                    <name>Home &amp; Garden</name>
                 </taxon>
                 <taxon>
                     <code>home-garden</code>
+                    <external-code>CAT-HOME-GARDEN</external-code>
+                    <name>Home &amp; Garden</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -9249,9 +9425,13 @@
             <taxons main="electronics-cameras">
                 <taxon>
                     <code>electronics-cameras</code>
+                    <external-code>CAT-ELECTRONICS-CAMERAS</external-code>
+                    <name>Cameras</name>
                 </taxon>
                 <taxon>
                     <code>electronics</code>
+                    <external-code>CAT-ELECTRONICS</external-code>
+                    <name>Electronics</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -9523,9 +9703,13 @@
             <taxons main="electronics-phones">
                 <taxon>
                     <code>electronics-phones</code>
+                    <external-code>CAT-ELECTRONICS-PHONES</external-code>
+                    <name>Phones</name>
                 </taxon>
                 <taxon>
                     <code>electronics</code>
+                    <external-code>CAT-ELECTRONICS</external-code>
+                    <name>Electronics</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -9699,9 +9883,13 @@
             <taxons main="electronics-phones">
                 <taxon>
                     <code>electronics-phones</code>
+                    <external-code>CAT-ELECTRONICS-PHONES</external-code>
+                    <name>Phones</name>
                 </taxon>
                 <taxon>
                     <code>electronics</code>
+                    <external-code>CAT-ELECTRONICS</external-code>
+                    <name>Electronics</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -9907,9 +10095,13 @@
             <taxons main="electronics-audio">
                 <taxon>
                     <code>electronics-audio</code>
+                    <external-code>CAT-ELECTRONICS-AUDIO</external-code>
+                    <name>Audio</name>
                 </taxon>
                 <taxon>
                     <code>electronics</code>
+                    <external-code>CAT-ELECTRONICS</external-code>
+                    <name>Electronics</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -10083,9 +10275,13 @@
             <taxons main="electronics-laptops">
                 <taxon>
                     <code>electronics-laptops</code>
+                    <external-code>CAT-ELECTRONICS-LAPTOPS</external-code>
+                    <name>Laptops</name>
                 </taxon>
                 <taxon>
                     <code>electronics</code>
+                    <external-code>CAT-ELECTRONICS</external-code>
+                    <name>Electronics</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -10260,9 +10456,13 @@
             <taxons main="clothing-mens">
                 <taxon>
                     <code>clothing-mens</code>
+                    <external-code>CAT-CLOTHING-MENS</external-code>
+                    <name>Men's Clothing</name>
                 </taxon>
                 <taxon>
                     <code>clothing</code>
+                    <external-code>CAT-CLOTHING</external-code>
+                    <name>Clothing</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -10534,9 +10734,13 @@
             <taxons main="clothing-mens">
                 <taxon>
                     <code>clothing-mens</code>
+                    <external-code>CAT-CLOTHING-MENS</external-code>
+                    <name>Men's Clothing</name>
                 </taxon>
                 <taxon>
                     <code>clothing</code>
+                    <external-code>CAT-CLOTHING</external-code>
+                    <name>Clothing</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -10709,9 +10913,13 @@
             <taxons main="clothing-mens">
                 <taxon>
                     <code>clothing-mens</code>
+                    <external-code>CAT-CLOTHING-MENS</external-code>
+                    <name>Men's Clothing</name>
                 </taxon>
                 <taxon>
                     <code>clothing</code>
+                    <external-code>CAT-CLOTHING</external-code>
+                    <name>Clothing</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -10918,9 +11126,13 @@
             <taxons main="clothing-womens">
                 <taxon>
                     <code>clothing-womens</code>
+                    <external-code>CAT-CLOTHING-WOMENS</external-code>
+                    <name>Women's Clothing</name>
                 </taxon>
                 <taxon>
                     <code>clothing</code>
+                    <external-code>CAT-CLOTHING</external-code>
+                    <name>Clothing</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -11126,9 +11338,13 @@
             <taxons main="sports-cycling">
                 <taxon>
                     <code>sports-cycling</code>
+                    <external-code>CAT-SPORTS-CYCLING</external-code>
+                    <name>Cycling</name>
                 </taxon>
                 <taxon>
                     <code>sports</code>
+                    <external-code>CAT-SPORTS</external-code>
+                    <name>Sports &amp; Outdoors</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -11262,9 +11478,13 @@
             <taxons main="sports-fitness">
                 <taxon>
                     <code>sports-fitness</code>
+                    <external-code>CAT-SPORTS-FITNESS</external-code>
+                    <name>Fitness</name>
                 </taxon>
                 <taxon>
                     <code>sports</code>
+                    <external-code>CAT-SPORTS</external-code>
+                    <name>Sports &amp; Outdoors</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -11398,9 +11618,13 @@
             <taxons main="home-furniture">
                 <taxon>
                     <code>home-furniture</code>
+                    <external-code>CAT-HOME-FURNITURE</external-code>
+                    <name>Furniture</name>
                 </taxon>
                 <taxon>
                     <code>home-garden</code>
+                    <external-code>CAT-HOME-GARDEN</external-code>
+                    <name>Home &amp; Garden</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -11559,9 +11783,13 @@
             <taxons main="home-kitchen">
                 <taxon>
                     <code>home-kitchen</code>
+                    <external-code>CAT-HOME-KITCHEN</external-code>
+                    <name>Kitchen</name>
                 </taxon>
                 <taxon>
                     <code>home-garden</code>
+                    <external-code>CAT-HOME-GARDEN</external-code>
+                    <name>Home &amp; Garden</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -11751,9 +11979,13 @@
             <taxons main="home-kitchen">
                 <taxon>
                     <code>home-kitchen</code>
+                    <external-code>CAT-HOME-KITCHEN</external-code>
+                    <name>Kitchen</name>
                 </taxon>
                 <taxon>
                     <code>home-garden</code>
+                    <external-code>CAT-HOME-GARDEN</external-code>
+                    <name>Home &amp; Garden</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -11878,9 +12110,13 @@
             <taxons main="home-garden">
                 <taxon>
                     <code>home-garden</code>
+                    <external-code>CAT-HOME-GARDEN</external-code>
+                    <name>Home &amp; Garden</name>
                 </taxon>
                 <taxon>
                     <code>home-garden</code>
+                    <external-code>CAT-HOME-GARDEN</external-code>
+                    <name>Home &amp; Garden</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -12044,9 +12280,13 @@
             <taxons main="electronics-cameras">
                 <taxon>
                     <code>electronics-cameras</code>
+                    <external-code>CAT-ELECTRONICS-CAMERAS</external-code>
+                    <name>Cameras</name>
                 </taxon>
                 <taxon>
                     <code>electronics</code>
+                    <external-code>CAT-ELECTRONICS</external-code>
+                    <name>Electronics</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -12319,9 +12559,13 @@
             <taxons main="electronics-phones">
                 <taxon>
                     <code>electronics-phones</code>
+                    <external-code>CAT-ELECTRONICS-PHONES</external-code>
+                    <name>Phones</name>
                 </taxon>
                 <taxon>
                     <code>electronics</code>
+                    <external-code>CAT-ELECTRONICS</external-code>
+                    <name>Electronics</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -12595,9 +12839,13 @@
             <taxons main="electronics-phones">
                 <taxon>
                     <code>electronics-phones</code>
+                    <external-code>CAT-ELECTRONICS-PHONES</external-code>
+                    <name>Phones</name>
                 </taxon>
                 <taxon>
                     <code>electronics</code>
+                    <external-code>CAT-ELECTRONICS</external-code>
+                    <name>Electronics</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -12804,9 +13052,13 @@
             <taxons main="electronics-audio">
                 <taxon>
                     <code>electronics-audio</code>
+                    <external-code>CAT-ELECTRONICS-AUDIO</external-code>
+                    <name>Audio</name>
                 </taxon>
                 <taxon>
                     <code>electronics</code>
+                    <external-code>CAT-ELECTRONICS</external-code>
+                    <name>Electronics</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -12980,9 +13232,13 @@
             <taxons main="electronics-laptops">
                 <taxon>
                     <code>electronics-laptops</code>
+                    <external-code>CAT-ELECTRONICS-LAPTOPS</external-code>
+                    <name>Laptops</name>
                 </taxon>
                 <taxon>
                     <code>electronics</code>
+                    <external-code>CAT-ELECTRONICS</external-code>
+                    <name>Electronics</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -13123,9 +13379,13 @@
             <taxons main="clothing-mens">
                 <taxon>
                     <code>clothing-mens</code>
+                    <external-code>CAT-CLOTHING-MENS</external-code>
+                    <name>Men's Clothing</name>
                 </taxon>
                 <taxon>
                     <code>clothing</code>
+                    <external-code>CAT-CLOTHING</external-code>
+                    <name>Clothing</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -13267,9 +13527,13 @@
             <taxons main="clothing-mens">
                 <taxon>
                     <code>clothing-mens</code>
+                    <external-code>CAT-CLOTHING-MENS</external-code>
+                    <name>Men's Clothing</name>
                 </taxon>
                 <taxon>
                     <code>clothing</code>
+                    <external-code>CAT-CLOTHING</external-code>
+                    <name>Clothing</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -13411,9 +13675,13 @@
             <taxons main="clothing-mens">
                 <taxon>
                     <code>clothing-mens</code>
+                    <external-code>CAT-CLOTHING-MENS</external-code>
+                    <name>Men's Clothing</name>
                 </taxon>
                 <taxon>
                     <code>clothing</code>
+                    <external-code>CAT-CLOTHING</external-code>
+                    <name>Clothing</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -13555,9 +13823,13 @@
             <taxons main="clothing-womens">
                 <taxon>
                     <code>clothing-womens</code>
+                    <external-code>CAT-CLOTHING-WOMENS</external-code>
+                    <name>Women's Clothing</name>
                 </taxon>
                 <taxon>
                     <code>clothing</code>
+                    <external-code>CAT-CLOTHING</external-code>
+                    <name>Clothing</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -13731,9 +14003,13 @@
             <taxons main="sports-cycling">
                 <taxon>
                     <code>sports-cycling</code>
+                    <external-code>CAT-SPORTS-CYCLING</external-code>
+                    <name>Cycling</name>
                 </taxon>
                 <taxon>
                     <code>sports</code>
+                    <external-code>CAT-SPORTS</external-code>
+                    <name>Sports &amp; Outdoors</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -13899,9 +14175,13 @@
             <taxons main="sports-fitness">
                 <taxon>
                     <code>sports-fitness</code>
+                    <external-code>CAT-SPORTS-FITNESS</external-code>
+                    <name>Fitness</name>
                 </taxon>
                 <taxon>
                     <code>sports</code>
+                    <external-code>CAT-SPORTS</external-code>
+                    <name>Sports &amp; Outdoors</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -14097,9 +14377,13 @@
             <taxons main="home-furniture">
                 <taxon>
                     <code>home-furniture</code>
+                    <external-code>CAT-HOME-FURNITURE</external-code>
+                    <name>Furniture</name>
                 </taxon>
                 <taxon>
                     <code>home-garden</code>
+                    <external-code>CAT-HOME-GARDEN</external-code>
+                    <name>Home &amp; Garden</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -14290,9 +14574,13 @@
             <taxons main="home-kitchen">
                 <taxon>
                     <code>home-kitchen</code>
+                    <external-code>CAT-HOME-KITCHEN</external-code>
+                    <name>Kitchen</name>
                 </taxon>
                 <taxon>
                     <code>home-garden</code>
+                    <external-code>CAT-HOME-GARDEN</external-code>
+                    <name>Home &amp; Garden</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -14417,9 +14705,13 @@
             <taxons main="home-kitchen">
                 <taxon>
                     <code>home-kitchen</code>
+                    <external-code>CAT-HOME-KITCHEN</external-code>
+                    <name>Kitchen</name>
                 </taxon>
                 <taxon>
                     <code>home-garden</code>
+                    <external-code>CAT-HOME-GARDEN</external-code>
+                    <name>Home &amp; Garden</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -14610,9 +14902,13 @@
             <taxons main="home-garden">
                 <taxon>
                     <code>home-garden</code>
+                    <external-code>CAT-HOME-GARDEN</external-code>
+                    <name>Home &amp; Garden</name>
                 </taxon>
                 <taxon>
                     <code>home-garden</code>
+                    <external-code>CAT-HOME-GARDEN</external-code>
+                    <name>Home &amp; Garden</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -14874,9 +15170,13 @@
             <taxons main="electronics-cameras">
                 <taxon>
                     <code>electronics-cameras</code>
+                    <external-code>CAT-ELECTRONICS-CAMERAS</external-code>
+                    <name>Cameras</name>
                 </taxon>
                 <taxon>
                     <code>electronics</code>
+                    <external-code>CAT-ELECTRONICS</external-code>
+                    <name>Electronics</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -15049,9 +15349,13 @@
             <taxons main="electronics-phones">
                 <taxon>
                     <code>electronics-phones</code>
+                    <external-code>CAT-ELECTRONICS-PHONES</external-code>
+                    <name>Phones</name>
                 </taxon>
                 <taxon>
                     <code>electronics</code>
+                    <external-code>CAT-ELECTRONICS</external-code>
+                    <name>Electronics</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -15225,9 +15529,13 @@
             <taxons main="electronics-phones">
                 <taxon>
                     <code>electronics-phones</code>
+                    <external-code>CAT-ELECTRONICS-PHONES</external-code>
+                    <name>Phones</name>
                 </taxon>
                 <taxon>
                     <code>electronics</code>
+                    <external-code>CAT-ELECTRONICS</external-code>
+                    <name>Electronics</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -15369,9 +15677,13 @@
             <taxons main="electronics-audio">
                 <taxon>
                     <code>electronics-audio</code>
+                    <external-code>CAT-ELECTRONICS-AUDIO</external-code>
+                    <name>Audio</name>
                 </taxon>
                 <taxon>
                     <code>electronics</code>
+                    <external-code>CAT-ELECTRONICS</external-code>
+                    <name>Electronics</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -15643,9 +15955,13 @@
             <taxons main="electronics-laptops">
                 <taxon>
                     <code>electronics-laptops</code>
+                    <external-code>CAT-ELECTRONICS-LAPTOPS</external-code>
+                    <name>Laptops</name>
                 </taxon>
                 <taxon>
                     <code>electronics</code>
+                    <external-code>CAT-ELECTRONICS</external-code>
+                    <name>Electronics</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -15786,9 +16102,13 @@
             <taxons main="clothing-mens">
                 <taxon>
                     <code>clothing-mens</code>
+                    <external-code>CAT-CLOTHING-MENS</external-code>
+                    <name>Men's Clothing</name>
                 </taxon>
                 <taxon>
                     <code>clothing</code>
+                    <external-code>CAT-CLOTHING</external-code>
+                    <name>Clothing</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -15995,9 +16315,13 @@
             <taxons main="clothing-mens">
                 <taxon>
                     <code>clothing-mens</code>
+                    <external-code>CAT-CLOTHING-MENS</external-code>
+                    <name>Men's Clothing</name>
                 </taxon>
                 <taxon>
                     <code>clothing</code>
+                    <external-code>CAT-CLOTHING</external-code>
+                    <name>Clothing</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -16171,9 +16495,13 @@
             <taxons main="clothing-mens">
                 <taxon>
                     <code>clothing-mens</code>
+                    <external-code>CAT-CLOTHING-MENS</external-code>
+                    <name>Men's Clothing</name>
                 </taxon>
                 <taxon>
                     <code>clothing</code>
+                    <external-code>CAT-CLOTHING</external-code>
+                    <name>Clothing</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -16346,9 +16674,13 @@
             <taxons main="clothing-womens">
                 <taxon>
                     <code>clothing-womens</code>
+                    <external-code>CAT-CLOTHING-WOMENS</external-code>
+                    <name>Women's Clothing</name>
                 </taxon>
                 <taxon>
                     <code>clothing</code>
+                    <external-code>CAT-CLOTHING</external-code>
+                    <name>Clothing</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -16621,9 +16953,13 @@
             <taxons main="sports-cycling">
                 <taxon>
                     <code>sports-cycling</code>
+                    <external-code>CAT-SPORTS-CYCLING</external-code>
+                    <name>Cycling</name>
                 </taxon>
                 <taxon>
                     <code>sports</code>
+                    <external-code>CAT-SPORTS</external-code>
+                    <name>Sports &amp; Outdoors</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -16822,9 +17158,13 @@
             <taxons main="sports-fitness">
                 <taxon>
                     <code>sports-fitness</code>
+                    <external-code>CAT-SPORTS-FITNESS</external-code>
+                    <name>Fitness</name>
                 </taxon>
                 <taxon>
                     <code>sports</code>
+                    <external-code>CAT-SPORTS</external-code>
+                    <name>Sports &amp; Outdoors</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -16958,9 +17298,13 @@
             <taxons main="home-furniture">
                 <taxon>
                     <code>home-furniture</code>
+                    <external-code>CAT-HOME-FURNITURE</external-code>
+                    <name>Furniture</name>
                 </taxon>
                 <taxon>
                     <code>home-garden</code>
+                    <external-code>CAT-HOME-GARDEN</external-code>
+                    <name>Home &amp; Garden</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -17151,9 +17495,13 @@
             <taxons main="home-kitchen">
                 <taxon>
                     <code>home-kitchen</code>
+                    <external-code>CAT-HOME-KITCHEN</external-code>
+                    <name>Kitchen</name>
                 </taxon>
                 <taxon>
                     <code>home-garden</code>
+                    <external-code>CAT-HOME-GARDEN</external-code>
+                    <name>Home &amp; Garden</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -17310,9 +17658,13 @@
             <taxons main="home-kitchen">
                 <taxon>
                     <code>home-kitchen</code>
+                    <external-code>CAT-HOME-KITCHEN</external-code>
+                    <name>Kitchen</name>
                 </taxon>
                 <taxon>
                     <code>home-garden</code>
+                    <external-code>CAT-HOME-GARDEN</external-code>
+                    <name>Home &amp; Garden</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -17469,9 +17821,13 @@
             <taxons main="home-garden">
                 <taxon>
                     <code>home-garden</code>
+                    <external-code>CAT-HOME-GARDEN</external-code>
+                    <name>Home &amp; Garden</name>
                 </taxon>
                 <taxon>
                     <code>home-garden</code>
+                    <external-code>CAT-HOME-GARDEN</external-code>
+                    <name>Home &amp; Garden</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -17669,9 +18025,13 @@
             <taxons main="electronics-cameras">
                 <taxon>
                     <code>electronics-cameras</code>
+                    <external-code>CAT-ELECTRONICS-CAMERAS</external-code>
+                    <name>Cameras</name>
                 </taxon>
                 <taxon>
                     <code>electronics</code>
+                    <external-code>CAT-ELECTRONICS</external-code>
+                    <name>Electronics</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -17945,9 +18305,13 @@
             <taxons main="electronics-phones">
                 <taxon>
                     <code>electronics-phones</code>
+                    <external-code>CAT-ELECTRONICS-PHONES</external-code>
+                    <name>Phones</name>
                 </taxon>
                 <taxon>
                     <code>electronics</code>
+                    <external-code>CAT-ELECTRONICS</external-code>
+                    <name>Electronics</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -18219,9 +18583,13 @@
             <taxons main="electronics-phones">
                 <taxon>
                     <code>electronics-phones</code>
+                    <external-code>CAT-ELECTRONICS-PHONES</external-code>
+                    <name>Phones</name>
                 </taxon>
                 <taxon>
                     <code>electronics</code>
+                    <external-code>CAT-ELECTRONICS</external-code>
+                    <name>Electronics</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -18395,9 +18763,13 @@
             <taxons main="electronics-audio">
                 <taxon>
                     <code>electronics-audio</code>
+                    <external-code>CAT-ELECTRONICS-AUDIO</external-code>
+                    <name>Audio</name>
                 </taxon>
                 <taxon>
                     <code>electronics</code>
+                    <external-code>CAT-ELECTRONICS</external-code>
+                    <name>Electronics</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -18572,9 +18944,13 @@
             <taxons main="electronics-laptops">
                 <taxon>
                     <code>electronics-laptops</code>
+                    <external-code>CAT-ELECTRONICS-LAPTOPS</external-code>
+                    <name>Laptops</name>
                 </taxon>
                 <taxon>
                     <code>electronics</code>
+                    <external-code>CAT-ELECTRONICS</external-code>
+                    <name>Electronics</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -18847,9 +19223,13 @@
             <taxons main="clothing-mens">
                 <taxon>
                     <code>clothing-mens</code>
+                    <external-code>CAT-CLOTHING-MENS</external-code>
+                    <name>Men's Clothing</name>
                 </taxon>
                 <taxon>
                     <code>clothing</code>
+                    <external-code>CAT-CLOTHING</external-code>
+                    <name>Clothing</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -19056,9 +19436,13 @@
             <taxons main="clothing-mens">
                 <taxon>
                     <code>clothing-mens</code>
+                    <external-code>CAT-CLOTHING-MENS</external-code>
+                    <name>Men's Clothing</name>
                 </taxon>
                 <taxon>
                     <code>clothing</code>
+                    <external-code>CAT-CLOTHING</external-code>
+                    <name>Clothing</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -19265,9 +19649,13 @@
             <taxons main="clothing-mens">
                 <taxon>
                     <code>clothing-mens</code>
+                    <external-code>CAT-CLOTHING-MENS</external-code>
+                    <name>Men's Clothing</name>
                 </taxon>
                 <taxon>
                     <code>clothing</code>
+                    <external-code>CAT-CLOTHING</external-code>
+                    <name>Clothing</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -19540,9 +19928,13 @@
             <taxons main="clothing-womens">
                 <taxon>
                     <code>clothing-womens</code>
+                    <external-code>CAT-CLOTHING-WOMENS</external-code>
+                    <name>Women's Clothing</name>
                 </taxon>
                 <taxon>
                     <code>clothing</code>
+                    <external-code>CAT-CLOTHING</external-code>
+                    <name>Clothing</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -19748,9 +20140,13 @@
             <taxons main="sports-cycling">
                 <taxon>
                     <code>sports-cycling</code>
+                    <external-code>CAT-SPORTS-CYCLING</external-code>
+                    <name>Cycling</name>
                 </taxon>
                 <taxon>
                     <code>sports</code>
+                    <external-code>CAT-SPORTS</external-code>
+                    <name>Sports &amp; Outdoors</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -19884,9 +20280,13 @@
             <taxons main="sports-fitness">
                 <taxon>
                     <code>sports-fitness</code>
+                    <external-code>CAT-SPORTS-FITNESS</external-code>
+                    <name>Fitness</name>
                 </taxon>
                 <taxon>
                     <code>sports</code>
+                    <external-code>CAT-SPORTS</external-code>
+                    <name>Sports &amp; Outdoors</name>
                 </taxon>
             </taxons>
             <attributes>

@@ -27,9 +27,13 @@
             <taxons main="electronics-phones">
                 <taxon>
                     <code>electronics-phones</code>
+                    <external-code>CAT-ELECTRONICS-PHONES</external-code>
+                    <name>Phones</name>
                 </taxon>
                 <taxon>
                     <code>electronics</code>
+                    <external-code>CAT-ELECTRONICS</external-code>
+                    <name>Electronics</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -171,9 +175,13 @@
             <taxons main="electronics-phones">
                 <taxon>
                     <code>electronics-phones</code>
+                    <external-code>CAT-ELECTRONICS-PHONES</external-code>
+                    <name>Phones</name>
                 </taxon>
                 <taxon>
                     <code>electronics</code>
+                    <external-code>CAT-ELECTRONICS</external-code>
+                    <name>Electronics</name>
                 </taxon>
             </taxons>
             <attributes>
@@ -380,9 +388,13 @@
             <taxons main="electronics-audio">
                 <taxon>
                     <code>electronics-audio</code>
+                    <external-code>CAT-ELECTRONICS-AUDIO</external-code>
+                    <name>Audio</name>
                 </taxon>
                 <taxon>
                     <code>electronics</code>
+                    <external-code>CAT-ELECTRONICS</external-code>
+                    <name>Electronics</name>
                 </taxon>
             </taxons>
             <attributes>

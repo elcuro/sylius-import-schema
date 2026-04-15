@@ -209,10 +209,14 @@ def build_product(idx, total):
     child(tr_fr, "slug", slugify(f"{fr_name}-{idx+1}"))
 
     # ── Taxons
+    cat_names = {code: name for code, _, name in CATEGORIES}
     taxons = ET.SubElement(prod, "taxons")
     taxons.set("main", sub_cat)
-    t1 = ET.SubElement(taxons, "taxon"); child(t1, "code", sub_cat)
-    t2 = ET.SubElement(taxons, "taxon"); child(t2, "code", main_cat)
+    for tax_code in (sub_cat, main_cat):
+        t = ET.SubElement(taxons, "taxon")
+        child(t, "code",          tax_code)
+        child(t, "external-code", f"CAT-{tax_code.upper()}")
+        child(t, "name",          cat_names.get(tax_code, tax_code))
 
     # ── Attributes
     attr_set = get_attr_set(sub_cat)
