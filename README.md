@@ -470,12 +470,12 @@ When your export contains more than ~5,000 products, split it into multiple `syl
     <files>
         <file>products-001.xml</file>
         <file>products-002.xml</file>
-        <file>products-003.xml</file>
+        <file>https://cdn.example.com/exports/2026-04/products-003.xml</file>
     </files>
 </sylius-import-manifest>
 ```
 
-Each `<file>` element contains the relative path to a `sylius-import` document. Paths are resolved relative to the manifest file.
+Each `<file>` element contains either a **relative path** (resolved against the manifest's own location) or an **absolute `http(s)` URL** that the importer fetches directly. Both forms can be mixed within a single manifest — useful when part of the export is bundled next to the manifest and the rest is served from a CDN.
 
 **Recommended directory layout:**
 

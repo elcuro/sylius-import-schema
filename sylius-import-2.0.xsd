@@ -124,8 +124,10 @@
     <xs:complexType name="ManifestFilesType">
         <xs:sequence>
             <!--
-                Each <file> element contains a single text value — a relative
-                path to a sylius-import XML file, processed in the order listed.
+                Each <file> element contains a single text value — either a
+                relative path (resolved against the manifest's location) or an
+                absolute http(s) URL pointing to a sylius-import XML file.
+                Entries are processed in the order listed.
             -->
             <xs:element name="file" type="NonEmptyString"
                         minOccurs="1" maxOccurs="unbounded"/>

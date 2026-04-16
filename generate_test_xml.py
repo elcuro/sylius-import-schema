@@ -356,9 +356,13 @@ def build_manifest(files, output_path):
     root.set("xsi:noNamespaceSchemaLocation",
              "https://elcuro.github.io/sylius-import-schema/sylius-import-2.0.xsd")
 
+    # Mix forms so the fixture exercises both reference styles:
+    # first entry as a relative path, remaining entries as absolute URLs.
+    base_url = "https://elcuro.github.io/sylius-import-schema/tests"
     files_el = ET.SubElement(root, "files")
-    for path in files:
-        child(files_el, "file", os.path.basename(path))
+    for i, path in enumerate(files):
+        name = os.path.basename(path)
+        child(files_el, "file", name if i == 0 else f"{base_url}/{name}")
 
     xml_body = indent_xml(root)
     with open(output_path, "w", encoding="utf-8") as fh:
