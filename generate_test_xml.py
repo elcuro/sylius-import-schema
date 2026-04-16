@@ -324,7 +324,12 @@ def build_product(idx, total):
 
 # ── File builder ──────────────────────────────────────────────────────────────
 
-def build_file(count, output_path):
+def build_file(count, output_path, start_index=0, total=None):
+    # start_index/total let manifest parts share a disjoint index range
+    # (e.g. part-a: 0..249, part-b: 250..499) so product codes don't collide.
+    if total is None:
+        total = count
+
     root = ET.Element("sylius-import")
     root.set("version",        "2.0")
     root.set("default-locale", "en_US")
@@ -335,7 +340,7 @@ def build_file(count, output_path):
 
     products_el = ET.SubElement(root, "products")
     for i in range(count):
-        products_el.append(build_product(i, count))
+        products_el.append(build_product(start_index + i, total))
 
     xml_body = indent_xml(root)
     with open(output_path, "w", encoding="utf-8") as f:
@@ -383,12 +388,13 @@ if __name__ == "__main__":
         build_file(count, path)
         generated.append(path)
 
-    # Manifest for the 500-product file split into two halves
+    # Manifest for the 500-product file split into two disjoint halves
+    # (part-a covers products 1..250, part-b covers 251..500).
     half = 250
     path_a = os.path.join(out_dir, "test-500-part-a.xml")
     path_b = os.path.join(out_dir, "test-500-part-b.xml")
-    build_file(half, path_a)
-    build_file(half, path_b)
+    build_file(half, path_a, start_index=0,    total=half * 2)
+    build_file(half, path_b, start_index=half, total=half * 2)
     build_manifest([path_a, path_b], os.path.join(out_dir, "test-500-manifest.xml"))
 
     print("Done.")
