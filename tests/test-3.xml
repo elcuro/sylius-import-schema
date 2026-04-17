@@ -6,6 +6,7 @@
             <code>PROD-00001</code>
             <external-code>EXT-00001</external-code>
             <manufacturer>Samsung</manufacturer>
+            <brand>Samsung</brand>
             <translations>
                 <translation locale="en_US">
                     <name>Samsung Galaxy S1 Ultra</name>
@@ -149,11 +150,54 @@
                     <dimensions weight="0.24" width="81.2" height="376.7" depth="21.0"/>
                 </variant>
             </variants>
+            <gpsr>
+                <manufacturer>
+                    <name>Samsung Electronics Co., Ltd.</name>
+                    <trademark>Samsung</trademark>
+                    <street>129 Samsung-ro, Yeongtong-gu</street>
+                    <city>Suwon</city>
+                    <postal-code>16677</postal-code>
+                    <country>KR</country>
+                    <email>productsafety@samsung.com</email>
+                    <phone>+82-31-200-1114</phone>
+                </manufacturer>
+                <eu-responsible-person>
+                    <name>Example EU Compliance B.V.</name>
+                    <street>Rokin 25</street>
+                    <city>Amsterdam</city>
+                    <postal-code>1012 KK</postal-code>
+                    <country>NL</country>
+                    <email>gpsr@example-eu-compliance.example</email>
+                    <phone>+31-20-555-0123</phone>
+                </eu-responsible-person>
+                <model>MDL-00001</model>
+                <safety-notices>
+                    <notice locale="en_US">Keep out of reach of children. Not suitable for children under 36 months.</notice>
+                    <notice locale="de_DE">Außerhalb der Reichweite von Kindern aufbewahren. Nicht für Kinder unter 36 Monaten.</notice>
+                </safety-notices>
+                <safety-documents>
+                    <document type="user-manual" locale="en_US">
+                        <url>https://sample-files.com/downloads/documents/pdf/sample-20-page-pdf-a4-size.pdf</url>
+                    </document>
+                    <document type="user-manual" locale="de_DE">
+                        <url>https://sample-files.com/downloads/documents/pdf/sample-10-page-pdf-a4-size.pdf</url>
+                    </document>
+                    <document type="declaration-of-conformity">
+                        <url>https://sample-files.com/downloads/documents/pdf/sample-pdf-a4-size.pdf</url>
+                    </document>
+                </safety-documents>
+                <certifications>
+                    <certification>
+                        <code>CE</code>
+                    </certification>
+                </certifications>
+            </gpsr>
         </product>
         <product enabled="true">
             <code>PROD-00002</code>
             <external-code>EXT-00002</external-code>
             <manufacturer>Apple</manufacturer>
+            <brand>Apple</brand>
             <translations>
                 <translation locale="en_US">
                     <name>Apple iPhone 1 Pro</name>
@@ -362,11 +406,46 @@
                     <dimensions weight="0.245" width="104.8" height="399.3" depth="81.3"/>
                 </variant>
             </variants>
+            <gpsr>
+                <manufacturer>
+                    <name>Apple Inc.</name>
+                    <trademark>Apple</trademark>
+                    <street>One Apple Park Way</street>
+                    <city>Cupertino</city>
+                    <postal-code>95014</postal-code>
+                    <country>US</country>
+                    <email>productsafety@apple.com</email>
+                    <phone>+1-408-996-1010</phone>
+                </manufacturer>
+                <eu-responsible-person>
+                    <name>Example EU Compliance B.V.</name>
+                    <street>Rokin 25</street>
+                    <city>Amsterdam</city>
+                    <postal-code>1012 KK</postal-code>
+                    <country>NL</country>
+                    <email>gpsr@example-eu-compliance.example</email>
+                    <phone>+31-20-555-0123</phone>
+                </eu-responsible-person>
+                <model>MDL-00002</model>
+                <safety-notices>
+                    <notice locale="en_US">Do not immerse in water. Clean with a dry cloth only.</notice>
+                    <notice locale="de_DE">Nicht in Wasser tauchen. Nur mit trockenem Tuch reinigen.</notice>
+                </safety-notices>
+                <certifications>
+                    <certification>
+                        <code>RoHS</code>
+                    </certification>
+                    <certification>
+                        <code>FCC</code>
+                    </certification>
+                </certifications>
+            </gpsr>
         </product>
         <product enabled="true">
             <code>PROD-00003</code>
             <external-code>EXT-00003</external-code>
             <manufacturer>Sony</manufacturer>
+            <brand>Sony</brand>
             <translations>
                 <translation locale="en_US">
                     <name>Sony WH-1000XM5 Headphones</name>
@@ -509,6 +588,53 @@
                     <dimensions weight="0.298" width="240.5" height="252.3" depth="24.9"/>
                 </variant>
             </variants>
+            <gpsr>
+                <manufacturer>
+                    <name>Sony Group Corporation</name>
+                    <trademark>Sony</trademark>
+                    <street>1-7-1 Konan, Minato-ku</street>
+                    <city>Tokyo</city>
+                    <postal-code>108-0075</postal-code>
+                    <country>JP</country>
+                    <email>productsafety@sony.com</email>
+                </manufacturer>
+                <eu-responsible-person>
+                    <name>Example EU Compliance B.V.</name>
+                    <street>Rokin 25</street>
+                    <city>Amsterdam</city>
+                    <postal-code>1012 KK</postal-code>
+                    <country>NL</country>
+                    <email>gpsr@example-eu-compliance.example</email>
+                    <phone>+31-20-555-0123</phone>
+                </eu-responsible-person>
+                <model>MDL-00003</model>
+                <safety-notices>
+                    <notice locale="en_US">Charge only with the supplied adapter. Do not use damaged cables.</notice>
+                    <notice locale="de_DE">Nur mit dem mitgelieferten Netzteil laden. Keine beschädigten Kabel verwenden.</notice>
+                </safety-notices>
+                <safety-documents>
+                    <document type="user-manual" locale="en_US">
+                        <url>https://sample-files.com/downloads/documents/pdf/sample-5-page-pdf-a4-size.pdf</url>
+                    </document>
+                    <document type="user-manual" locale="de_DE">
+                        <url>https://sample-files.com/downloads/documents/pdf/sample-20-page-pdf-a4-size.pdf</url>
+                    </document>
+                    <document type="declaration-of-conformity">
+                        <url>https://sample-files.com/downloads/documents/pdf/basic-text.pdf</url>
+                    </document>
+                </safety-documents>
+                <certifications>
+                    <certification>
+                        <code>FCC</code>
+                    </certification>
+                    <certification>
+                        <code>REACH</code>
+                    </certification>
+                    <certification>
+                        <code>UKCA</code>
+                    </certification>
+                </certifications>
+            </gpsr>
         </product>
     </products>
 </sylius-import>

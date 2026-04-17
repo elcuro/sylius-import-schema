@@ -27,7 +27,10 @@
              ═══════════════════════════════════════ -->
         <product enabled="true">
             <external-code>BB-987654</external-code>
-            <manufacturer>Apple</manufacturer>
+            <!-- manufacturer = who physically makes the device;
+                 brand         = marketing label the consumer recognises. -->
+            <manufacturer>Foxconn Technology Group</manufacturer>
+            <brand>Apple</brand>
 
             <!-- At least one translation is required.
                  If locale is omitted, default-locale from root element is used (en_US). -->
@@ -216,6 +219,62 @@
                 </variant>
 
             </variants>
+
+            <!-- GPSR (EU 2023/988) — manufacturer is outside the EU (US),
+                 so an EU responsible person (Art. 16) must be named.
+                 Safety notices are translated into the consumer's language
+                 (Art. 9(7-8), Art. 19(4)(d)). External safety documents
+                 link to PDFs such as the user manual and DoC. -->
+            <gpsr>
+                <manufacturer>
+                    <name>Apple Inc.</name>
+                    <trademark>Apple</trademark>
+                    <street>One Apple Park Way</street>
+                    <city>Cupertino</city>
+                    <postal-code>95014</postal-code>
+                    <country>US</country>
+                    <email>productsafety@apple.com</email>
+                    <phone>+1-408-996-1010</phone>
+                </manufacturer>
+                <eu-responsible-person>
+                    <name>Apple Distribution International Ltd.</name>
+                    <street>Hollyhill Industrial Estate, Hollyhill</street>
+                    <city>Cork</city>
+                    <postal-code>T23 YK84</postal-code>
+                    <country>IE</country>
+                    <email>eu-productsafety@apple.com</email>
+                </eu-responsible-person>
+                <model>A3102</model>
+                <safety-notices>
+                    <notice><![CDATA[<p>Charge only with original adapter.
+Do not use a damaged cable. Keep away from liquids & small children.</p>]]></notice>
+                    <notice locale="de_DE"><![CDATA[<p>Nur mit originalem Netzteil laden.
+Beschädigte Kabel nicht verwenden.</p>]]></notice>
+                </safety-notices>
+                <!-- URLs point to real, publicly downloadable sample PDFs
+                     from sample-files.com so the example can be copy-pasted
+                     into an importer smoke test without needing live
+                     manufacturer URLs. -->
+                <safety-documents>
+                    <document type="user-manual" locale="en_US">
+                        <url>https://sample-files.com/downloads/documents/pdf/sample-20-page-pdf-a4-size.pdf</url>
+                    </document>
+                    <document type="user-manual" locale="de_DE">
+                        <url>https://sample-files.com/downloads/documents/pdf/sample-10-page-pdf-a4-size.pdf</url>
+                    </document>
+                    <document type="declaration-of-conformity">
+                        <url>https://sample-files.com/downloads/documents/pdf/sample-pdf-a4-size.pdf</url>
+                    </document>
+                </safety-documents>
+                <certifications>
+                    <certification>
+                        <code>CE</code>
+                    </certification>
+                    <certification>
+                        <code>RoHS</code>
+                    </certification>
+                </certifications>
+            </gpsr>
         </product>
 
         <!-- ═══════════════════════════════════════
@@ -225,6 +284,7 @@
         <product enabled="true">
             <external-code>CABLE-001</external-code>
             <manufacturer>Ben &amp; Jerry's Electronics</manufacturer>
+            <brand>Ben &amp; Jerry's</brand>
 
             <translations>
                 <translation>
@@ -275,6 +335,21 @@
                 </variant>
             </variants>
 
+            <!-- GPSR with an EU-established manufacturer — no
+                 eu-responsible-person needed (Art. 16 does not apply). -->
+            <gpsr>
+                <manufacturer>
+                    <name>Ben &amp; Jerry's Electronics GmbH</name>
+                    <street>Industriestraße 7</street>
+                    <city>Berlin</city>
+                    <postal-code>10115</postal-code>
+                    <country>DE</country>
+                    <email>safety@bj-electronics.example</email>
+                </manufacturer>
+                <safety-notices>
+                    <notice><![CDATA[Do not submerge in water. Keep away from fire.]]></notice>
+                </safety-notices>
+            </gpsr>
         </product>
 
     </products>

@@ -26,7 +26,8 @@
              ═══════════════════════════════════════ -->
         <product enabled="true">
             <code>IPHONE-15-PRO</code>
-            <manufacturer>Apple</manufacturer>
+            <manufacturer>Foxconn Technology Group</manufacturer>
+            <brand>Apple</brand>
 
             <translations>
                 <!-- slug is preserved from the source Sylius instance -->
@@ -192,6 +193,52 @@
                 </variant>
 
             </variants>
+
+            <!-- GPSR (EU 2023/988) — non-EU manufacturer, so an EU
+                 responsible person (Art. 16) is required. -->
+            <gpsr>
+                <manufacturer>
+                    <name>Apple Inc.</name>
+                    <trademark>Apple</trademark>
+                    <street>One Apple Park Way</street>
+                    <city>Cupertino</city>
+                    <postal-code>95014</postal-code>
+                    <country>US</country>
+                    <email>productsafety@apple.com</email>
+                    <phone>+1-408-996-1010</phone>
+                </manufacturer>
+                <eu-responsible-person>
+                    <name>Apple Distribution International Ltd.</name>
+                    <street>Hollyhill Industrial Estate, Hollyhill</street>
+                    <city>Cork</city>
+                    <postal-code>T23 YK84</postal-code>
+                    <country>IE</country>
+                    <email>eu-productsafety@apple.com</email>
+                </eu-responsible-person>
+                <model>A3102</model>
+                <safety-notices>
+                    <notice locale="en_US"><![CDATA[<p>Charge only with original adapter.
+Do not use a damaged cable.</p>]]></notice>
+                    <notice locale="de_DE"><![CDATA[<p>Nur mit originalem Netzteil laden.</p>]]></notice>
+                </safety-notices>
+                <!-- Sample PDFs from sample-files.com — real, downloadable. -->
+                <safety-documents>
+                    <document type="user-manual" locale="en_US">
+                        <url>https://sample-files.com/downloads/documents/pdf/sample-20-page-pdf-a4-size.pdf</url>
+                    </document>
+                    <document type="declaration-of-conformity">
+                        <url>https://sample-files.com/downloads/documents/pdf/sample-pdf-a4-size.pdf</url>
+                    </document>
+                </safety-documents>
+                <certifications>
+                    <certification>
+                        <code>CE</code>
+                    </certification>
+                    <certification>
+                        <code>RoHS</code>
+                    </certification>
+                </certifications>
+            </gpsr>
         </product>
 
         <!-- ═══════════════════════════════════════
@@ -203,6 +250,7 @@
             <code>CABLE-USB-C-1M</code>
             <external-code>BB-CABLE-001</external-code>
             <manufacturer>Baseus</manufacturer>
+            <brand>Baseus</brand>
 
             <translations>
                 <translation locale="en_US">
@@ -256,6 +304,28 @@
                 </variant>
             </variants>
 
+            <!-- GPSR with an EU importer acting as the responsible party;
+                 <eu-responsible-person> omitted — Baseus EU subsidiary
+                 serves as the manufacturer-of-record for EU market. -->
+            <gpsr>
+                <manufacturer>
+                    <name>Baseus Europe GmbH</name>
+                    <trademark>Baseus</trademark>
+                    <street>Friedrichstraße 123</street>
+                    <city>Berlin</city>
+                    <postal-code>10117</postal-code>
+                    <country>DE</country>
+                    <email>compliance@baseus.eu</email>
+                </manufacturer>
+                <safety-notices>
+                    <notice><![CDATA[Do not submerge. Keep away from fire & sharp objects.]]></notice>
+                </safety-notices>
+                <safety-documents>
+                    <document type="declaration-of-conformity">
+                        <url>https://sample-files.com/downloads/documents/pdf/basic-text.pdf</url>
+                    </document>
+                </safety-documents>
+            </gpsr>
         </product>
 
     </products>

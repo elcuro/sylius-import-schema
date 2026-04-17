@@ -115,6 +115,179 @@ PRODUCT_TEMPLATES = [
 DE_PREFIXES  = ["Super", "Premium", "Ultra", "Pro", "Elite", "Advanced", "Smart", "Eco"]
 FR_SUFFIXES  = ["Edition", "Collection", "Série", "Modèle", "Version"]
 
+# ── GPSR (EU 2023/988) data pools ────────────────────────────────────────────
+#
+# Per-brand manufacturer party. Country determines whether an EU responsible
+# person (Art. 16) is required. Addresses are illustrative — they roughly
+# reflect the real HQ but should not be treated as compliance data.
+MANUFACTURER_GPSR = {
+    "Samsung": {
+        "name": "Samsung Electronics Co., Ltd.",
+        "trademark": "Samsung",
+        "street": "129 Samsung-ro, Yeongtong-gu", "city": "Suwon",
+        "postal-code": "16677", "country": "KR",
+        "email": "productsafety@samsung.com", "phone": "+82-31-200-1114",
+    },
+    "Apple": {
+        "name": "Apple Inc.", "trademark": "Apple",
+        "street": "One Apple Park Way", "city": "Cupertino",
+        "postal-code": "95014", "country": "US",
+        "email": "productsafety@apple.com", "phone": "+1-408-996-1010",
+    },
+    "Sony": {
+        "name": "Sony Group Corporation", "trademark": "Sony",
+        "street": "1-7-1 Konan, Minato-ku", "city": "Tokyo",
+        "postal-code": "108-0075", "country": "JP",
+        "email": "productsafety@sony.com",
+    },
+    "LG": {
+        "name": "LG Electronics Inc.", "trademark": "LG",
+        "street": "128 Yeoui-daero, Yeongdeungpo-gu", "city": "Seoul",
+        "postal-code": "07336", "country": "KR",
+        "email": "productsafety@lge.com",
+    },
+    "Philips": {
+        "name": "Koninklijke Philips N.V.", "trademark": "Philips",
+        "street": "Amstelplein 2", "city": "Amsterdam",
+        "postal-code": "1096 BC", "country": "NL",
+        "email": "productsafety@philips.com",
+    },
+    "Bosch": {
+        "name": "Robert Bosch GmbH", "trademark": "Bosch",
+        "street": "Robert-Bosch-Platz 1", "city": "Gerlingen",
+        "postal-code": "70839", "country": "DE",
+        "email": "productsafety@bosch.com",
+    },
+    "Nike": {
+        "name": "Nike, Inc.", "trademark": "Nike",
+        "street": "One Bowerman Drive", "city": "Beaverton",
+        "postal-code": "97005", "country": "US",
+        "email": "productsafety@nike.com",
+    },
+    "Adidas": {
+        "name": "adidas AG", "trademark": "adidas",
+        "street": "Adi-Dassler-Straße 1", "city": "Herzogenaurach",
+        "postal-code": "91074", "country": "DE",
+        "email": "productsafety@adidas.com",
+    },
+    "Zara": {
+        "name": "Industria de Diseño Textil, S.A.", "trademark": "ZARA",
+        "street": "Avenida de la Diputación s/n", "city": "Arteixo",
+        "postal-code": "15142", "country": "ES",
+        "email": "productsafety@inditex.com",
+    },
+    "H&M": {
+        "name": "H & M Hennes & Mauritz AB", "trademark": "H&M",
+        "street": "Mäster Samuelsgatan 46A", "city": "Stockholm",
+        "postal-code": "106 38", "country": "SE",
+        "email": "productsafety@hm.com",
+    },
+    "Puma": {
+        "name": "PUMA SE", "trademark": "PUMA",
+        "street": "Puma Way 1", "city": "Herzogenaurach",
+        "postal-code": "91074", "country": "DE",
+        "email": "productsafety@puma.com",
+    },
+    "Under Armour": {
+        "name": "Under Armour, Inc.", "trademark": "Under Armour",
+        "street": "1020 Hull Street", "city": "Baltimore",
+        "postal-code": "21230", "country": "US",
+        "email": "productsafety@underarmour.com",
+    },
+    "Reebok": {
+        "name": "Reebok International Ltd.", "trademark": "Reebok",
+        "street": "25 Drydock Avenue", "city": "Boston",
+        "postal-code": "02210", "country": "US",
+        "email": "productsafety@reebok.com",
+    },
+    "Specialized": {
+        "name": "Specialized Bicycle Components, Inc.", "trademark": "Specialized",
+        "street": "15130 Concord Circle", "city": "Morgan Hill",
+        "postal-code": "95037", "country": "US",
+        "email": "productsafety@specialized.com",
+    },
+    "IKEA": {
+        "name": "IKEA of Sweden AB", "trademark": "IKEA",
+        "street": "Tulpanvägen 8", "city": "Älmhult",
+        "postal-code": "343 36", "country": "SE",
+        "email": "productsafety@ikea.com",
+    },
+    "Dyson": {
+        "name": "Dyson Technology Ltd.", "trademark": "Dyson",
+        "street": "Tetbury Hill", "city": "Malmesbury",
+        "postal-code": "SN16 0RP", "country": "GB",
+        "email": "productsafety@dyson.com",
+    },
+    "Electrolux": {
+        "name": "Electrolux AB", "trademark": "Electrolux",
+        "street": "S:t Göransgatan 143", "city": "Stockholm",
+        "postal-code": "105 45", "country": "SE",
+        "email": "productsafety@electrolux.com",
+    },
+    "Canon": {
+        "name": "Canon Inc.", "trademark": "Canon",
+        "street": "30-2 Shimomaruko 3-chome, Ohta-ku", "city": "Tokyo",
+        "postal-code": "146-8501", "country": "JP",
+        "email": "productsafety@canon.com",
+    },
+    # Fashion / generic brands without a dedicated entry fall back to this one.
+    "Levi's": {
+        "name": "Levi Strauss & Co.", "trademark": "Levi's",
+        "street": "1155 Battery Street", "city": "San Francisco",
+        "postal-code": "94111", "country": "US",
+        "email": "productsafety@levi.com",
+    },
+}
+
+# EU member countries — used to decide whether eu-responsible-person applies.
+EU_COUNTRIES = {
+    "AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR",
+    "DE", "GR", "HU", "IE", "IT", "LV", "LT", "LU", "MT", "NL",
+    "PL", "PT", "RO", "SK", "SI", "ES", "SE",
+}
+
+# Generic EU responsible person used for non-EU manufacturers.
+DEFAULT_EU_REP = {
+    "name": "Example EU Compliance B.V.",
+    "street": "Rokin 25", "city": "Amsterdam",
+    "postal-code": "1012 KK", "country": "NL",
+    "email": "gpsr@example-eu-compliance.example",
+    "phone": "+31-20-555-0123",
+}
+
+SAFETY_NOTICE_POOL = {
+    "en_US": [
+        "Keep out of reach of children. Not suitable for children under 36 months.",
+        "Do not immerse in water. Clean with a dry cloth only.",
+        "Charge only with the supplied adapter. Do not use damaged cables.",
+        "Use only as intended. Read the user manual before first use.",
+    ],
+    "de_DE": [
+        "Außerhalb der Reichweite von Kindern aufbewahren. Nicht für Kinder unter 36 Monaten.",
+        "Nicht in Wasser tauchen. Nur mit trockenem Tuch reinigen.",
+        "Nur mit dem mitgelieferten Netzteil laden. Keine beschädigten Kabel verwenden.",
+        "Bestimmungsgemäß verwenden. Vor Gebrauch Bedienungsanleitung lesen.",
+    ],
+}
+
+CERTIFICATION_POOL = ["CE", "RoHS", "FCC", "REACH", "UKCA", "WEEE"]
+
+# Real, publicly downloadable sample PDFs from sample-files.com — rotated
+# per document type so generated fixtures reference URLs that actually
+# resolve when the importer tries to download them.
+SAFETY_DOCUMENT_POOL = {
+    "user-manual": [
+        "https://sample-files.com/downloads/documents/pdf/sample-20-page-pdf-a4-size.pdf",
+        "https://sample-files.com/downloads/documents/pdf/sample-10-page-pdf-a4-size.pdf",
+        "https://sample-files.com/downloads/documents/pdf/sample-5-page-pdf-a4-size.pdf",
+    ],
+    "declaration-of-conformity": [
+        "https://sample-files.com/downloads/documents/pdf/sample-pdf-a4-size.pdf",
+        "https://sample-files.com/downloads/documents/pdf/sample-pdf-a4-size-65kb.pdf",
+        "https://sample-files.com/downloads/documents/pdf/basic-text.pdf",
+    ],
+}
+
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
 
@@ -164,6 +337,72 @@ def make_variant_combinations(options, max_variants=6):
     return combos[:max_variants]
 
 
+def build_gpsr_party(parent_tag_name, party_data, parent):
+    """Emit a GpsrPartyType element (<manufacturer> or <eu-responsible-person>)."""
+    party = ET.SubElement(parent, parent_tag_name)
+    child(party, "name", party_data["name"])
+    if party_data.get("trademark"):
+        child(party, "trademark", party_data["trademark"])
+    child(party, "street",      party_data["street"])
+    child(party, "city",        party_data["city"])
+    child(party, "postal-code", party_data["postal-code"])
+    child(party, "country",     party_data["country"])
+    child(party, "email",       party_data["email"])
+    if party_data.get("phone"):
+        child(party, "phone", party_data["phone"])
+
+
+def build_gpsr(manufacturer, sylius_code, idx, variant_count):
+    """Build the <gpsr> block for the product, or None if no data available."""
+    party_data = MANUFACTURER_GPSR.get(manufacturer)
+    if not party_data:
+        return None
+
+    gpsr = ET.Element("gpsr")
+    build_gpsr_party("manufacturer", party_data, gpsr)
+
+    # EU responsible person required when the manufacturer is outside the EU.
+    if party_data["country"] not in EU_COUNTRIES:
+        build_gpsr_party("eu-responsible-person", DEFAULT_EU_REP, gpsr)
+
+    # Model identifier — deterministic, derived from the Sylius code.
+    child(gpsr, "model", f"MDL-{idx+1:05d}")
+
+    # Safety notices — two locales, rotating through the notice pool so
+    # fixtures exercise variety while remaining reproducible.
+    notices = ET.SubElement(gpsr, "safety-notices")
+    for locale, pool in SAFETY_NOTICE_POOL.items():
+        n = ET.SubElement(notices, "notice")
+        n.set("locale", locale)
+        n.text = pool[idx % len(pool)]
+
+    # Safety documents — user manual + DoC for every other product so that
+    # both "with documents" and "without documents" shapes are covered.
+    # URLs come from the real sample-files.com PDF pool so importer tests
+    # can fetch them without stubbing.
+    if idx % 2 == 0:
+        manuals = SAFETY_DOCUMENT_POOL["user-manual"]
+        docs_pool = SAFETY_DOCUMENT_POOL["declaration-of-conformity"]
+        docs = ET.SubElement(gpsr, "safety-documents")
+        for li, locale in enumerate(("en_US", "de_DE")):
+            doc = ET.SubElement(docs, "document")
+            doc.set("type", "user-manual")
+            doc.set("locale", locale)
+            child(doc, "url", manuals[(idx + li) % len(manuals)])
+        doc = ET.SubElement(docs, "document")
+        doc.set("type", "declaration-of-conformity")
+        child(doc, "url", docs_pool[idx % len(docs_pool)])
+
+    # Certifications — pick 1–3 from the pool based on idx.
+    cert_count = 1 + (idx % 3)
+    certs = ET.SubElement(gpsr, "certifications")
+    for ci in range(cert_count):
+        cert = ET.SubElement(certs, "certification")
+        child(cert, "code", CERTIFICATION_POOL[(idx + ci) % len(CERTIFICATION_POOL)])
+
+    return gpsr
+
+
 # ── Product builder ───────────────────────────────────────────────────────────
 
 def build_product(idx, total):
@@ -183,6 +422,9 @@ def build_product(idx, total):
     child(prod, "code",          sylius_code)
     child(prod, "external-code", ext_code)
     child(prod, "manufacturer",  manufacturer)
+    # For the generated fixtures, brand == manufacturer (the name is the
+    # consumer-facing mark for these templates). Real imports may differ.
+    child(prod, "brand",         manufacturer)
 
     # ── Translations
     translations = ET.SubElement(prod, "translations")
@@ -318,6 +560,11 @@ def build_product(idx, total):
         dim_el.set("width",  str(round(random.uniform(50, 300), 1)))
         dim_el.set("height", str(round(random.uniform(100, 400), 1)))
         dim_el.set("depth",  str(round(random.uniform(10, 150), 1)))
+
+    # GPSR block — appended after <variants> per the XSD sequence.
+    gpsr_el = build_gpsr(manufacturer, sylius_code, idx, len(combos))
+    if gpsr_el is not None:
+        prod.append(gpsr_el)
 
     return prod
 

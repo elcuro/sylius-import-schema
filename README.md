@@ -90,7 +90,7 @@ Add the following to your root element to enable inline validation and autocompl
 <sylius-import>
   <products>
     <product>
-      <code/> <external-code/> <manufacturer/>
+      <code/> <external-code/> <manufacturer/> <brand/>
       <translations>
         <translation>
           <name/> <slug/> <short-description/> <description/>
@@ -130,6 +130,24 @@ Add the following to your root element to enable inline validation and autocompl
           <dimensions />
         </variant>
       </variants>
+      <gpsr>
+        <manufacturer>
+          <name/> <trademark/>
+          <street/> <city/> <postal-code/> <country/>
+          <email/> <phone/>
+        </manufacturer>
+        <eu-responsible-person>…same shape as <manufacturer>…</eu-responsible-person>
+        <model/>
+        <safety-notices>
+          <notice locale="…"/>
+        </safety-notices>
+        <safety-documents>
+          <document type="…" locale="…"><url/></document>
+        </safety-documents>
+        <certifications>
+          <certification><code/> <notified-body/></certification>
+        </certifications>
+      </gpsr>
     </product>
   </products>
 </sylius-import>
@@ -161,22 +179,31 @@ Add the following to your root element to enable inline validation and autocompl
 |---|---|---|
 | `<code>` | * | Our internal product code |
 | `<external-code>` | * | Your internal product code |
-| `<manufacturer>` | no | Manufacturer name (e.g. `Apple`, `Samsung`) |
+| `<manufacturer>` | no | Who **physically manufactured** the product (e.g. `Foxconn Technology Group`). For GPSR purposes the authoritative source is `<gpsr><manufacturer>` (see below) |
+| `<brand>` | no | Marketing **brand** under which the product is sold (e.g. `Apple`, `Nike`). Often equals the manufacturer, but not always — OEM, private labels, licensed brands |
+| `<gpsr>` | no | GPSR compliance block (EU 2023/988) — see [GPSR compliance](#gpsr-compliance-eu-2023988) |
 
 *At least one of `code` / `external-code` must be present.*
 
+> **`<manufacturer>` vs `<brand>`:** use both when they differ. If your
+> supplier only knows one of them, fill only that one — the importer
+> treats `<brand>` as the display brand and falls back to `<manufacturer>`
+> when no brand is given.
+
 ```xml
-<!-- External supplier — your code only -->
+<!-- External supplier — your code only; brand differs from manufacturer -->
 <product enabled="true">
     <external-code>BB-987654</external-code>
-    <manufacturer>Apple</manufacturer>
+    <manufacturer>Foxconn Technology Group</manufacturer>
+    <brand>Apple</brand>
     ...
 </product>
 
 <!-- Sylius to Sylius — our internal code -->
 <product enabled="true">
     <code>IPHONE-15-PRO</code>
-    <manufacturer>Apple</manufacturer>
+    <manufacturer>Foxconn Technology Group</manufacturer>
+    <brand>Apple</brand>
     ...
 </product>
 ```
@@ -452,6 +479,172 @@ Fixed units: `weight` in **kg**, all other dimensions in **mm**.
 
 ```xml
 <dimensions weight="0.187" width="71.5" height="146.6" depth="8.25" />
+```
+
+---
+
+## GPSR compliance (EU 2023/988)
+
+The EU **General Product Safety Regulation** (GPSR, Regulation (EU) 2023/988)
+has been in force since **13 December 2024**. Article 19 requires online
+marketplaces to display, for every product offered to EU consumers, the
+manufacturer's identity and contact data, an EU responsible person when
+the manufacturer is outside the EU, and safety warnings in the consumer's
+language.
+
+The optional `<gpsr>` block carries this data. It sits at the end of
+`<product>`, after `<variants>`. The block as a whole is optional — but
+**if it is present**, it must at minimum carry `<manufacturer>` with the
+required identification fields.
+
+```xml
+<product>
+    ...
+    <variants>...</variants>
+
+    <gpsr>
+        <manufacturer>
+            <name>Apple Inc.</name>
+            <trademark>Apple</trademark>
+            <street>One Apple Park Way</street>
+            <city>Cupertino</city>
+            <postal-code>95014</postal-code>
+            <country>US</country>
+            <email>productsafety@apple.com</email>
+            <phone>+1-408-996-1010</phone>
+        </manufacturer>
+        <eu-responsible-person>
+            <name>Apple Distribution International Ltd.</name>
+            <street>Hollyhill Industrial Estate, Hollyhill</street>
+            <city>Cork</city>
+            <postal-code>T23 YK84</postal-code>
+            <country>IE</country>
+            <email>eu-productsafety@apple.com</email>
+        </eu-responsible-person>
+        <model>A3102</model>
+        <safety-notices>
+            <notice locale="en_US"><![CDATA[Charge only with original adapter.]]></notice>
+            <notice locale="de_DE"><![CDATA[Nur mit originalem Netzteil laden.]]></notice>
+        </safety-notices>
+        <safety-documents>
+            <document type="user-manual" locale="en_US">
+                <url>https://manuals.apple.com/iphone-15-pro/en_US/manual.pdf</url>
+            </document>
+            <document type="declaration-of-conformity">
+                <url>https://www.apple.com/compliance/iphone-15-pro/doc.pdf</url>
+            </document>
+        </safety-documents>
+        <certifications>
+            <certification><code>CE</code></certification>
+            <certification><code>RoHS</code></certification>
+        </certifications>
+    </gpsr>
+</product>
+```
+
+### `<gpsr>` child elements
+
+| Child element | Required | Description |
+|---|---|---|
+| `<manufacturer>` | **yes (when `<gpsr>` is present)** | Structured manufacturer identity (Art. 9(5), 19(4)(a)) |
+| `<eu-responsible-person>` | \* | EU responsible person (Art. 16) — required when the manufacturer is established outside the EU |
+| `<model>` | no | Product type / model identifier, e.g. `A3102` (Art. 19(4)(c)) |
+| `<safety-notices>` | no | Short inline warnings translated per locale |
+| `<safety-documents>` | no | Links to external safety documents (PDF, web page) |
+| `<certifications>` | no | Compliance marks (`CE`, `RoHS`, `FCC`, `REACH`, `UKCA`, …) |
+
+*\* The "manufacturer outside EU → EU responsible person" rule cannot be
+expressed in XSD 1.0 and is enforced by the importer — same pattern as
+the "at least one of `code` / `external-code`" rule.*
+
+### `<manufacturer>` / `<eu-responsible-person>`
+
+Both elements share the same shape (`GpsrPartyType` in the XSD). All
+string content lives in child elements so CDATA is available for names
+with apostrophes, ampersands or non-ASCII characters.
+
+| Child element | Required | Description |
+|---|---|---|
+| `<name>` | yes | Legal name of the entity (Art. 9(5)) |
+| `<trademark>` | no | Registered trade name or registered trademark, if any |
+| `<street>` | yes | Street address |
+| `<city>` | yes | City |
+| `<postal-code>` | yes | Postal code |
+| `<country>` | yes | ISO 3166-1 alpha-2 country code (`SK`, `DE`, `US`, `CN`, …) |
+| `<email>` | yes | Electronic address (Art. 9(5)) |
+| `<phone>` | no | Phone number — **not required** by GPSR but useful where available |
+
+> **Why is `<phone>` optional?** GPSR Art. 9(5) requires a **postal
+> address** and an **electronic address**. "Electronic address" is
+> satisfied by email alone; a phone number is nice-to-have but not
+> compulsory.
+
+### `<safety-notices>`
+
+Short warning texts shown inline on the product page. Each `<notice>`
+is optionally tagged with a `locale` attribute — the importer falls
+back to `default-locale` from the root element when omitted.
+
+```xml
+<safety-notices>
+    <notice locale="en_US"><![CDATA[Keep out of reach of children.]]></notice>
+    <notice locale="de_DE"><![CDATA[Außerhalb der Reichweite von Kindern aufbewahren.]]></notice>
+</safety-notices>
+```
+
+### `<safety-documents>`
+
+References to external safety PDFs or web pages (user manuals,
+declaration of conformity, safety data sheets, recall notices…).
+
+| Attribute (on `<document>`) | Required | Description |
+|---|---|---|
+| `type` | yes | Document kind (enum, see below) |
+| `locale` | no | Language of the document; omit for universal documents |
+
+| Child element (of `<document>`) | Required | Description |
+|---|---|---|
+| `<url>` | yes | Absolute URL to the document |
+
+**Allowed values of `type`:**
+
+| `type` | Meaning |
+|---|---|
+| `user-manual` | Usage / operating instructions |
+| `declaration-of-conformity` | EU Declaration of Conformity (DoC) |
+| `safety-data-sheet` | Safety / material safety data sheet (SDS / MSDS) |
+| `safety-instructions` | Separate safety insert or quick-start safety card |
+| `test-report` | Lab or compliance test report |
+| `recall-notice` | Recall or corrective-action notice |
+| `other` | Anything else |
+
+```xml
+<safety-documents>
+    <document type="user-manual" locale="en_US">
+        <url>https://docs.example.com/product-123/manual-en.pdf</url>
+    </document>
+    <document type="declaration-of-conformity">
+        <url>https://docs.example.com/product-123/doc.pdf</url>
+    </document>
+</safety-documents>
+```
+
+### `<certifications>`
+
+Free-form compliance marks. `<code>` is mandatory; `<notified-body>` is
+optional and carries the notified body number when applicable (e.g. `0086`
+alongside a `CE` mark).
+
+```xml
+<certifications>
+    <certification>
+        <code>CE</code>
+        <notified-body>0086</notified-body>
+    </certification>
+    <certification>
+        <code>RoHS</code>
+    </certification>
+</certifications>
 ```
 
 ---

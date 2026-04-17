@@ -80,6 +80,25 @@
         </xs:restriction>
     </xs:simpleType>
 
+    <xs:simpleType name="CountryType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Z]{2}"/>
+            <!-- ISO 3166-1 alpha-2: SK, CZ, DE, FR, CN, US, GB, IE... -->
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="GpsrDocumentTypeType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="user-manual"/>
+            <xs:enumeration value="declaration-of-conformity"/>
+            <xs:enumeration value="safety-data-sheet"/>
+            <xs:enumeration value="safety-instructions"/>
+            <xs:enumeration value="test-report"/>
+            <xs:enumeration value="recall-notice"/>
+            <xs:enumeration value="other"/>
+        </xs:restriction>
+    </xs:simpleType>
+
     <!-- ═══════════════════════════════════════════
          ROOT ELEMENT
          ═══════════════════════════════════════════ -->
@@ -150,7 +169,14 @@
             <!--
                 code          — our internal product code (SKU, UUID...)
                 external-code — product code in the supplier's system
-                manufacturer  — name of the product manufacturer (e.g. "Apple")
+                manufacturer  — who physically manufactured the product
+                                (e.g. "Foxconn Technology Group"). Plain-text
+                                display hint. For GPSR purposes the
+                                authoritative source is <gpsr><manufacturer>.
+                brand         — marketing brand under which the product is
+                                sold (e.g. "Apple", "Nike"). Often equals the
+                                manufacturer, but not always (OEM, private
+                                labels, licensed brands). Optional.
 
                 Rule: at least one of code / external-code must be present.
                       Validated by the importer (XSD 1.0 cannot express this).
@@ -158,11 +184,19 @@
             <xs:element name="code"          type="NonEmptyString" minOccurs="0"/>
             <xs:element name="external-code" type="NonEmptyString" minOccurs="0"/>
             <xs:element name="manufacturer"  type="xs:string"      minOccurs="0"/>
+            <xs:element name="brand"         type="xs:string"      minOccurs="0"/>
             <xs:element name="translations"  type="ProductTranslationsType"/>
             <xs:element name="taxons"        type="TaxonsType"     minOccurs="0"/>
             <xs:element name="attributes"    type="AttributesType" minOccurs="0"/>
             <xs:element name="images"        type="ImagesType"     minOccurs="0"/>
             <xs:element name="variants"      type="VariantsType"/>
+            <!--
+                gpsr — General Product Safety Regulation (EU 2023/988) data.
+                Optional as a whole; when present, must carry at least the
+                manufacturer identity (name, postal address, email).
+                See the GPSR block below.
+            -->
+            <xs:element name="gpsr"          type="GpsrType"       minOccurs="0"/>
         </xs:sequence>
         <!-- enabled — whether the product is active, default true -->
         <xs:attribute name="enabled" type="xs:boolean" use="optional" default="true"/>
@@ -447,6 +481,159 @@
         <!-- mm -->
         <xs:attribute name="depth"  type="xs:decimal" use="optional"/>
         <!-- mm -->
+    </xs:complexType>
+
+    <!-- ═══════════════════════════════════════════
+         GPSR (General Product Safety Regulation, EU 2023/988)
+         ───────────────────────────────────────────
+         Effective 13 December 2024. Art. 19 requires online marketplaces
+         to display, for each product offered:
+           - manufacturer identity (name, trademark, postal address, email)
+           - EU responsible person (Art. 16) when manufacturer is outside EU
+           - product identification (type / model)
+           - safety warnings in the consumer's language
+
+         The whole <gpsr> block is optional on ProductType, but once
+         present it must carry at least <manufacturer> with its required
+         identification fields. Everything else (eu-responsible-person,
+         model, safety-notices, safety-documents, certifications) is
+         optional and added as data becomes available.
+         ═══════════════════════════════════════════ -->
+
+    <xs:complexType name="GpsrType">
+        <xs:sequence>
+            <!--
+                Manufacturer under GPSR Art. 9 / 19 — structured identity.
+                Required when <gpsr> is present.
+            -->
+            <xs:element name="manufacturer"          type="GpsrPartyType"/>
+
+            <!--
+                EU responsible person (Art. 16). Required when the
+                manufacturer is established outside the EU; otherwise omit.
+                XSD 1.0 cannot express a conditional requirement based on
+                another field's value, so this remains optional here and
+                the rule is enforced by the importer (same pattern as
+                "at least one of code / external-code").
+            -->
+            <xs:element name="eu-responsible-person" type="GpsrPartyType" minOccurs="0"/>
+
+            <!-- Product type / model identifier, e.g. "A3102" (Art. 19(4)(c)). -->
+            <xs:element name="model"                 type="xs:string"               minOccurs="0"/>
+
+            <!--
+                Inline safety notices / warnings in the consumer's language.
+                Short text shown directly on the product page.
+            -->
+            <xs:element name="safety-notices"        type="GpsrSafetyNoticesType"   minOccurs="0"/>
+
+            <!--
+                References to external safety documents (user manuals,
+                declaration of conformity, safety data sheets, recall
+                notices, ...). Each document carries a required type, an
+                optional locale and a URL.
+            -->
+            <xs:element name="safety-documents"      type="GpsrSafetyDocumentsType" minOccurs="0"/>
+
+            <!--
+                Compliance marks / certifications (CE, RoHS, FCC, REACH,
+                UKCA, ...). Free-form but typically from a known vocabulary.
+            -->
+            <xs:element name="certifications"        type="GpsrCertificationsType"  minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!--
+        GpsrPartyType — identity of a legal party (manufacturer or EU
+        responsible person). All string content lives in child elements
+        (so CDATA / ampersands / apostrophes work without escaping);
+        only <country> is an attribute-free typed pattern.
+
+        Required fields per GPSR Art. 9(5): name, postal address
+        (street + city + postal-code + country), electronic address (email).
+        Phone is NOT required by the regulation — "electronic address" is
+        satisfied by email alone — so <phone> stays optional.
+    -->
+    <xs:complexType name="GpsrPartyType">
+        <xs:sequence>
+            <xs:element name="name"        type="NonEmptyString"/>
+            <xs:element name="trademark"   type="xs:string"      minOccurs="0"/>
+            <xs:element name="street"      type="NonEmptyString"/>
+            <xs:element name="city"        type="NonEmptyString"/>
+            <xs:element name="postal-code" type="NonEmptyString"/>
+            <xs:element name="country"     type="CountryType"/>
+            <xs:element name="email"       type="NonEmptyString"/>
+            <xs:element name="phone"       type="xs:string"      minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Inline safety notices (short, translatable warning texts). -->
+    <xs:complexType name="GpsrSafetyNoticesType">
+        <xs:sequence>
+            <xs:element name="notice" type="GpsrSafetyNoticeType"
+                        minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="GpsrSafetyNoticeType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <!--
+                    locale — language of this safety notice (sk_SK, en_US...);
+                    if omitted, default-locale from the root element is used.
+                -->
+                <xs:attribute name="locale" type="LocaleType" use="optional"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <!-- References to external safety documents (PDF / web pages). -->
+    <xs:complexType name="GpsrSafetyDocumentsType">
+        <xs:sequence>
+            <xs:element name="document" type="GpsrSafetyDocumentType"
+                        minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="GpsrSafetyDocumentType">
+        <xs:sequence>
+            <!-- url — absolute URL to the document (PDF, HTML page, ...). -->
+            <xs:element name="url" type="xs:anyURI"/>
+        </xs:sequence>
+        <!--
+            type — kind of document:
+              user-manual                — usage / operating instructions
+              declaration-of-conformity  — EU DoC
+              safety-data-sheet          — SDS / MSDS
+              safety-instructions        — separate safety insert
+              test-report                — lab / compliance test report
+              recall-notice              — recall announcement
+              other                      — anything else
+        -->
+        <xs:attribute name="type"   type="GpsrDocumentTypeType" use="required"/>
+        <!-- locale — language of the document; omit for universal documents. -->
+        <xs:attribute name="locale" type="LocaleType"           use="optional"/>
+    </xs:complexType>
+
+    <!-- Compliance certifications (CE, RoHS, FCC, ...). -->
+    <xs:complexType name="GpsrCertificationsType">
+        <xs:sequence>
+            <xs:element name="certification" type="GpsrCertificationType"
+                        minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="GpsrCertificationType">
+        <xs:sequence>
+            <!--
+                code          — certification mark, e.g. "CE", "RoHS",
+                                "FCC", "REACH", "UKCA"
+                notified-body — optional notified body number (e.g. "0086"
+                                for a CE notified body)
+            -->
+            <xs:element name="code"          type="NonEmptyString"/>
+            <xs:element name="notified-body" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
     </xs:complexType>
 
 </xs:schema>
