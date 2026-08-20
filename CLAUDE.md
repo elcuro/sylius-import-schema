@@ -162,6 +162,10 @@ The MAJOR of the release version always equals the MAJOR of the schema
 version. Versioning starts at `v2.0.0` (commit `7285956`); `v2.1.0` adds
 variant images; `v2.2.0` opens the image `type` to custom values.
 
+`v2.0.0` intentionally has no GitHub release: the release workflow does not
+exist in that commit, so nothing could have built one. This is expected, not
+a fault to repair.
+
 ### Which level to pick
 
 - **MAJOR** — an element is removed, renamed, becomes required, or its type
@@ -181,9 +185,33 @@ variant images; `v2.2.0` opens the image `type` to custom values.
    and update the compare links at the bottom.
 3. Write the new version into `VERSION`.
 4. Run `./scripts/validate.sh` and `./scripts/check-version.sh` — both must pass.
-5. Commit, then tag `vx.y.z` and push the tag. `release.yml` verifies the tag
-   matches `VERSION`, re-validates, and publishes a GitHub release built from
-   the changelog section.
+5. Commit, then push the branch **on its own**:
+
+   ```bash
+   git push origin master
+   ```
+
+6. Tag and push the tag as a **separate** push:
+
+   ```bash
+   git tag -a vx.y.z -m "Short summary"
+   git push origin vx.y.z
+   ```
+
+   Do **not** use `git push --follow-tags` (or push branch and tag in one
+   command). When both refs travel in a single push, the tag ref does not
+   raise its own push event, `release.yml` never runs and no release is
+   created. Recovering from that means deleting the remote tag and pushing
+   it again:
+
+   ```bash
+   git push origin :refs/tags/vx.y.z && git push origin vx.y.z
+   ```
+
+7. Check that `release.yml` went green. It verifies the tag matches
+   `VERSION`, re-validates, and publishes a GitHub release built from the
+   matching `CHANGELOG.md` section. **A tag with no release means the push
+   event was missed** — see the previous step.
 
 ---
 
