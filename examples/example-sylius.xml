@@ -103,6 +103,18 @@
                 <image type="thumbnail">
                     <path>iphone-15-pro/thumb.jpg</path>
                 </image>
+
+                <!-- Shared variant image — one file used by both black variants.
+                     The <variants> selector names the Sylius variant codes it is
+                     attached to, mirroring the ProductImage to ProductVariant
+                     relation on the source instance. -->
+                <image type="additional">
+                    <path>iphone-15-pro/black-hero.jpg</path>
+                    <variants>
+                        <variant-code>IPHONE-15-PRO-BLK-128</variant-code>
+                        <variant-code>IPHONE-15-PRO-BLK-256</variant-code>
+                    </variants>
+                </image>
             </images>
 
             <variants>
@@ -136,6 +148,15 @@
                     <price currency="EUR" amount="119900" vat="20" />
                     <stock on-hand="50" />
                     <dimensions weight="0.187" width="71.5" height="146.6" depth="8.25" />
+                    <!-- Images owned by this variant alone -->
+                    <images>
+                        <image type="main">
+                            <path>iphone-15-pro/black-128-front.jpg</path>
+                        </image>
+                        <image type="additional">
+                            <path>iphone-15-pro/black-128-box.jpg</path>
+                        </image>
+                    </images>
                 </variant>
 
                 <!-- Variant: Black / 256 GB -->
@@ -164,6 +185,11 @@
                     <price currency="EUR" amount="134900" vat-amount="161880" vat="20" />
                     <stock on-hand="30" />
                     <dimensions weight="0.187" width="71.5" height="146.6" depth="8.25" />
+                    <images>
+                        <image type="main">
+                            <path>iphone-15-pro/black-256-front.jpg</path>
+                        </image>
+                    </images>
                 </variant>
 
                 <!-- Variant: White / 128 GB -->
@@ -190,6 +216,14 @@
                     <price currency="EUR" amount="119900" vat="20" />
                     <stock on-hand="25" />
                     <dimensions weight="0.187" width="71.5" height="146.6" depth="8.25" />
+                    <images>
+                        <image type="main">
+                            <path>iphone-15-pro/white-128-front.jpg</path>
+                        </image>
+                        <image type="thumbnail">
+                            <path>iphone-15-pro/white-128-thumb.jpg</path>
+                        </image>
+                    </images>
                 </variant>
 
             </variants>

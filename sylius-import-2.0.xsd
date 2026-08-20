@@ -308,6 +308,25 @@
 
     <!-- ═══════════════════════════════════════════
          IMAGES
+
+         Images can be attached at two levels:
+
+           1. Product level — <product><images>
+              An image with no <variants> selector belongs to the whole
+              product and is used for every variant (this is the original
+              v2.0 behaviour). An image WITH a <variants> selector is
+              assigned only to the variants it lists. Use the selector
+              when several variants share one file and you do not want
+              to repeat the same URL over and over.
+
+           2. Variant level — <variant><images>
+              The image belongs to that single variant only. This is the
+              simplest option for suppliers whose feed already carries
+              images per variant row.
+
+         Both levels may be combined in one document. The importer
+         merges the two sets and de-duplicates by url / path, so the
+         same file listed twice still produces a single Sylius image.
          ═══════════════════════════════════════════ -->
 
     <xs:complexType name="ImagesType">
@@ -326,6 +345,67 @@
 
                 Rule: at least one of url / path must be present.
                       Validated by the importer.
+
+                variants — optional selector limiting this image to specific
+                           variants of the same product. Omit it to attach
+                           the image to the product as a whole.
+            -->
+            <xs:element name="url"      type="xs:anyURI"            minOccurs="0"/>
+            <xs:element name="path"     type="xs:string"            minOccurs="0"/>
+            <xs:element name="variants" type="ImageVariantRefsType" minOccurs="0"/>
+        </xs:sequence>
+        <!--
+            type — image type: main / additional / thumbnail
+                   default: additional
+        -->
+        <xs:attribute name="type" type="ImageTypeType" use="optional" default="additional"/>
+    </xs:complexType>
+
+    <!--
+        Selector attaching a product level image to one or more variants.
+
+        Each child element carries exactly one variant code; the element
+        name says which code space that code belongs to:
+
+          variant-code          — our internal Sylius variant code
+                                  (matches <variant><code>)
+          external-variant-code — the supplier's variant code
+                                  (matches <variant><external-code>)
+
+        Both kinds may be mixed in any order. A code that matches no
+        variant of the same product is skipped by the importer and
+        reported as a warning rather than failing the whole import.
+    -->
+    <xs:complexType name="ImageVariantRefsType">
+        <xs:choice minOccurs="1" maxOccurs="unbounded">
+            <xs:element name="variant-code"          type="NonEmptyString"/>
+            <xs:element name="external-variant-code" type="NonEmptyString"/>
+        </xs:choice>
+    </xs:complexType>
+
+    <!--
+        Images declared inside a single <variant>.
+
+        Same shape as a product level image minus the <variants>
+        selector, which would be meaningless here: the owning variant
+        is already the target.
+    -->
+    <xs:complexType name="VariantImagesType">
+        <xs:sequence>
+            <xs:element name="image" type="VariantImageType"
+                        minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="VariantImageType">
+        <xs:sequence>
+            <!--
+                url  — absolute image URL (https://...); ampersands in query
+                       strings are safe because this is element content
+                path — relative path on disk (used for Sylius to Sylius export)
+
+                Rule: at least one of url / path must be present.
+                      Validated by the importer.
             -->
             <xs:element name="url"  type="xs:anyURI" minOccurs="0"/>
             <xs:element name="path" type="xs:string" minOccurs="0"/>
@@ -333,6 +413,9 @@
         <!--
             type — image type: main / additional / thumbnail
                    default: additional
+
+            Here "main" means the main image OF THIS VARIANT, i.e. the
+            picture the shop shows once the variant has been selected.
         -->
         <xs:attribute name="type" type="ImageTypeType" use="optional" default="additional"/>
     </xs:complexType>
@@ -364,6 +447,16 @@
             <xs:element name="price"         type="PriceType"/>
             <xs:element name="stock"         type="StockType"      minOccurs="0"/>
             <xs:element name="dimensions"    type="DimensionsType" minOccurs="0"/>
+            <!--
+                images — pictures that belong to this variant only, for
+                         example the colour shot of a red T shirt. Images
+                         shared by the whole product stay in
+                         <product><images>; an image shared by some but
+                         not all variants can instead live in
+                         <product><images> with a <variants> selector.
+                         See the IMAGES section above.
+            -->
+            <xs:element name="images"        type="VariantImagesType" minOccurs="0"/>
         </xs:sequence>
         <!--
             enabled   — whether the variant is active, default true

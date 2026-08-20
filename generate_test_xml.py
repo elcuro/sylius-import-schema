@@ -474,23 +474,57 @@ def build_product(idx, total):
             child(a, "value-code",          slugify(val))
             child(a, "external-value-code", f"VAL-{slugify(val).upper()[:8]}")
 
+    # ── Variant combinations
+    # Computed before the images block so that product level images can
+    # reference variant codes in their <variants> selector; the XSD sequence
+    # still requires <images> to be emitted before <variants>.
+    option_set = get_option_set(sub_cat)
+    max_variants = random.choice([2, 3, 4, 6])
+    combos = make_variant_combinations(option_set, max_variants)
+
+    variant_codes = []
+    for vi, combo in enumerate(combos):
+        combo_slug = "-".join(slugify(v) for _, v in combo.values()) if combo else "default"
+        variant_codes.append((
+            f"{sylius_code}-{combo_slug.upper()[:20]}",  # code
+            f"{ext_code}-{vi+1:02d}",                    # external-code
+        ))
+
     # ── Images (dummyimage.com placeholders so URLs actually resolve in tests)
     images = ET.SubElement(prod, "images")
     img_slug = slugify(name_en)
-    for variant_tag, size, label in [
+    for image_type, size, label in [
         ("main",       "800x600", "main"),
         ("additional", "800x600", "detail"),
         ("thumbnail",  "200x200", "thumb"),
     ]:
         img = ET.SubElement(images, "image")
-        img.set("type", variant_tag)
+        img.set("type", image_type)
         child(img, "url", f"https://dummyimage.com/{size}/cccccc/333333.jpg&text={img_slug}-{label}")
 
-    # ── Variants
-    option_set = get_option_set(sub_cat)
-    max_variants = random.choice([2, 3, 4, 6])
-    combos = make_variant_combinations(option_set, max_variants)
+    # Shared variant image — one product level file attached to a subset of
+    # variants through the <variants> selector. Both selector flavours are
+    # exercised: <variant-code> (our code) and <external-variant-code>
+    # (the supplier's code).
+    shared_url = None
+    if len(variant_codes) >= 2:
+        shared_url = f"https://dummyimage.com/800x600/cccccc/333333.jpg&text={img_slug}-shared"
+        shared = ET.SubElement(images, "image")
+        shared.set("type", "additional")
+        child(shared, "url", shared_url)
+        refs = ET.SubElement(shared, "variants")
+        child(refs, "variant-code",          variant_codes[0][0])
+        child(refs, "external-variant-code", variant_codes[1][1])
 
+    # De-duplication case — every 10th product also repeats the shared URL
+    # inside the first referenced variant, so the very same file arrives
+    # through both mechanisms at once. A conforming importer must collapse
+    # the two entries into a single Sylius image instead of creating a
+    # duplicate. Every generated file starts at an index divisible by 10
+    # (0 or 250), so each fixture contains at least one such product.
+    dedup_variant_index = 0 if (shared_url is not None and idx % 10 == 0) else None
+
+    # ── Variants
     variants = ET.SubElement(prod, "variants")
     for vi, combo in enumerate(combos):
         variant = ET.SubElement(variants, "variant")
@@ -502,8 +536,9 @@ def build_product(idx, total):
         )[0])
 
         combo_slug = "-".join(slugify(v) for _, v in combo.values()) if combo else "default"
-        child(variant, "code",          f"{sylius_code}-{combo_slug.upper()[:20]}")
-        child(variant, "external-code", f"{ext_code}-{vi+1:02d}")
+        variant_code, variant_ext_code = variant_codes[vi]
+        child(variant, "code",          variant_code)
+        child(variant, "external-code", variant_ext_code)
         # EAN is optional — roughly 70 % of variants have one
         if random.random() < 0.7:
             ean_base = 5900000000000 + (idx * 100) + vi
@@ -560,6 +595,31 @@ def build_product(idx, total):
         dim_el.set("width",  str(round(random.uniform(50, 300), 1)))
         dim_el.set("height", str(round(random.uniform(100, 400), 1)))
         dim_el.set("depth",  str(round(random.uniform(10, 150), 1)))
+
+        # Variant level images — optional, so roughly 80 % of variants carry
+        # their own picture and the rest fall back to the product images.
+        # The de-duplication variant always gets a block, because it has to
+        # restate the shared product level URL.
+        is_dedup_variant = vi == dedup_variant_index
+        if random.random() < 0.8 or is_dedup_variant:
+            v_slug = slugify(combo_label)[:30] or "default"
+            v_images = ET.SubElement(variant, "images")
+            v_main = ET.SubElement(v_images, "image")
+            v_main.set("type", "main")
+            child(v_main, "url",
+                  f"https://dummyimage.com/800x600/cccccc/333333.jpg&text={img_slug}-{v_slug}")
+            if is_dedup_variant:
+                # Same URL and same type as the product level shared image
+                # above, which already selects this variant. Expected result
+                # after import: one image on this variant, not two.
+                v_dup = ET.SubElement(v_images, "image")
+                v_dup.set("type", "additional")
+                child(v_dup, "url", shared_url)
+            if random.random() < 0.4:
+                v_extra = ET.SubElement(v_images, "image")
+                v_extra.set("type", "additional")
+                child(v_extra, "url",
+                      f"https://dummyimage.com/800x600/cccccc/333333.jpg&text={img_slug}-{v_slug}-alt")
 
     # GPSR block — appended after <variants> per the XSD sequence.
     gpsr_el = build_gpsr(manufacturer, sylius_code, idx, len(combos))

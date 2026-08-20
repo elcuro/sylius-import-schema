@@ -111,6 +111,9 @@ Add the following to your root element to enable inline validation and autocompl
       <images>
         <image>
           <url/> <path/>
+          <variants>
+            <variant-code/> <external-variant-code/>
+          </variants>
         </image>
       </images>
       <variants>
@@ -128,6 +131,11 @@ Add the following to your root element to enable inline validation and autocompl
           <price />
           <stock />
           <dimensions />
+          <images>
+            <image>
+              <url/> <path/>
+            </image>
+          </images>
         </variant>
       </variants>
       <gpsr>
@@ -342,6 +350,7 @@ Add the following to your root element to enable inline validation and autocompl
 |---|---|---|
 | `<url>` | * | Absolute image URL |
 | `<path>` | * | Relative path on disk (Sylius export) |
+| `<variants>` | no | Selector limiting the image to specific variants (see below) |
 
 *At least one of `url` / `path` must be present.*
 
@@ -358,6 +367,102 @@ Add the following to your root element to enable inline validation and autocompl
 
 ---
 
+## Variant images
+
+An image can belong to the whole product or to individual variants.
+There are two ways to say so, and they can be mixed in the same file.
+
+| Where | Meaning |
+|---|---|
+| `<product><images><image>` **without** `<variants>` | Product-wide image, shown for every variant. This is the default. |
+| `<product><images><image>` **with** `<variants>` | Attached only to the variants listed in the selector. |
+| `<variant><images><image>` | Attached to that one variant. |
+
+**Which one to use**
+
+- Your feed carries images per variant row → put them straight into `<variant><images>`.
+- One file is shared by several variants (a colour shot used by every size of
+  the same colour) → declare it once in `<product><images>` and list the
+  variants in `<variants>`.
+
+The importer merges both sets and de-duplicates by `url` / `path`, so listing
+the same file in both places still produces a single Sylius image.
+
+### `<variants>` selector (inside a product-level `<image>`)
+
+| Child element | Description |
+|---|---|
+| `<variant-code>` | Our internal Sylius variant code — matches `<variant><code>` |
+| `<external-variant-code>` | Your internal variant code — matches `<variant><external-code>` |
+
+Both element types may be repeated and mixed in any order. A code that matches
+no variant of that product is skipped with a warning; it does not fail the import.
+
+```xml
+<!-- External supplier: one colour shot shared by two variants -->
+<images>
+    <image type="main">
+        <url>https://cdn.supplier.eu/tshirt/main.jpg</url>
+    </image>
+    <image type="additional">
+        <url>https://cdn.supplier.eu/tshirt/red.jpg?v=2&amp;size=800</url>
+        <variants>
+            <external-variant-code>TS-RED-M</external-variant-code>
+            <external-variant-code>TS-RED-L</external-variant-code>
+        </variants>
+    </image>
+</images>
+```
+
+```xml
+<!-- Sylius to Sylius: same idea with internal codes and paths -->
+<images>
+    <image type="additional">
+        <path>tshirt/red.jpg</path>
+        <variants>
+            <variant-code>TSHIRT-RED-M</variant-code>
+            <variant-code>TSHIRT-RED-L</variant-code>
+        </variants>
+    </image>
+</images>
+```
+
+### `<images>` inside `<variant>`
+
+Same shape as a product image, minus the `<variants>` selector — the owning
+variant is already the target.
+
+| Attribute (on `<image>`) | Description |
+|---|---|
+| `type` | `main` / `additional` / `thumbnail`, default `additional`. Here `main` is the picture shown once the shopper selects this variant. |
+
+| Child element (of `<image>`) | Required | Description |
+|---|---|---|
+| `<url>` | * | Absolute image URL |
+| `<path>` | * | Relative path on disk (Sylius export) |
+
+*At least one of `url` / `path` must be present.*
+
+```xml
+<variant enabled="true" condition="new">
+    <external-code>TS-RED-M</external-code>
+    <price currency="EUR" vat-amount="2388" vat="20" />
+    <images>
+        <image type="main">
+            <url>https://cdn.supplier.eu/tshirt/red-m-front.jpg</url>
+        </image>
+        <image type="additional">
+            <url>https://cdn.supplier.eu/tshirt/red-m-back.jpg</url>
+        </image>
+    </images>
+</variant>
+```
+
+> `<images>` is the **last** child of `<variant>`, after `<dimensions>` — the
+> XSD enforces the element order.
+
+---
+
 ## `<variant>`
 
 | Attribute | Description |
@@ -370,6 +475,7 @@ Add the following to your root element to enable inline validation and autocompl
 | `<code>` | * | Our internal variant code (EAN, SKU...) |
 | `<external-code>` | * | Your internal variant code |
 | `<ean>` | no | EAN-13 barcode (e.g. `5901234123457`); omit if not available |
+| `<images>` | no | Images belonging to this variant only — see [Variant images](#variant-images) |
 
 *At least one of `code` / `external-code` must be present.*
 
@@ -704,6 +810,17 @@ Generated fixtures are hosted on GitHub Pages so you can download them directly
 All fixtures are generated by `generate_test_xml.py` and validated against
 `sylius-import-2.0.xsd` before every release. Image URLs use
 [dummyimage.com](https://dummyimage.com/) placeholders so they actually resolve.
+
+Every fixture exercises both ways of attaching an image to a variant
+(see [Variant images](#variant-images)):
+
+- each product carries one product-level image with a `<variants>` selector,
+  using `<variant-code>` and `<external-variant-code>` side by side;
+- roughly 80 % of variants carry their own `<images>` block, the rest fall back
+  to the product images;
+- every 10th product repeats the **same URL** in both places at once, so the
+  importer's de-duplication path is covered — the expected result is one image
+  on that variant, not two.
 
 ```bash
 # Download and validate the smallest fixture

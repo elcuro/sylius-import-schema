@@ -115,6 +115,19 @@
                 <image type="thumbnail">
                     <url>https://cdn.supplier.eu/iphone15pro/thumb.jpg</url>
                 </image>
+
+                <!-- Shared variant image — the same colour shot is used by both
+                     black variants. The <variants> selector lists the variants it
+                     belongs to, so the URL does not have to be repeated inside
+                     each <variant>. Reference your own codes with
+                     <external-variant-code> (they match <variant><external-code>). -->
+                <image type="additional">
+                    <url>https://cdn.supplier.eu/iphone15pro/black-hero.jpg?v=2&amp;size=800</url>
+                    <variants>
+                        <external-variant-code>BB-987654-BLK-128</external-variant-code>
+                        <external-variant-code>BB-987654-BLK-256</external-variant-code>
+                    </variants>
+                </image>
             </images>
 
             <variants>
@@ -157,6 +170,18 @@
 
                     <!-- Dimensions: weight in kg, all other values in mm -->
                     <dimensions weight="0.187" width="71.5" height="146.6" depth="8.25" />
+
+                    <!-- Images that belong to this variant only.
+                         type="main" is the picture shown once the shopper
+                         has selected this variant. -->
+                    <images>
+                        <image type="main">
+                            <url>https://cdn.supplier.eu/iphone15pro/black-128-front.jpg?v=2&amp;size=800</url>
+                        </image>
+                        <image type="additional">
+                            <url>https://cdn.supplier.eu/iphone15pro/black-128-box.jpg</url>
+                        </image>
+                    </images>
                 </variant>
 
                 <!-- Variant: Black / 256 GB -->
@@ -186,6 +211,11 @@
                     <price currency="EUR" vat-amount="161880" vat="20" />
                     <stock on-hand="30" />
                     <dimensions weight="0.187" width="71.5" height="146.6" depth="8.25" />
+                    <images>
+                        <image type="main">
+                            <url>https://cdn.supplier.eu/iphone15pro/black-256-front.jpg</url>
+                        </image>
+                    </images>
                 </variant>
 
                 <!-- Variant: White / 128 GB -->
@@ -216,6 +246,14 @@
                     <price currency="EUR" amount="119900" />
                     <stock on-hand="25" />
                     <dimensions weight="0.187" width="71.5" height="146.6" depth="8.25" />
+                    <images>
+                        <image type="main">
+                            <url>https://cdn.supplier.eu/iphone15pro/white-128-front.jpg</url>
+                        </image>
+                        <image type="thumbnail">
+                            <url>https://cdn.supplier.eu/iphone15pro/white-128-thumb.jpg</url>
+                        </image>
+                    </images>
                 </variant>
 
             </variants>

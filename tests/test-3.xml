@@ -81,6 +81,13 @@
                 <image type="thumbnail">
                     <url>https://dummyimage.com/200x200/cccccc/333333.jpg&amp;text=samsung-galaxy-s1-ultra-thumb</url>
                 </image>
+                <image type="additional">
+                    <url>https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=samsung-galaxy-s1-ultra-shared</url>
+                    <variants>
+                        <variant-code>PROD-00001-128-GB-BLUE</variant-code>
+                        <external-variant-code>EXT-00001-02</external-variant-code>
+                    </variants>
+                </image>
             </images>
             <variants>
                 <variant enabled="true" condition="new">
@@ -115,11 +122,18 @@
                     <price currency="EUR" amount="121805"/>
                     <stock on-hand="195"/>
                     <dimensions weight="0.23" width="134.1" height="127.8" depth="23.5"/>
+                    <images>
+                        <image type="main">
+                            <url>https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=samsung-galaxy-s1-ultra-128-gb---blue</url>
+                        </image>
+                        <image type="additional">
+                            <url>https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=samsung-galaxy-s1-ultra-shared</url>
+                        </image>
+                    </images>
                 </variant>
                 <variant enabled="true" condition="new">
                     <code>PROD-00001-128-GB-BLACK</code>
                     <external-code>EXT-00001-02</external-code>
-                    <ean>5900000000001</ean>
                     <translation locale="en_US">
                         <name>128 GB / Black</name>
                         <slug>samsung-galaxy-s1-ultra-128-gb---black-1</slug>
@@ -145,9 +159,9 @@
                             <external-value-code>VAL-BLACK</external-value-code>
                         </option>
                     </options>
-                    <price currency="EUR" vat-amount="128513" vat="5"/>
-                    <stock on-hand="137"/>
-                    <dimensions weight="0.24" width="81.2" height="376.7" depth="21.0"/>
+                    <price currency="EUR" vat-amount="148084" vat="20"/>
+                    <stock on-hand="96"/>
+                    <dimensions weight="0.24" width="69.7" height="188.0" depth="98.0"/>
                 </variant>
             </variants>
             <gpsr>
@@ -208,12 +222,12 @@
                     <meta-description>Buy Apple iPhone 1 Pro at the best price. Free shipping available.</meta-description>
                 </translation>
                 <translation locale="de_DE">
-                    <name>Advanced Apple iPhone 1 Pro</name>
-                    <slug>advanced-apple-iphone-1-pro-2</slug>
+                    <name>Premium Apple iPhone 1 Pro</name>
+                    <slug>premium-apple-iphone-1-pro-2</slug>
                 </translation>
                 <translation locale="fr_FR">
-                    <name>Apple iPhone 1 Pro Version</name>
-                    <slug>apple-iphone-1-pro-version-2</slug>
+                    <name>Apple iPhone 1 Pro Edition</name>
+                    <slug>apple-iphone-1-pro-edition-2</slug>
                 </translation>
             </translations>
             <taxons main="electronics-phones">
@@ -233,33 +247,33 @@
                     <code>brand</code>
                     <name>Brand</name>
                     <external-code>ATTR-BRAND</external-code>
-                    <value>Apple</value>
-                    <value-code>apple</value-code>
-                    <external-value-code>VAL-APPLE</external-value-code>
+                    <value>Bosch</value>
+                    <value-code>bosch</value-code>
+                    <external-value-code>VAL-BOSCH</external-value-code>
                 </attribute>
                 <attribute>
                     <code>color</code>
                     <name>Color</name>
                     <external-code>ATTR-COLOR</external-code>
-                    <value>Black</value>
-                    <value-code>black</value-code>
-                    <external-value-code>VAL-BLACK</external-value-code>
+                    <value>White</value>
+                    <value-code>white</value-code>
+                    <external-value-code>VAL-WHITE</external-value-code>
                 </attribute>
                 <attribute>
                     <code>warranty</code>
                     <name>Warranty</name>
                     <external-code>ATTR-WARRANTY</external-code>
-                    <value>12 months</value>
-                    <value-code>12-months</value-code>
-                    <external-value-code>VAL-12-MONTH</external-value-code>
+                    <value>24 months</value>
+                    <value-code>24-months</value-code>
+                    <external-value-code>VAL-24-MONTH</external-value-code>
                 </attribute>
                 <attribute>
                     <code>country</code>
                     <name>Country of origin</name>
                     <external-code>ATTR-COUNTRY</external-code>
-                    <value>USA</value>
-                    <value-code>usa</value-code>
-                    <external-value-code>VAL-USA</external-value-code>
+                    <value>South Korea</value>
+                    <value-code>south-korea</value-code>
+                    <external-value-code>VAL-SOUTH-KO</external-value-code>
                 </attribute>
             </attributes>
             <images>
@@ -272,12 +286,89 @@
                 <image type="thumbnail">
                     <url>https://dummyimage.com/200x200/cccccc/333333.jpg&amp;text=apple-iphone-1-pro-thumb</url>
                 </image>
+                <image type="additional">
+                    <url>https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=apple-iphone-1-pro-shared</url>
+                    <variants>
+                        <variant-code>PROD-00002-64-GB-BLACK</variant-code>
+                        <external-variant-code>EXT-00002-02</external-variant-code>
+                    </variants>
+                </image>
             </images>
             <variants>
                 <variant enabled="true" condition="new">
-                    <code>PROD-00002-512-GB-BLACK</code>
+                    <code>PROD-00002-64-GB-BLACK</code>
                     <external-code>EXT-00002-01</external-code>
-                    <ean>5900000000100</ean>
+                    <translation locale="en_US">
+                        <name>64 GB / Black</name>
+                        <slug>apple-iphone-1-pro-64-gb---black-2</slug>
+                    </translation>
+                    <translation locale="de_DE">
+                        <name>64 GB / Black</name>
+                    </translation>
+                    <options>
+                        <option>
+                            <code>storage</code>
+                            <name>Storage</name>
+                            <external-code>OPT-STORAGE</external-code>
+                            <value>64 GB</value>
+                            <value-code>64-gb</value-code>
+                            <external-value-code>VAL-64-GB</external-value-code>
+                        </option>
+                        <option>
+                            <code>color</code>
+                            <name>Color</name>
+                            <external-code>OPT-COLOR</external-code>
+                            <value>Black</value>
+                            <value-code>black</value-code>
+                            <external-value-code>VAL-BLACK</external-value-code>
+                        </option>
+                    </options>
+                    <price currency="EUR" amount="123600"/>
+                    <stock on-hand="175"/>
+                    <dimensions weight="0.207" width="131.1" height="330.5" depth="17.8"/>
+                </variant>
+                <variant enabled="true" condition="new">
+                    <code>PROD-00002-128-GB-BLUE</code>
+                    <external-code>EXT-00002-02</external-code>
+                    <ean>5900000000101</ean>
+                    <translation locale="en_US">
+                        <name>128 GB / Blue</name>
+                        <slug>apple-iphone-1-pro-128-gb---blue-2</slug>
+                    </translation>
+                    <translation locale="de_DE">
+                        <name>128 GB / Blue</name>
+                    </translation>
+                    <options>
+                        <option>
+                            <code>storage</code>
+                            <name>Storage</name>
+                            <external-code>OPT-STORAGE</external-code>
+                            <value>128 GB</value>
+                            <value-code>128-gb</value-code>
+                            <external-value-code>VAL-128-GB</external-value-code>
+                        </option>
+                        <option>
+                            <code>color</code>
+                            <name>Color</name>
+                            <external-code>OPT-COLOR</external-code>
+                            <value>Blue</value>
+                            <value-code>blue</value-code>
+                            <external-value-code>VAL-BLUE</external-value-code>
+                        </option>
+                    </options>
+                    <price currency="EUR" vat-amount="150324" vat="21"/>
+                    <stock on-hand="145"/>
+                    <dimensions weight="0.217" width="269.1" height="194.4" depth="101.8"/>
+                    <images>
+                        <image type="main">
+                            <url>https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=apple-iphone-1-pro-128-gb---blue</url>
+                        </image>
+                    </images>
+                </variant>
+                <variant enabled="true" condition="new">
+                    <code>PROD-00002-512-GB-BLACK</code>
+                    <external-code>EXT-00002-03</external-code>
+                    <ean>5900000000102</ean>
                     <translation locale="en_US">
                         <name>512 GB / Black</name>
                         <slug>apple-iphone-1-pro-512-gb---black-2</slug>
@@ -303,107 +394,14 @@
                             <external-value-code>VAL-BLACK</external-value-code>
                         </option>
                     </options>
-                    <price currency="EUR" amount="119113"/>
-                    <stock on-hand="175"/>
-                    <dimensions weight="0.215" width="131.1" height="330.5" depth="17.8"/>
-                </variant>
-                <variant enabled="true" condition="new">
-                    <code>PROD-00002-256-GB-SILVER</code>
-                    <external-code>EXT-00002-02</external-code>
-                    <translation locale="en_US">
-                        <name>256 GB / Silver</name>
-                        <slug>apple-iphone-1-pro-256-gb---silver-2</slug>
-                    </translation>
-                    <translation locale="de_DE">
-                        <name>256 GB / Silver</name>
-                    </translation>
-                    <options>
-                        <option>
-                            <code>storage</code>
-                            <name>Storage</name>
-                            <external-code>OPT-STORAGE</external-code>
-                            <value>256 GB</value>
-                            <value-code>256-gb</value-code>
-                            <external-value-code>VAL-256-GB</external-value-code>
-                        </option>
-                        <option>
-                            <code>color</code>
-                            <name>Color</name>
-                            <external-code>OPT-COLOR</external-code>
-                            <value>Silver</value>
-                            <value-code>silver</value-code>
-                            <external-value-code>VAL-SILVER</external-value-code>
-                        </option>
-                    </options>
-                    <price currency="EUR" vat-amount="132477" vat="10"/>
-                    <stock on-hand="16"/>
-                    <dimensions weight="0.225" width="102.7" height="382.9" depth="132.7"/>
-                </variant>
-                <variant enabled="true" condition="new">
-                    <code>PROD-00002-256-GB-WHITE</code>
-                    <external-code>EXT-00002-03</external-code>
-                    <ean>5900000000102</ean>
-                    <translation locale="en_US">
-                        <name>256 GB / White</name>
-                        <slug>apple-iphone-1-pro-256-gb---white-2</slug>
-                    </translation>
-                    <translation locale="de_DE">
-                        <name>256 GB / White</name>
-                    </translation>
-                    <options>
-                        <option>
-                            <code>storage</code>
-                            <name>Storage</name>
-                            <external-code>OPT-STORAGE</external-code>
-                            <value>256 GB</value>
-                            <value-code>256-gb</value-code>
-                            <external-value-code>VAL-256-GB</external-value-code>
-                        </option>
-                        <option>
-                            <code>color</code>
-                            <name>Color</name>
-                            <external-code>OPT-COLOR</external-code>
-                            <value>White</value>
-                            <value-code>white</value-code>
-                            <external-value-code>VAL-WHITE</external-value-code>
-                        </option>
-                    </options>
-                    <price currency="EUR" amount="121733" vat-amount="127820" vat="5"/>
-                    <stock on-hand="36"/>
-                    <dimensions weight="0.235" width="116.2" height="174.0" depth="88.6"/>
-                </variant>
-                <variant enabled="true" condition="new">
-                    <code>PROD-00002-64-GB-WHITE</code>
-                    <external-code>EXT-00002-04</external-code>
-                    <ean>5900000000103</ean>
-                    <translation locale="en_US">
-                        <name>64 GB / White</name>
-                        <slug>apple-iphone-1-pro-64-gb---white-2</slug>
-                    </translation>
-                    <translation locale="de_DE">
-                        <name>64 GB / White</name>
-                    </translation>
-                    <options>
-                        <option>
-                            <code>storage</code>
-                            <name>Storage</name>
-                            <external-code>OPT-STORAGE</external-code>
-                            <value>64 GB</value>
-                            <value-code>64-gb</value-code>
-                            <external-value-code>VAL-64-GB</external-value-code>
-                        </option>
-                        <option>
-                            <code>color</code>
-                            <name>Color</name>
-                            <external-code>OPT-COLOR</external-code>
-                            <value>White</value>
-                            <value-code>white</value-code>
-                            <external-value-code>VAL-WHITE</external-value-code>
-                        </option>
-                    </options>
-                    <price currency="EUR" amount="124198"/>
-                    <stock on-hand="92"/>
-                    <dimensions weight="0.245" width="104.8" height="399.3" depth="81.3"/>
+                    <price currency="EUR" amount="125610" vat-amount="138171" vat="10"/>
+                    <stock on-hand="191"/>
+                    <dimensions weight="0.227" width="196.1" height="369.3" depth="65.9"/>
+                    <images>
+                        <image type="main">
+                            <url>https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=apple-iphone-1-pro-512-gb---black</url>
+                        </image>
+                    </images>
                 </variant>
             </variants>
             <gpsr>
@@ -456,12 +454,12 @@
                     <meta-description>Buy Sony WH-1000XM5 Headphones at the best price. Free shipping available.</meta-description>
                 </translation>
                 <translation locale="de_DE">
-                    <name>Premium Sony WH-1000XM5 Headphones</name>
-                    <slug>premium-sony-wh-1000xm5-headphones-3</slug>
+                    <name>Super Sony WH-1000XM5 Headphones</name>
+                    <slug>super-sony-wh-1000xm5-headphones-3</slug>
                 </translation>
                 <translation locale="fr_FR">
-                    <name>Sony WH-1000XM5 Headphones Collection</name>
-                    <slug>sony-wh-1000xm5-headphones-collection-3</slug>
+                    <name>Sony WH-1000XM5 Headphones Edition</name>
+                    <slug>sony-wh-1000xm5-headphones-edition-3</slug>
                 </translation>
             </translations>
             <taxons main="electronics-audio">
@@ -481,9 +479,9 @@
                     <code>brand</code>
                     <name>Brand</name>
                     <external-code>ATTR-BRAND</external-code>
-                    <value>Bosch</value>
-                    <value-code>bosch</value-code>
-                    <external-value-code>VAL-BOSCH</external-value-code>
+                    <value>Apple</value>
+                    <value-code>apple</value-code>
+                    <external-value-code>VAL-APPLE</external-value-code>
                 </attribute>
                 <attribute>
                     <code>color</code>
@@ -520,6 +518,13 @@
                 <image type="thumbnail">
                     <url>https://dummyimage.com/200x200/cccccc/333333.jpg&amp;text=sony-wh-1000xm5-headphones-thumb</url>
                 </image>
+                <image type="additional">
+                    <url>https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=sony-wh-1000xm5-headphones-shared</url>
+                    <variants>
+                        <variant-code>PROD-00003-BLACK-WIRELESS</variant-code>
+                        <external-variant-code>EXT-00003-02</external-variant-code>
+                    </variants>
+                </image>
             </images>
             <variants>
                 <variant enabled="true" condition="new">
@@ -551,13 +556,19 @@
                             <external-value-code>VAL-WIRELESS</external-value-code>
                         </option>
                     </options>
-                    <price currency="EUR" amount="26389"/>
+                    <price currency="EUR" amount="33248"/>
                     <stock on-hand="196"/>
-                    <dimensions weight="0.288" width="210.2" height="133.5" depth="70.9"/>
+                    <dimensions weight="0.275" width="210.2" height="133.5" depth="70.9"/>
+                    <images>
+                        <image type="main">
+                            <url>https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=sony-wh-1000xm5-headphones-black---wireless</url>
+                        </image>
+                    </images>
                 </variant>
-                <variant enabled="true" condition="new">
+                <variant enabled="true" condition="used">
                     <code>PROD-00003-BLACK-WIRED</code>
                     <external-code>EXT-00003-02</external-code>
+                    <ean>5900000000201</ean>
                     <translation locale="en_US">
                         <name>Black / Wired</name>
                         <slug>sony-wh-1000xm5-headphones-black---wired-3</slug>
@@ -583,9 +594,14 @@
                             <external-value-code>VAL-WIRED</external-value-code>
                         </option>
                     </options>
-                    <price currency="EUR" vat-amount="31198" vat="10"/>
-                    <stock on-hand="128"/>
-                    <dimensions weight="0.298" width="240.5" height="252.3" depth="24.9"/>
+                    <price currency="EUR" vat-amount="42075" vat="21"/>
+                    <stock on-hand="129"/>
+                    <dimensions weight="0.285" width="278.2" height="361.2" depth="51.8"/>
+                    <images>
+                        <image type="main">
+                            <url>https://dummyimage.com/800x600/cccccc/333333.jpg&amp;text=sony-wh-1000xm5-headphones-black---wired</url>
+                        </image>
+                    </images>
                 </variant>
             </variants>
             <gpsr>
