@@ -792,6 +792,44 @@ Each file may repeat `<taxons>` and `<attributes>` — the importer performs ups
 
 ---
 
+## Versioning
+
+This repository carries **two** version numbers. They move independently.
+
+| | Where | Now | Bumps when |
+|---|---|---|---|
+| **Release version** | git tag `v2.1.0`, `VERSION`, `CHANGELOG.md` | `2.1.0` | every release, following [SemVer](https://semver.org/) |
+| **Schema version** | `<sylius-import version="…">`, XSD file name | `2.0` | **only** on a breaking change |
+
+**As a supplier you only care about the schema version.** Keep writing
+`version="2.0"` and pointing at `sylius-import-2.0.xsd`; that stays valid for
+the whole 2.x line. Nothing you send has to change when we publish 2.2.0 or
+2.3.0.
+
+### What each release level means
+
+| Level | Example | Effect on your XML |
+|---|---|---|
+| **MAJOR** `2.x.x` → `3.0.0` | an element is removed, renamed or becomes required | Breaking. A new schema version and a new file (`sylius-import-3.0.xsd`) are published; the old file stays online, so existing documents keep validating until you migrate. |
+| **MINOR** `2.1.0` → `2.2.0` | a new optional element or attribute | Safe. Your documents stay valid. You can adopt the new field whenever you like. |
+| **PATCH** `2.1.0` → `2.1.1` | documentation, comments, regenerated fixtures | No contract change at all. |
+
+The MAJOR of the release version always equals the MAJOR of the schema version.
+
+See [`CHANGELOG.md`](CHANGELOG.md) for the full history.
+
+### Checks run on every change
+
+```bash
+./scripts/validate.sh       # every example and fixture against the XSD
+./scripts/check-version.sh  # release version vs. schema version vs. changelog
+```
+
+Both run in CI, together with a check that `tests/` is reproducible from
+`generate_test_xml.py`.
+
+---
+
 ## Public test fixtures
 
 Generated fixtures are hosted on GitHub Pages so you can download them directly

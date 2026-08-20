@@ -22,7 +22,15 @@ The schema is hosted on GitHub Pages so suppliers can reference the XSD directly
 sylius-import-schema/
 ├── CLAUDE.md                          ← you are here
 ├── README.md                          ← supplier-facing documentation
+├── CHANGELOG.md                       ← release history (Keep a Changelog)
+├── VERSION                            ← current release version (SemVer)
 ├── sylius-import-2.0.xsd              ← XSD schema (single source of truth)
+├── scripts/
+│   ├── validate.sh                    ← validate all XML against the XSD
+│   └── check-version.sh               ← release vs. schema version consistency
+├── .github/workflows/
+│   ├── validate.yml                   ← CI: validate + version + reproducible fixtures
+│   └── release.yml                    ← CI: publish a GitHub release on tag v*
 ├── examples/
 │   ├── example-external.xml           ← external supplier example
 │   ├── example-sylius.xml             ← Sylius to Sylius example
@@ -141,6 +149,44 @@ Expected output for every file: `filename validates`
 
 ---
 
+## Versioning and releasing
+
+Two version numbers, moving independently. Never conflate them.
+
+| | Where it lives | Now | Bumps when |
+|---|---|---|---|
+| **Release version** | git tag `v*`, `VERSION`, `CHANGELOG.md` | `2.1.0` | every release, SemVer |
+| **Schema version** | `<sylius-import version="…">`, XSD file name, XSD header | `2.0` | **only** on a breaking change |
+
+The MAJOR of the release version always equals the MAJOR of the schema
+version. Versioning starts at `v2.0.0` (commit `7285956`); `v2.1.0` adds
+variant images.
+
+### Which level to pick
+
+- **MAJOR** — an element is removed, renamed, becomes required, or its type
+  is tightened. Requires a new XSD file (`sylius-import-3.0.xsd`) alongside
+  the old one, which stays online forever. The schema version bumps to `3.0`.
+- **MINOR** — a new optional element or attribute. This is the normal case;
+  everything added so far has been a MINOR. The schema version does **not**
+  move.
+- **PATCH** — documentation, comments, generator internals, regenerated
+  fixtures. No contract change.
+
+### Release checklist
+
+1. Land the change (XSD + both examples + README + generator + regenerated
+   `tests/`), per the rules above.
+2. Add a `## [x.y.z] - YYYY-MM-DD` section to `CHANGELOG.md` describing it,
+   and update the compare links at the bottom.
+3. Write the new version into `VERSION`.
+4. Run `./scripts/validate.sh` and `./scripts/check-version.sh` — both must pass.
+5. Commit, then tag `vx.y.z` and push the tag. `release.yml` verifies the tag
+   matches `VERSION`, re-validates, and publishes a GitHub release built from
+   the changelog section.
+
+---
+
 ## Environment policy — no host installs
 
 Never install packages or tools on the host machine (no `apt install`,
@@ -173,7 +219,9 @@ the host — do not `sudo apt-get install` on your own.
 - XML comments must **not contain `--`** (double hyphen) — it is invalid XML
 - Every new element or attribute needs a comment explaining its purpose
 - After any XSD change, re-validate all example and test files
-- Bump `version` in the XSD header comment when making breaking changes
+- **Do not touch the schema version** (`version="2.0"`, the XSD file name,
+  the XSD header) for an additive change. It moves only on a breaking
+  change — see *Versioning and releasing* above
 - Never remove existing elements — add new optional ones instead (backwards compatibility)
 - **When adding a new field, default to a child element** (see *Content lives in child elements*). Only use an attribute for typed/enum/numeric values, references, or root metadata.
 - **When adding any new element or attribute to the XSD, always update all of the following:**

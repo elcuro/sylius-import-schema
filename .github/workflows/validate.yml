@@ -1,0 +1,28 @@
+name: Validate
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install xmllint
+        run: sudo apt-get update && sudo apt-get install -y libxml2-utils
+
+      - name: Validate examples and fixtures against the XSD
+        run: ./scripts/validate.sh
+
+      - name: Check release / schema version consistency
+        run: ./scripts/check-version.sh
+
+      - name: Fixtures are reproducible from the generator
+        run: |
+          python3 generate_test_xml.py
+          git diff --exit-code -- tests/ \
+            || { echo "::error::tests/ is out of sync with generate_test_xml.py — re-run it and commit the result"; exit 1; }
