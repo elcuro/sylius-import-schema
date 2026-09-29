@@ -903,9 +903,3 @@ Use CDATA or escape ampersands as `&amp;`:
 <name>Ben &amp; Jerry's</name>
 ```
 
----
-
-## Contact
-
-For questions about the schema or the import process, contact us at:
-**import@your-company.com**
