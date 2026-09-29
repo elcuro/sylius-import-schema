@@ -104,6 +104,13 @@
                     <path>iphone-15-pro/thumb.jpg</path>
                 </image>
 
+                <!-- Custom image type, preserved from the source Sylius
+                     instance. Anything beyond main / additional / thumbnail
+                     is kept by the importer as it is. -->
+                <image type="detail1">
+                    <path>iphone-15-pro/camera-detail.jpg</path>
+                </image>
+
                 <!-- Shared variant image — one file used by both black variants.
                      The <variants> selector names the Sylius variant codes it is
                      attached to, mirroring the ProductImage to ProductVariant

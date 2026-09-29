@@ -11,7 +11,7 @@ Do not confuse them:
 
 | What | Where it lives | Current | Bumps when |
 |---|---|---|---|
-| **Release version** | git tag, `VERSION` | `2.1.0` | every release, following SemVer |
+| **Release version** | git tag, `VERSION` | `2.2.0` | every release, following SemVer |
 | **Schema version** | `<sylius-import version="…">`, XSD file name, XSD header | `2.0` | **only** on a breaking change |
 
 The MAJOR of the release version always equals the MAJOR of the schema
@@ -21,6 +21,26 @@ stays online forever so documents already in the wild keep validating.
 
 MINOR and PATCH releases never touch the schema version. Supplier XML
 files keep declaring `version="2.0"` for the whole 2.x line.
+
+## [2.2.0] - 2026-09-29
+
+### Changed
+
+- The `type` attribute of `<image>` (product and variant level) accepts any
+  non-empty value. `main`, `additional` and `thumbnail` remain the well
+  known types and `additional` remains the default. Sylius stores the image
+  type as an arbitrary string, so a Sylius to Sylius export can now carry
+  custom types (`detail1`, `main_red`, `parameters`...) over unchanged.
+- `ImageTypeType` in the XSD is a non-empty string instead of an
+  enumeration.
+- README section *Custom image types*; the Sylius example shows one.
+
+### Notes
+
+- The type is loosened, never tightened; every document valid under 2.1.0
+  is still valid. The schema version therefore stays `2.0`.
+- Importers that switch on the three well known types must now handle an
+  unknown type, either by keeping it or by falling back to `additional`.
 
 ## [2.1.0] - 2026-08-20
 
@@ -79,5 +99,6 @@ up to and including commit `7285956`.
   onwards every breaking change gets its own MAJOR release and its own XSD
   file.
 
+[2.2.0]: https://github.com/elcuro/sylius-import-schema/compare/v2.1.0...v2.2.0
 [2.1.0]: https://github.com/elcuro/sylius-import-schema/compare/v2.0.0...v2.1.0
 [2.0.0]: https://github.com/elcuro/sylius-import-schema/releases/tag/v2.0.0

@@ -155,12 +155,12 @@ Two version numbers, moving independently. Never conflate them.
 
 | | Where it lives | Now | Bumps when |
 |---|---|---|---|
-| **Release version** | git tag `v*`, `VERSION`, `CHANGELOG.md` | `2.1.0` | every release, SemVer |
+| **Release version** | git tag `v*`, `VERSION`, `CHANGELOG.md` | `2.2.0` | every release, SemVer |
 | **Schema version** | `<sylius-import version="…">`, XSD file name, XSD header | `2.0` | **only** on a breaking change |
 
 The MAJOR of the release version always equals the MAJOR of the schema
 version. Versioning starts at `v2.0.0` (commit `7285956`); `v2.1.0` adds
-variant images.
+variant images; `v2.2.0` opens the image `type` to custom values.
 
 ### Which level to pick
 

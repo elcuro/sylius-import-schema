@@ -37,11 +37,22 @@
         </xs:restriction>
     </xs:simpleType>
 
+    <!--
+        Image type: a short identifier, not free text.
+
+        Well known values, understood by every importer:
+          main        primary image
+          additional  gallery image (default)
+          thumbnail   small preview
+
+        Any other non-empty value is allowed since release 2.2.0. Sylius
+        stores the image type as an arbitrary string, so a Sylius to Sylius
+        export may carry its own types (detail1, main_red, parameters...)
+        and the importer keeps them as they are.
+    -->
     <xs:simpleType name="ImageTypeType">
         <xs:restriction base="xs:string">
-            <xs:enumeration value="main"/>
-            <xs:enumeration value="additional"/>
-            <xs:enumeration value="thumbnail"/>
+            <xs:minLength value="1"/>
         </xs:restriction>
     </xs:simpleType>
 
@@ -355,7 +366,8 @@
             <xs:element name="variants" type="ImageVariantRefsType" minOccurs="0"/>
         </xs:sequence>
         <!--
-            type — image type: main / additional / thumbnail
+            type — image type: main / additional / thumbnail, or a custom
+                   type preserved from a source Sylius instance
                    default: additional
         -->
         <xs:attribute name="type" type="ImageTypeType" use="optional" default="additional"/>
@@ -411,7 +423,8 @@
             <xs:element name="path" type="xs:string" minOccurs="0"/>
         </xs:sequence>
         <!--
-            type — image type: main / additional / thumbnail
+            type — image type: main / additional / thumbnail, or a custom
+                   type preserved from a source Sylius instance
                    default: additional
 
             Here "main" means the main image OF THIS VARIANT, i.e. the

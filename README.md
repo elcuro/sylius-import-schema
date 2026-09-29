@@ -344,7 +344,7 @@ Add the following to your root element to enable inline validation and autocompl
 
 | Attribute (on `<image>`) | Description |
 |---|---|
-| `type` | `main` / `additional` / `thumbnail`, default `additional` |
+| `type` | `main` / `additional` / `thumbnail`, default `additional`. A Sylius export may use its own type instead (see *Custom image types*). |
 
 | Child element (of `<image>`) | Required | Description |
 |---|---|---|
@@ -353,6 +353,25 @@ Add the following to your root element to enable inline validation and autocompl
 | `<variants>` | no | Selector limiting the image to specific variants (see below) |
 
 *At least one of `url` / `path` must be present.*
+
+### Custom image types
+
+`main`, `additional` and `thumbnail` are the well known types every importer
+understands. If you are an external supplier, stick to these three.
+
+Sylius itself stores the image type as an arbitrary string, so shops often
+define their own (`detail1`, `main_red`, `parameters`...). Since release 2.2.0
+the `type` attribute accepts any non-empty value, which lets a Sylius to
+Sylius export carry those types over unchanged:
+
+```xml
+<image type="main_red">
+    <url>https://example.com/media/image/ab/cd/tent-red.jpg</url>
+</image>
+```
+
+Omit the attribute for an image that has no type on the source instance; it
+is then treated as `additional`.
 
 ```xml
 <images>
@@ -434,7 +453,7 @@ variant is already the target.
 
 | Attribute (on `<image>`) | Description |
 |---|---|
-| `type` | `main` / `additional` / `thumbnail`, default `additional`. Here `main` is the picture shown once the shopper selects this variant. |
+| `type` | `main` / `additional` / `thumbnail`, default `additional`. Here `main` is the picture shown once the shopper selects this variant. Custom types are allowed, see *Custom image types*. |
 
 | Child element (of `<image>`) | Required | Description |
 |---|---|---|
@@ -798,13 +817,13 @@ This repository carries **two** version numbers. They move independently.
 
 | | Where | Now | Bumps when |
 |---|---|---|---|
-| **Release version** | git tag `v2.1.0`, `VERSION`, `CHANGELOG.md` | `2.1.0` | every release, following [SemVer](https://semver.org/) |
+| **Release version** | git tag `v2.2.0`, `VERSION`, `CHANGELOG.md` | `2.2.0` | every release, following [SemVer](https://semver.org/) |
 | **Schema version** | `<sylius-import version="…">`, XSD file name | `2.0` | **only** on a breaking change |
 
 **As a supplier you only care about the schema version.** Keep writing
 `version="2.0"` and pointing at `sylius-import-2.0.xsd`; that stays valid for
-the whole 2.x line. Nothing you send has to change when we publish 2.2.0 or
-2.3.0.
+the whole 2.x line. Nothing you send has to change when we publish 2.3.0 or
+2.4.0.
 
 ### What each release level means
 
